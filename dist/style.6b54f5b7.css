@@ -8,7 +8,7 @@
   color: #333;
 }
 
-@media all and (min-width: 1320px) and (max-width: 1340px) {
+@media all and (min-width: 1300px) and (max-width: 1320px) {
   body {
     overflow-x: hidden;
   }
@@ -303,11 +303,11 @@ section {
   background-color: #000;
 }
 .ranking .rank_slider {
-  width: 1180px;
+  width: calc(100% - 480px);
 }
 .ranking .rank_slider .swiper-slide {
-  width: 700px;
-  height: 700px;
+  width: 60%;
+  height: 200px;
   background-color: #666;
   transition: 0.3s;
 }
@@ -316,12 +316,12 @@ section {
   z-index: -1;
   margin-top: 80px;
   margin-right: 3px;
-  width: 540px;
+  width: 40%;
   height: 540px;
   background-color: #aaa;
 }
 .ranking .rank_slider .swiper-slide.swiper-slide-next {
-  margin-left: -60px;
+  margin-left: -10%;
 }
 
 /********** mid_banner **********/
