@@ -118,9 +118,6 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 
   return newRequire;
 })({"js/main.js":[function(require,module,exports) {
-function _createForOfIteratorHelper(o, allowArrayLike) { var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it.return != null) it.return(); } finally { if (didErr) throw err; } } }; }
-function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
-function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i]; return arr2; }
 $(function () {
   //나중에 바꿀 것: 스크롤탑 0일때만 투명배경 아닐때는 흰배경
   //스크롤 업/다운 따라서 메뉴 온오프
@@ -138,12 +135,11 @@ $(function () {
     $('.header').removeClass('top');
   }, function () {
     $(this).children('.gnb_hover').stop().fadeOut(300);
-    $('.header').addClass('top');
   });
 }); ////jquery_END
 
 // swiper
-var swiper1 = new Swiper('.vm_slider', {
+new Swiper('.vm_slider', {
   loop: true,
   autoplay: {
     delay: 5000,
@@ -158,9 +154,10 @@ var swiper1 = new Swiper('.vm_slider', {
     type: "progressbar"
   }
 });
-var swiper2 = new Swiper(".rank_slider", {
+new Swiper(".rank_slider", {
   slidesPerView: 'auto',
-  loop: true
+  rewind: true
+  // loop: true,
   /* 
       autoplay: {
         delay: 2500,
@@ -170,58 +167,28 @@ var swiper2 = new Swiper(".rank_slider", {
 
 //data-swiper-slide-index  이게 슬라이드 index임에 참고<< index는 자꾸 바뀌니까!!! 근데 어떻게 해야하지
 
-var swiper3 = new Swiper(".new_tab", {
+new Swiper(".new_tab", {
   slidesPerView: "auto",
   centeredSlides: true,
+  observer: true,
+  observeParents: true,
   speed: 800,
-  loop: true,
-  /*   autoplay: {
-      delay: 2500,
-      disableOnInteraction: false,
-    }, */
-
+  // loop: true,
+  rewind: true,
+  autoplay: {
+    delay: 2500,
+    disableOnInteraction: false,
+    pauseOnMouseEnter: true
+  },
   navigation: {
     nextEl: ".swiper-button-next",
     prevEl: ".swiper-button-prev"
   },
   pagination: {
-    el: ".swiper-pagination"
+    el: ".swiper-pagination",
+    clickable: true
   }
 });
-var rankImg1 = document.querySelectorAll('.rank_tab.tab1 .swiper-slide');
-var rankList1 = document.querySelectorAll('.rank_tab.tab1 .rank_list li');
-var rankWrapper1 = document.querySelector('.rank_tab.tab1 .swiper-wrapper');
-console.log(rankImg1);
-console.log(rankList1);
-console.log(rankWrapper1);
-var _loop = function _loop(i) {
-  rankImg1[i].addEventListener("DOMAttrModified", function () {
-    //클래스 변경 감지 > on 전체 해제 > 해당 index와 동일한 rankList1에 on 부여
-    //가 안되나?
-  });
-  rankList1[i].addEventListener('click', function () {
-    var _iterator = _createForOfIteratorHelper(rankImg1),
-      _step;
-    try {
-      for (_iterator.s(); !(_step = _iterator.n()).done;) {
-        var rankImg = _step.value;
-        rankImg.classList.remove('swiper-slide-prev');
-        rankImg.classList.remove('swiper-slide-active');
-        rankImg.classList.remove('swiper-slide-next');
-      }
-    } catch (err) {
-      _iterator.e(err);
-    } finally {
-      _iterator.f();
-    }
-    rankImg1[(i + 6 - 1) % 6].classList.add('swiper-slide-prev');
-    rankImg1[i % 6].classList.add('swiper-slide-active');
-    rankImg1[(i + 1) % 6].classList.add('swiper-slide-next');
-  }); //class는 바뀌는데 움직이진 않음...  switchcase로 이동시키기 > 실패! 
-};
-for (var i = 0; i < rankImg1.length; i++) {
-  _loop(i);
-}
 },{}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -247,7 +214,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61381" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56174" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];

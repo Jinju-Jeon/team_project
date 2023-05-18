@@ -64,7 +64,8 @@ h1 {
   line-height: 60px;
   font-size: 20px;
   background: none;
-  border: 1px solid #333;
+  border: 1px solid;
+  border-color: #0E0057;
   margin-right: 40px;
 }
 .tab_list label:last-child {
@@ -85,6 +86,7 @@ section, .header_inner, .footer_inner {
 }
 
 section, .footer_inner {
+  position: relative;
   padding: 80px 10px;
   box-sizing: border-box;
 }
@@ -451,6 +453,33 @@ section, .footer_inner {
 }
 
 /********** new **********/
+.new input[type=radio] {
+  display: none;
+}
+.new #new_tab_btn1:checked ~ .new_tab_cover .new_tab:nth-child(1) {
+  display: block;
+}
+.new #new_tab_btn2:checked ~ .new_tab_cover .new_tab:nth-child(2) {
+  display: block;
+}
+.new #new_tab_btn3:checked ~ .new_tab_cover .new_tab:nth-child(3) {
+  display: block;
+}
+.new #new_tab_btn1:checked ~ .tab_list label:nth-child(1) {
+  background-color: #0E0057;
+  color: #fff;
+}
+.new #new_tab_btn2:checked ~ .tab_list label:nth-child(2) {
+  background-color: #0E0057;
+  color: #fff;
+}
+.new #new_tab_btn3:checked ~ .tab_list label:nth-child(3) {
+  background-color: #0E0057;
+  color: #fff;
+}
+.new .new_tab {
+  display: none;
+}
 .new .new_tab .swiper-slide {
   width: calc(60% - 40px);
   display: flex;

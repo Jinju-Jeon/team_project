@@ -20,7 +20,6 @@ $(function(){
     $('.header').removeClass('top')
     },function(){
       $(this).children('.gnb_hover').stop().fadeOut(300)
-      $('.header').addClass('top')
     })
 
 
@@ -33,7 +32,7 @@ $(function(){
 
 
 // swiper
-const swiper1 = new Swiper('.vm_slider', {
+new Swiper('.vm_slider', {
     loop: true,
 
     autoplay: {
@@ -54,9 +53,10 @@ const swiper1 = new Swiper('.vm_slider', {
 
 
   
-const swiper2 = new Swiper(".rank_slider", {
+new Swiper(".rank_slider", {
     slidesPerView: 'auto',
-    loop: true,
+    rewind: true,
+    // loop: true,
 /* 
     autoplay: {
       delay: 2500,
@@ -69,18 +69,23 @@ const swiper2 = new Swiper(".rank_slider", {
 
 
 
-const swiper3 = new Swiper(".new_tab", {
+new Swiper(".new_tab", {
   slidesPerView: "auto",
   centeredSlides: true,
+  
+  observer: true,
+  observeParents: true,
 
   speed: 800,
-
-  loop: true,
-
-/*   autoplay: {
+  // loop: true,
+  rewind: true,
+  
+  
+  autoplay: {
     delay: 2500,
     disableOnInteraction: false,
-  }, */ 
+    pauseOnMouseEnter:true,
+  }, 
 
   navigation: {
     nextEl: ".swiper-button-next",
@@ -89,39 +94,9 @@ const swiper3 = new Swiper(".new_tab", {
   
   pagination: {
     el: ".swiper-pagination",
+    clickable: true,
   },
   
 });
 
 
-
-const rankImg1 = document.querySelectorAll('.rank_tab.tab1 .swiper-slide')
-const rankList1 = document.querySelectorAll('.rank_tab.tab1 .rank_list li')
-const rankWrapper1 = document.querySelector('.rank_tab.tab1 .swiper-wrapper')
-
-
-console.log(rankImg1)
-console.log(rankList1)
-console.log(rankWrapper1)
-
-for(let i=0;i<rankImg1.length;i++){
-  rankImg1[i].addEventListener("DOMAttrModified",function(){
-    //클래스 변경 감지 > on 전체 해제 > 해당 index와 동일한 rankList1에 on 부여
-    //가 안되나?
-
-  })
-
-  rankList1[i].addEventListener('click',function(){
-    for(let rankImg of rankImg1){
-      rankImg.classList.remove('swiper-slide-prev')
-      rankImg.classList.remove('swiper-slide-active')
-      rankImg.classList.remove('swiper-slide-next')
-    }
-
-    rankImg1[(i+6-1)%6].classList.add('swiper-slide-prev')
-    rankImg1[i%6].classList.add('swiper-slide-active')
-    rankImg1[(i+1)%6].classList.add('swiper-slide-next')
-  }) //class는 바뀌는데 움직이진 않음...  switchcase로 이동시키기 > 실패! 
-
-
-}

@@ -10,6 +10,7 @@ h1, h2, h3, h4, h5, h6{font-weight: normal; font-size: inherit;}
 a{display: block;}
 img{display: block; width: 100%; height: auto;}
 button{background: none; border: none; display: block;}
+$mainC: #0E0057;
 
 
 /* 양식 통일용 */
@@ -31,7 +32,8 @@ h1{
     font-size: 20px;
     
     background: none;
-    border: 1px solid #333;
+    border: 1px solid;
+    border-color: $mainC;
     margin-right: 40px;
 
     &:last-child{margin-right: 0;}
@@ -43,7 +45,6 @@ h1{
 
 
 /* scss mixin */
-$mainC: #0E0057;
 
 @mixin secWidth{
     width: 100%;
@@ -56,6 +57,7 @@ $mainC: #0E0057;
 
 section,.header_inner,.footer_inner{@include secWidth;}
 section,.footer_inner{
+    position: relative;
     padding: 80px 10px;
     box-sizing: border-box;
 }
@@ -455,9 +457,23 @@ section,.footer_inner{
 
 /********** new **********/
 .new{
+    input[type=radio]{display: none;}
+    #new_tab_btn1:checked ~ .new_tab_cover .new_tab:nth-child(1){display: block;}
+    #new_tab_btn2:checked ~ .new_tab_cover .new_tab:nth-child(2){display: block;}
+    #new_tab_btn3:checked ~ .new_tab_cover .new_tab:nth-child(3){display: block;}
+
+    #new_tab_btn1:checked ~ .tab_list label:nth-child(1){background-color: $mainC; color: #fff;}
+    #new_tab_btn2:checked ~ .tab_list label:nth-child(2){background-color: $mainC; color: #fff;}
+    #new_tab_btn3:checked ~ .tab_list label:nth-child(3){background-color: $mainC; color: #fff;}
+
+    //이거 for로 못돌리나?
+
+
     .new_tab_cover{}
 
     .new_tab{
+        display: none;
+        
         .swiper-slide{
             width: calc(60% - 40px);
             display: flex;
@@ -488,7 +504,9 @@ section,.footer_inner{
 
             .new_tit,.new_desc,.icon{display: none;}
             
-            &.swiper-slide-active{margin: 0 20px;}
+            &.swiper-slide-active{
+                margin: 0 20px;
+            }
             &.swiper-slide-active,&.swiper-slide-next{
                 justify-content: start;
                 .new_txt{
@@ -535,6 +553,7 @@ section,.footer_inner{
         
 
     }////new_tab
+
 }//new
 
 /********** magazine **********/
