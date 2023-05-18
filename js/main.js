@@ -15,14 +15,13 @@ $(function(){
 
 
 
-  $('.gnb>li').hover(function(){
+  $('.gnb ul>li').hover(function(){
     $(this).children('.gnb_hover').stop().fadeIn(300)
+    $('.header').removeClass('top')
     },function(){
       $(this).children('.gnb_hover').stop().fadeOut(300)
+      $('.header').addClass('top')
     })
-
-
-    
 
 
 
@@ -32,8 +31,15 @@ $(function(){
 
 
 
-const swiper = new Swiper('.vm_slider', {
+
+// swiper
+const swiper1 = new Swiper('.vm_slider', {
     loop: true,
+
+    autoplay: {
+      delay: 5000,
+      disableOnInteraction: false,
+    },
   
     navigation: {
       nextEl: '.swiper-button-next',
@@ -48,22 +54,74 @@ const swiper = new Swiper('.vm_slider', {
 
 
   
-swiper = new Swiper(".rank_slider", {
+const swiper2 = new Swiper(".rank_slider", {
     slidesPerView: 'auto',
     loop: true,
-
-
-    pagination: {
-      el: ".swiper-pagination",
-      clickable: true,
-    },
-  
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-    },
+/* 
+    autoplay: {
+      delay: 2500,
+      disableOnInteraction: false,
+    },  */
+    
   });
-//data-swiper-slide-index < 이게 슬라이드 index임에 참고
+
+//data-swiper-slide-index  이게 슬라이드 index임에 참고<< index는 자꾸 바뀌니까!!! 근데 어떻게 해야하지
 
 
 
+const swiper3 = new Swiper(".new_tab", {
+  slidesPerView: "auto",
+  centeredSlides: true,
+
+  speed: 800,
+
+  loop: true,
+
+/*   autoplay: {
+    delay: 2500,
+    disableOnInteraction: false,
+  }, */ 
+
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+  
+  pagination: {
+    el: ".swiper-pagination",
+  },
+  
+});
+
+
+
+const rankImg1 = document.querySelectorAll('.rank_tab.tab1 .swiper-slide')
+const rankList1 = document.querySelectorAll('.rank_tab.tab1 .rank_list li')
+const rankWrapper1 = document.querySelector('.rank_tab.tab1 .swiper-wrapper')
+
+
+console.log(rankImg1)
+console.log(rankList1)
+console.log(rankWrapper1)
+
+for(let i=0;i<rankImg1.length;i++){
+  rankImg1[i].addEventListener("DOMAttrModified",function(){
+    //클래스 변경 감지 > on 전체 해제 > 해당 index와 동일한 rankList1에 on 부여
+    //가 안되나?
+
+  })
+
+  rankList1[i].addEventListener('click',function(){
+    for(let rankImg of rankImg1){
+      rankImg.classList.remove('swiper-slide-prev')
+      rankImg.classList.remove('swiper-slide-active')
+      rankImg.classList.remove('swiper-slide-next')
+    }
+
+    rankImg1[(i+6-1)%6].classList.add('swiper-slide-prev')
+    rankImg1[i%6].classList.add('swiper-slide-active')
+    rankImg1[(i+1)%6].classList.add('swiper-slide-next')
+  }) //class는 바뀌는데 움직이진 않음...  switchcase로 이동시키기 > 실패! 
+
+
+}
