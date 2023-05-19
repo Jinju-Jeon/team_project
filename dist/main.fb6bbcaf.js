@@ -181,15 +181,28 @@ new Swiper(".new_tab", {
     clickable: true
   }
 });
+var recomMores = document.querySelectorAll('.recom_more');
+console.log(recomMores);
+
+/* rank */
 var rankSlider = new Swiper(".rank_slider", {
   slidesPerView: 'auto',
   slideToClickedSlide: true,
   touchRatio: 1,
   loop: true,
+  loopAdditionalSlides: 1,
   autoplay: {
     // delay: 300,
     disableOnInteraction: false
   }
+});
+var rankList1 = document.querySelectorAll('.tab1 .rank_list li');
+console.log(rankList1);
+rankList1.forEach(function (rank, i) {
+  //인덱스를 뽑아서 > 해당 index에 해당하는 slide로 가게 slideToLoop 넣기
+  rank.addEventListener('click', function () {
+    rankSlider.slideToLoop(i, 300, true);
+  });
 });
 },{}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
@@ -216,7 +229,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56495" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61108" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];

@@ -91,12 +91,22 @@ new Swiper(".new_tab", {
 
 
 
-  
+
+const recomMores = document.querySelectorAll('.recom_more')
+console.log(recomMores)
+
+
+
+
+
+
+/* rank */  
 const rankSlider = new Swiper(".rank_slider", {
     slidesPerView: 'auto',
     slideToClickedSlide: true,
     touchRatio: 1,
     loop: true,
+    loopAdditionalSlides: 1,
 
     autoplay: {
       // delay: 300,
@@ -106,5 +116,13 @@ const rankSlider = new Swiper(".rank_slider", {
   });
 
 
+const rankList1 = document.querySelectorAll('.tab1 .rank_list li')
+console.log(rankList1)
 
+rankList1.forEach(function(rank,i){
+  //인덱스를 뽑아서 > 해당 index에 해당하는 slide로 가게 slideToLoop 넣기
+  rank.addEventListener('click',function(){
+    rankSlider.slideToLoop(i,300,true)
+  })
+})
 
