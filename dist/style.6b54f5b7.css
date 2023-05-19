@@ -100,7 +100,6 @@ section, .footer_inner {
 }
 .header .header_inner {
   height: 100px;
-  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -155,7 +154,7 @@ section, .footer_inner {
   border-bottom: 1px solid #333;
 }
 .header .header_inner .gnb > ul > li .gnb_hover {
-  width: 100%;
+  width: 100vw;
   position: absolute;
   left: 0;
   top: 100px;
@@ -334,16 +333,19 @@ section, .footer_inner {
 .ranking {
   width: 1300px;
 }
-.ranking input[type=radio] {
-  display: none;
+.ranking #rank_tab_btn1:checked ~ .rank_tab_cover .tab1 {
+  display: flex;
+}
+.ranking #rank_tab_btn2:checked ~ .rank_tab_cover .tab2 {
+  display: flex;
+}
+.ranking #rank_tab_btn3:checked ~ .rank_tab_cover .tab3 {
+  display: flex;
 }
 .ranking .rank_tab {
   display: none;
   justify-content: start;
   align-items: center;
-}
-.ranking .rank_tab:first-child {
-  display: flex;
 }
 .ranking .rank_list {
   width: 480px;
@@ -359,19 +361,31 @@ section, .footer_inner {
   padding-bottom: 10px;
   margin-bottom: 20px;
 }
-.ranking .rank_list ol li {
-  list-style: decimal-leading-zero;
-  list-style-position: inside;
-  margin-left: 40px;
-  font-size: 20px;
-  height: 60px;
-  line-height: 60px;
-  border-bottom: 1px solid #333;
+.ranking .rank_list .list_swiper {
+  /* .swiper-slide{
+      margin-left: 40px;
+      width: 380px;
+      font-size: 20px;
+      max-height: 60px;
+      line-height: 60px;
+      border-bottom: 1px solid #333; 
+
+
+
+  &.swiper-slide-active{
+      margin-left: 0px;
+      width: 100%;
+      font-weight: bold;
+      font-size: 24px;
+      color: $mainC;
+      }
+  } */
 }
-.ranking .rank_list ol li.on {
-  font-weight: bold;
-  font-size: 24px;
-  color: #0E0057;
+.ranking .rank_list .list_swiper .swiper-slide {
+  display: none;
+}
+.ranking .rank_list .list_swiper span {
+  display: block;
 }
 .ranking .rank_slider {
   width: calc(100% - 500px);

@@ -65,7 +65,10 @@ for(let i in menClothList){
   
   const infoPrice = document.createElement('p')
   infoPrice.setAttribute('class','info_price')
-  infoPrice.appendChild(document.createTextNode(menClothList[i].price+'원'))
+  let priceString = menClothList[i].price.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
+
+
+  infoPrice.appendChild(document.createTextNode(priceString+'원'))
   
   productInfo.append(infoName,infoPrice)
 
@@ -96,6 +99,13 @@ for(let item of elHeart){
     })
 }
 //a태그 이동 방지
+
+
+const productImgs = document.querySelectorAll('.item_top img')
+
+
+for(let productImg of productImgs){}
+//hover효과
 
 
 

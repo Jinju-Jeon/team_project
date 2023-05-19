@@ -346,7 +346,8 @@ for (var i in _data.default) {
   infoName.appendChild(document.createTextNode(_data.default[i].name));
   var infoPrice = document.createElement('p');
   infoPrice.setAttribute('class', 'info_price');
-  infoPrice.appendChild(document.createTextNode(_data.default[i].price + '원'));
+  var priceString = _data.default[i].price.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
+  infoPrice.appendChild(document.createTextNode(priceString + '원'));
   productInfo.append(infoName, infoPrice);
   href.append(itemTop, productCategory, productInfo);
   productList.appendChild(product);
@@ -382,6 +383,19 @@ try {
   _iterator2.e(err);
 } finally {
   _iterator2.f();
+}
+var productImgs = document.querySelectorAll('.item_top img');
+var _iterator3 = _createForOfIteratorHelper(productImgs),
+  _step3;
+try {
+  for (_iterator3.s(); !(_step3 = _iterator3.n()).done;) {
+    var _productImg = _step3.value;
+  }
+  //hover효과
+} catch (err) {
+  _iterator3.e(err);
+} finally {
+  _iterator3.f();
 }
 $(function () {
   //나중에 바꿀 것: 스크롤탑 0일때만 투명배경 아닐때는 흰배경
@@ -428,7 +442,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56590" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56495" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];

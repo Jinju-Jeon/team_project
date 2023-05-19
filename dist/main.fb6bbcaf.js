@@ -154,22 +154,14 @@ new Swiper('.vm_slider', {
     type: "progressbar"
   }
 });
-new Swiper(".rank_slider", {
-  slidesPerView: 'auto',
-  rewind: true
-  // loop: true,
-  /* 
-      autoplay: {
-        delay: 2500,
-        disableOnInteraction: false,
-      },  */
-});
 
 //data-swiper-slide-index  이게 슬라이드 index임에 참고<< index는 자꾸 바뀌니까!!! 근데 어떻게 해야하지
 
 new Swiper(".new_tab", {
   slidesPerView: "auto",
   centeredSlides: true,
+  slideToClickedSlide: true,
+  touchRatio: 1,
   observer: true,
   observeParents: true,
   speed: 800,
@@ -187,6 +179,16 @@ new Swiper(".new_tab", {
   pagination: {
     el: ".swiper-pagination",
     clickable: true
+  }
+});
+var rankSlider = new Swiper(".rank_slider", {
+  slidesPerView: 'auto',
+  slideToClickedSlide: true,
+  touchRatio: 1,
+  loop: true,
+  autoplay: {
+    // delay: 300,
+    disableOnInteraction: false
   }
 });
 },{}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
@@ -214,7 +216,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56590" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56495" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];

@@ -73,7 +73,6 @@ section,.footer_inner{
 
     .header_inner{
         height: 100px;
-        position: relative;
         @include flexSB;
         align-items: center;
         color: #333;
@@ -131,7 +130,7 @@ section,.footer_inner{
 
             /* hovermenu */
             .gnb_hover{
-                width: 100%;
+                width: 100vw;
                 position: absolute;
                 left: 0; top: 100px;
                 background-color: #fff;
@@ -312,7 +311,11 @@ section,.footer_inner{
 
 /********** ranking **********/
 .ranking{
-    input[type=radio]{display: none;}
+    input[type=radio]{}
+
+    #rank_tab_btn1:checked ~ .rank_tab_cover .tab1{display: flex;}
+    #rank_tab_btn2:checked ~ .rank_tab_cover .tab2{display: flex;}
+    #rank_tab_btn3:checked ~ .rank_tab_cover .tab3{display: flex;}
 
     width: 1300px;
     .rank_btn{ }
@@ -321,10 +324,6 @@ section,.footer_inner{
         display: none;
         justify-content: start;
         align-items: center;
-
-        &:first-child{
-            display: flex;
-        }
         
     }
 
@@ -342,23 +341,35 @@ section,.footer_inner{
             margin-bottom: 20px;
         }
 
-        ol{
-            li{
-                list-style: decimal-leading-zero;
-                list-style-position: inside;
+        .list_swiper{ 
+
+            .swiper-slide{display: none;}
+            span{display: block;}
+
+            /* .swiper-slide{
                 margin-left: 40px;
+                width: 380px;
                 font-size: 20px;
-                height: 60px;
+                max-height: 60px;
                 line-height: 60px;
-                border-bottom: 1px solid #333;  
+                border-bottom: 1px solid #333; 
                 
-                &.on{
-                    font-weight: bold;
-                    font-size: 24px;
-                    color: $mainC;
+                
+
+            &.swiper-slide-active{
+                margin-left: 0px;
+                width: 100%;
+                font-weight: bold;
+                font-size: 24px;
+                color: $mainC;
                 }
-            }
-        }//ol
+            } */
+            ///slide
+            
+        }//list_swiper
+
+
+        
     }//rank_list
 
     .rank_slider{

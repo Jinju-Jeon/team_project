@@ -31,6 +31,8 @@ $(function(){
 
 
 
+ 
+
 // swiper
 new Swiper('.vm_slider', {
     loop: true,
@@ -51,20 +53,6 @@ new Swiper('.vm_slider', {
     },
   });
 
-
-  
-new Swiper(".rank_slider", {
-    slidesPerView: 'auto',
-    rewind: true,
-    // loop: true,
-/* 
-    autoplay: {
-      delay: 2500,
-      disableOnInteraction: false,
-    },  */
-    
-  });
-
 //data-swiper-slide-index  이게 슬라이드 index임에 참고<< index는 자꾸 바뀌니까!!! 근데 어떻게 해야하지
 
 
@@ -72,6 +60,8 @@ new Swiper(".rank_slider", {
 new Swiper(".new_tab", {
   slidesPerView: "auto",
   centeredSlides: true,
+  slideToClickedSlide: true,
+  touchRatio: 1,
   
   observer: true,
   observeParents: true,
@@ -98,5 +88,23 @@ new Swiper(".new_tab", {
   },
   
 });
+
+
+
+  
+const rankSlider = new Swiper(".rank_slider", {
+    slidesPerView: 'auto',
+    slideToClickedSlide: true,
+    touchRatio: 1,
+    loop: true,
+
+    autoplay: {
+      // delay: 300,
+      disableOnInteraction: false,
+    }, 
+    
+  });
+
+
 
 
