@@ -118,27 +118,39 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 
   return newRequire;
 })({"js/main.js":[function(require,module,exports) {
-$(function () {
-  //나중에 바꿀 것: 스크롤탑 0일때만 투명배경 아닐때는 흰배경
-  //스크롤 업/다운 따라서 메뉴 온오프
+/* scroll-menu */
+var headerInner = document.querySelector('.header_inner');
+var prev = 0;
+window.addEventListener('scroll', function () {
+  /* header view */
+  if (prev < window.scrollY && window.scrollY > 500) {
+    headerInner.classList.remove('scroll_up');
+    headerInner.classList.add('scroll_down');
+  } else {
+    headerInner.classList.remove('scroll_down');
+    headerInner.classList.add('scroll_up');
+  }
+  prev = window.scrollY;
+  headerStyle();
+});
 
-  $(window).scroll(function () {
-    var p = $(this).scrollTop();
-    if (p === 0) {
-      $('.header').addClass('top');
-    } else {
-      $('.header').removeClass('top');
-    }
+/* header-hover */
+var gnbLists = document.querySelectorAll('.gnb>ul>li');
+var gnbHovers = document.querySelectorAll('.gnb .gnb_hover');
+gnbLists.forEach(function (gnbList, i) {
+  gnbList.addEventListener('mouseenter', function () {
+    document.querySelector('.header').classList.remove('top');
+    gnbHovers[i].classList.add('hovered');
+    document.querySelector('.bg_opacity').style.display = 'block';
   });
-  $('.gnb ul>li').hover(function () {
-    $(this).children('.gnb_hover').stop().fadeIn(300);
-    $('.header').removeClass('top');
-  }, function () {
-    $(this).children('.gnb_hover').stop().fadeOut(300);
+  gnbList.addEventListener('mouseleave', function () {
+    gnbHovers[i].classList.remove('hovered');
+    document.querySelector('.bg_opacity').style.display = 'none';
+    headerStyle();
   });
-}); ////jquery_END
+});
 
-// swiper
+// visual_main
 new Swiper('.vm_slider', {
   loop: true,
   autoplay: {
@@ -157,6 +169,7 @@ new Swiper('.vm_slider', {
 
 //data-swiper-slide-index  이게 슬라이드 index임에 참고<< index는 자꾸 바뀌니까!!! 근데 어떻게 해야하지
 
+/* new */
 new Swiper(".new_tab", {
   slidesPerView: "auto",
   centeredSlides: true,
@@ -243,6 +256,37 @@ rankList2.forEach(function (rank, i) {
     rankSlider2.slideToLoop(i, 300, true);
   });
 });
+
+/* recom */
+var plusBtns = document.querySelectorAll('.recom_detail>button');
+var plusIcon = document.querySelectorAll('.recom_detail>button span');
+var recomDesc = document.querySelectorAll('.recom_desc');
+var clickState = new Array();
+for (var i = 0; i < plusBtns.length; i++) {
+  clickState.push(0);
+}
+plusBtns.forEach(function (btn, i) {
+  btn.addEventListener('click', function () {
+    if (!clickState[i]) {
+      clickState[i] = 1;
+      recomDesc[i].classList.add('on');
+      plusIcon[i].innerText = 'cancel';
+    } else {
+      clickState[i] = 0;
+      recomDesc[i].classList.remove('on');
+      plusIcon[i].innerText = 'add_circle';
+    }
+  }); //click
+}); //forEach
+
+/* function */
+function headerStyle() {
+  if (window.scrollY === 0) {
+    document.querySelector('.header').classList.add('top');
+  } else {
+    document.querySelector('.header').classList.remove('top');
+  }
+}
 },{}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -268,7 +312,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60245" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49816" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];

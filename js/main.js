@@ -1,31 +1,40 @@
 
 
-$(function(){
+/* scroll-menu */
+const headerInner = document.querySelector('.header_inner')
+let prev = 0
+window.addEventListener('scroll',()=>{
+  /* header view */
+	if(prev < window.scrollY && window.scrollY>500){
+    headerInner.classList.remove('scroll_up')
+    headerInner.classList.add('scroll_down')
+  } else{
+    headerInner.classList.remove('scroll_down')
+    headerInner.classList.add('scroll_up')
+  }
+	prev = window.scrollY;
 
-  //나중에 바꿀 것: 스크롤탑 0일때만 투명배경 아닐때는 흰배경
-  //스크롤 업/다운 따라서 메뉴 온오프
+  headerStyle();
+});
 
-  $(window).scroll(function(){
-    let p=$(this).scrollTop()
-    if(p===0){
-      $('.header').addClass('top')
-    } else{$('.header').removeClass('top')}
+
+/* header-hover */
+const gnbLists = document.querySelectorAll('.gnb>ul>li')
+const gnbHovers = document.querySelectorAll('.gnb .gnb_hover')
+
+gnbLists.forEach((gnbList,i)=>{
+  gnbList.addEventListener('mouseenter',function(){
+    document.querySelector('.header').classList.remove('top')
+    gnbHovers[i].classList.add('hovered')
+    document.querySelector('.bg_opacity').style.display = 'block'
   })
 
-
-
-
-  $('.gnb ul>li').hover(function(){
-    $(this).children('.gnb_hover').stop().fadeIn(300)
-    $('.header').removeClass('top')
-    },function(){
-      $(this).children('.gnb_hover').stop().fadeOut(300)
-    })
-
-
-
-})////jquery_END
-
+  gnbList.addEventListener('mouseleave',function(){
+    gnbHovers[i].classList.remove('hovered')
+    document.querySelector('.bg_opacity').style.display = 'none'
+    headerStyle();
+  })
+})
 
 
 
@@ -33,7 +42,7 @@ $(function(){
 
  
 
-// swiper
+// visual_main
 new Swiper('.vm_slider', {
     loop: true,
 
@@ -56,7 +65,7 @@ new Swiper('.vm_slider', {
 //data-swiper-slide-index  이게 슬라이드 index임에 참고<< index는 자꾸 바뀌니까!!! 근데 어떻게 해야하지
 
 
-
+/* new */
 new Swiper(".new_tab", {
   slidesPerView: "auto",
   centeredSlides: true,
@@ -91,12 +100,6 @@ new Swiper(".new_tab", {
 
 
 
-
-
-
-
-
-
 /* rank */
 const rankList1 = document.querySelectorAll('.rank_list1 li')
 const rankList2 = document.querySelectorAll('.rank_list2 li')
@@ -125,7 +128,6 @@ const rankSlider1 = new Swiper(".rank_slider1", {
       }//activeIndex
     }//on    
   });
-
 rankList1.forEach((rank,i)=>{
   rank.addEventListener('click',function(){
     rankSlider1.slideToLoop(i,300,true)
@@ -157,9 +159,50 @@ const rankSlider2 = new Swiper(".rank_slider2", {
     }//activeIndex
   }//on    
 });
-
 rankList2.forEach((rank,i)=>{
   rank.addEventListener('click',function(){
     rankSlider2.slideToLoop(i,300,true)
   })
 })
+
+
+
+/* recom */
+const plusBtns = document.querySelectorAll('.recom_detail>button')
+const plusIcon = document.querySelectorAll('.recom_detail>button span')
+const recomDesc = document.querySelectorAll('.recom_desc')
+const clickState = new Array
+for(let i=0;i<plusBtns.length;i++){
+  clickState.push(0)
+}
+
+plusBtns.forEach((btn,i)=>{
+  btn.addEventListener('click',()=>{
+  if(!clickState[i]){
+    clickState[i]=1
+    recomDesc[i].classList.add('on')
+    plusIcon[i].innerText = 'cancel'
+  } else{
+    clickState[i]=0
+    recomDesc[i].classList.remove('on')
+    plusIcon[i].innerText = 'add_circle'
+  }
+  
+  })//click
+  
+})//forEach
+  
+
+
+
+
+
+/* function */
+function headerStyle(){
+    if(window.scrollY===0){
+    document.querySelector('.header').classList.add('top')
+  } else{
+    document.querySelector('.header').classList.remove('top')
+  }
+
+}
