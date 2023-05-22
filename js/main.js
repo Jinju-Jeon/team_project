@@ -92,37 +92,74 @@ new Swiper(".new_tab", {
 
 
 
-const recomMores = document.querySelectorAll('.recom_more')
-console.log(recomMores)
 
 
 
 
 
+/* rank */
+const rankList1 = document.querySelectorAll('.rank_list1 li')
+const rankList2 = document.querySelectorAll('.rank_list2 li')
 
-/* rank */  
-const rankSlider = new Swiper(".rank_slider", {
+//rankslider1
+const rankSlider1 = new Swiper(".rank_slider1", {
     slidesPerView: 'auto',
     slideToClickedSlide: true,
-    touchRatio: 1,
     loop: true,
     loopAdditionalSlides: 1,
 
     autoplay: {
-      // delay: 300,
+      delay: 3000,
       disableOnInteraction: false,
     }, 
-    
+
+    on: {
+      activeIndexChange: function(){
+        rankList1.forEach((rank,i)=>{
+          rank.classList.remove('on')
+          if(i===this.realIndex){
+            rank.classList.add('on')            
+          } //if
+
+        })//forEach
+      }//activeIndex
+    }//on    
   });
 
-
-const rankList1 = document.querySelectorAll('.tab1 .rank_list li')
-console.log(rankList1)
-
-rankList1.forEach(function(rank,i){
-  //인덱스를 뽑아서 > 해당 index에 해당하는 slide로 가게 slideToLoop 넣기
+rankList1.forEach((rank,i)=>{
   rank.addEventListener('click',function(){
-    rankSlider.slideToLoop(i,300,true)
+    rankSlider1.slideToLoop(i,300,true)
   })
 })
 
+
+//rankslider2
+const rankSlider2 = new Swiper(".rank_slider2", {
+  slidesPerView: 'auto',
+  slideToClickedSlide: true,
+  loop: true,
+  loopAdditionalSlides: 1,
+
+  autoplay: {
+    delay: 3000,
+    disableOnInteraction: false,
+  }, 
+
+  on: {
+    activeIndexChange: function(){
+      rankList2.forEach((rank,i)=>{
+        rank.classList.remove('on')
+        if(i===this.realIndex){
+          rank.classList.add('on')            
+        } //if
+
+      })//forEach
+    }//activeIndex
+  }//on    
+});
+
+rankList2.forEach((rank,i)=>{
+  rank.addEventListener('click',function(){
+    rankSlider2.slideToLoop(i,300,true)
+  })
+})
