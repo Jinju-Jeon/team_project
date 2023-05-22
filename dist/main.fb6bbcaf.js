@@ -181,27 +181,66 @@ new Swiper(".new_tab", {
     clickable: true
   }
 });
-var recomMores = document.querySelectorAll('.recom_more');
-console.log(recomMores);
 
 /* rank */
-var rankSlider = new Swiper(".rank_slider", {
+var rankList1 = document.querySelectorAll('.rank_list1 li');
+var rankList2 = document.querySelectorAll('.rank_list2 li');
+
+//rankslider1
+var rankSlider1 = new Swiper(".rank_slider1", {
   slidesPerView: 'auto',
   slideToClickedSlide: true,
-  touchRatio: 1,
   loop: true,
   loopAdditionalSlides: 1,
   autoplay: {
-    // delay: 300,
+    delay: 3000,
     disableOnInteraction: false
-  }
+  },
+  on: {
+    activeIndexChange: function activeIndexChange() {
+      var _this = this;
+      rankList1.forEach(function (rank, i) {
+        rank.classList.remove('on');
+        if (i === _this.realIndex) {
+          rank.classList.add('on');
+        } //if
+      }); //forEach
+    } //activeIndex
+  } //on    
 });
-var rankList1 = document.querySelectorAll('.tab1 .rank_list li');
-console.log(rankList1);
+
 rankList1.forEach(function (rank, i) {
-  //인덱스를 뽑아서 > 해당 index에 해당하는 slide로 가게 slideToLoop 넣기
   rank.addEventListener('click', function () {
-    rankSlider.slideToLoop(i, 300, true);
+    rankSlider1.slideToLoop(i, 300, true);
+  });
+});
+
+//rankslider2
+var rankSlider2 = new Swiper(".rank_slider2", {
+  slidesPerView: 'auto',
+  slideToClickedSlide: true,
+  loop: true,
+  loopAdditionalSlides: 1,
+  autoplay: {
+    delay: 3000,
+    disableOnInteraction: false
+  },
+  on: {
+    activeIndexChange: function activeIndexChange() {
+      var _this2 = this;
+      rankList2.forEach(function (rank, i) {
+        rank.classList.remove('on');
+        if (i === _this2.realIndex) {
+          rank.classList.add('on');
+        } //if
+      }); //forEach
+    } //activeIndex
+  } //on    
+});
+
+rankList2.forEach(function (rank, i) {
+  rank.addEventListener('click', function () {
+    rankSlider2.slideToLoop(i, 300, true);
   });
 });
 },{}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
@@ -229,7 +268,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61108" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55749" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];

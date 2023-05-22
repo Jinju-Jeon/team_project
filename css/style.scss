@@ -311,14 +311,19 @@ section,.footer_inner{
 
 /********** ranking **********/
 .ranking{
-    input[type=radio]{}
+    width: 1300px;
+    input[type=radio]{display: none;}
 
     #rank_tab_btn1:checked ~ .rank_tab_cover .tab1{display: flex;}
     #rank_tab_btn2:checked ~ .rank_tab_cover .tab2{display: flex;}
-    #rank_tab_btn3:checked ~ .rank_tab_cover .tab3{display: flex;}
 
-    width: 1300px;
-    .rank_btn{ }
+    
+    #rank_tab_btn1:checked ~ .tab_list>:nth-child(1),
+    #rank_tab_btn2:checked ~ .tab_list>:nth-child(2){
+        background-color: $mainC;
+        color: #fff;
+        font-weight: bold;
+    }
 
     .rank_tab{
         display: none;
@@ -349,6 +354,12 @@ section,.footer_inner{
                 line-height: 60px;
                 border-bottom: 1px solid #333;
                 cursor: pointer;
+
+                &.on{
+                    font-size: 24px;
+                    font-weight: bold;
+                    color: $mainC;
+                }
             }
 
 
@@ -380,18 +391,15 @@ section,.footer_inner{
 
             &.swiper-slide-next{
                 z-index: -1;
-                .rank_hover{display: none;}
                 img{
                     margin-left: -10%;
                     opacity: .3;
                 }
             }
-            &.swiper-slide-active img{opacity: 1; width: 100%; margin-top: 0;}
 
             &:hover .rank_hover{
                     bottom: 0;
-                    opacity: .5;
-                
+                    opacity: .5;                
             }
 
             .rank_hover{
@@ -402,6 +410,7 @@ section,.footer_inner{
                 padding: 30px 20px;
                 opacity: 0;
                 transition: .3s;
+                display: none;
                 
                 p{
                     color: #fff;
@@ -428,7 +437,16 @@ section,.footer_inner{
                             text-align: center; 
                             padding-top: 7px;
                             font-size: 28px;
-                        }}}}//rank_hover
+                        }}}
+            }//rank_hover
+
+
+                
+            &.swiper-slide-active{
+                .rank_hover{display: block;}
+                img{opacity: 1; width: 100%; margin-top: 0;}
+            }
+
             
         }//swiper_slide
 
@@ -660,7 +678,7 @@ section,.footer_inner{
                 &.desc2-2{top: 51%; right: 12%}
                 &.desc1-2{bottom: 21%;left: 47%;}
                 &.desc3-1{top: 30%;left: 55%;}
-                &.desc3-2{top: 51%; right: 12%}
+                &.desc3-2{top: 57%; left: 18%}
             }
 
             

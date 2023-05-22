@@ -333,14 +333,20 @@ section, .footer_inner {
 .ranking {
   width: 1300px;
 }
+.ranking input[type=radio] {
+  display: none;
+}
 .ranking #rank_tab_btn1:checked ~ .rank_tab_cover .tab1 {
   display: flex;
 }
 .ranking #rank_tab_btn2:checked ~ .rank_tab_cover .tab2 {
   display: flex;
 }
-.ranking #rank_tab_btn3:checked ~ .rank_tab_cover .tab3 {
-  display: flex;
+.ranking #rank_tab_btn1:checked ~ .tab_list > :nth-child(1),
+.ranking #rank_tab_btn2:checked ~ .tab_list > :nth-child(2) {
+  background-color: #0E0057;
+  color: #fff;
+  font-weight: bold;
 }
 .ranking .rank_tab {
   display: none;
@@ -386,6 +392,11 @@ section, .footer_inner {
   border-bottom: 1px solid #333;
   cursor: pointer;
 }
+.ranking .rank_list ul li.on {
+  font-size: 24px;
+  font-weight: bold;
+  color: #0E0057;
+}
 .ranking .rank_list h2 {
   font-size: 36px;
   font-weight: bold;
@@ -414,17 +425,9 @@ section, .footer_inner {
 .ranking .rank_slider .swiper-slide.swiper-slide-next {
   z-index: -1;
 }
-.ranking .rank_slider .swiper-slide.swiper-slide-next .rank_hover {
-  display: none;
-}
 .ranking .rank_slider .swiper-slide.swiper-slide-next img {
   margin-left: -10%;
   opacity: 0.3;
-}
-.ranking .rank_slider .swiper-slide.swiper-slide-active img {
-  opacity: 1;
-  width: 100%;
-  margin-top: 0;
 }
 .ranking .rank_slider .swiper-slide:hover .rank_hover {
   bottom: 0;
@@ -439,6 +442,7 @@ section, .footer_inner {
   padding: 30px 20px;
   opacity: 0;
   transition: 0.3s;
+  display: none;
 }
 .ranking .rank_slider .swiper-slide .rank_hover p {
   color: #fff;
@@ -468,6 +472,14 @@ section, .footer_inner {
   text-align: center;
   padding-top: 7px;
   font-size: 28px;
+}
+.ranking .rank_slider .swiper-slide.swiper-slide-active .rank_hover {
+  display: block;
+}
+.ranking .rank_slider .swiper-slide.swiper-slide-active img {
+  opacity: 1;
+  width: 100%;
+  margin-top: 0;
 }
 
 /********** mid_banner **********/
@@ -731,8 +743,8 @@ section, .footer_inner {
   left: 55%;
 }
 .recommend .recom_cover .recom_detail .recom_desc.desc3-2 {
-  top: 51%;
-  right: 12%;
+  top: 57%;
+  left: 18%;
 }
 
 /********** sns **********/
