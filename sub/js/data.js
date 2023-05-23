@@ -7,7 +7,8 @@ const menClothList = [
         category: cat[0],
         name: '핫써머 씨어서커 우븐반바지',
         price: '69000',
-        href: 'link'
+        href: '#!',
+        sports: '',
 
     },
     {
@@ -16,7 +17,8 @@ const menClothList = [
         category: cat[0],
         name: '핫써머 씨어서커 아노락 바람막이',
         price: '119000',
-        href: 'link2'
+        href: '#!',
+        sports: '',
 
     },
     {
@@ -25,7 +27,8 @@ const menClothList = [
         category: cat[0],
         name: '컴포트핏 인터내셔널 반팔 카라티',
         price: '69000',
-        href: 'link2'
+        href: '#!',
+        sports: '',
 
     },
     {
@@ -34,7 +37,8 @@ const menClothList = [
         category: cat[0],
         name: '핫써머 씨어서커 아노락 바람막이',
         price: '119000',
-        href: 'link2'
+        href: '#!',
+        sports: '',
 
     },
     {
@@ -43,7 +47,8 @@ const menClothList = [
         category: cat[0],
         name: '핫써머 사이드프린트 우븐 반바지',
         price: '69000',
-        href: 'link2'
+        href: '#!',
+        sports: '',
 
     },
     {
@@ -52,16 +57,18 @@ const menClothList = [
         category: cat[0],
         name: '핫써머 모노그램 우븐 반바지',
         price: '79000',
-        href: 'link2'
+        href: '#!',
+        sports: '',
 
     },
     {
         id: 'men07',
        src: './img/men07.jpg',
-        category: cat[0],
-        name: '컴포트핏 인터내셔널 6부 반바지',
-        price: '59000',
-        href: 'link2'
+       category: cat[0],
+       name: '컴포트핏 인터내셔널 6부 반바지',
+       price: '59000',
+       href: '#!',
+       sports: '',
 
     },
     {
@@ -70,7 +77,8 @@ const menClothList = [
         category: cat[0],
         name: '페스타 그래픽 티셔츠',
         price: '49000',
-        href: 'link2'
+        href: '#!',
+        sports: '',
 
     },
     {
@@ -79,25 +87,28 @@ const menClothList = [
         category: cat[0],
         name: '레터링 그래픽 티셔츠',
         price: '49000',
-        href: 'link2'
+        href: '#!',
+        sports: '',
 
     },
     {
         id: 'men10',
        src: './img/men10.jpg',
-        category: cat[0],
-        name: '레코드 그래픽 티셔츠',
-        price: '59000',
-        href: 'link2'
+       category: cat[0],
+       name: '레코드 그래픽 티셔츠',
+       price: '59000',
+       href: '#!',
+       sports: '',
 
     },
     {
         id: 'men11',
        src: './img/men11.jpg',
-        category: cat[0],
-        name: 'havefun 그래픽 티셔츠',
-        price: '49000',
-        href: 'link2'
+       category: cat[0],
+       name: 'havefun 그래픽 티셔츠',
+       price: '49000',
+       href: '#!',
+       sports: '',
 
     },
     {
@@ -106,7 +117,8 @@ const menClothList = [
         category: cat[0],
         name: '컴포트핏 인터내셔널 우븐 후드티',
         price: '119000',
-        href: 'link2'
+        href: '#!',
+        sports: '',
 
     },
     {
@@ -115,7 +127,8 @@ const menClothList = [
         category: cat[0],
         name: '컴포트핏 인터내셔널 우븐 후드티',
         price: '119000',
-        href: 'link2'
+        href: '#!',
+        sports: '',
 
     },
     {
@@ -124,7 +137,8 @@ const menClothList = [
         category: cat[0],
         name: '컴포트핏 인터내셔널 우븐 후드티',
         price: '119000',
-        href: 'link2'
+        href: '#!',
+        sports: '',
 
     },
     {
@@ -133,16 +147,18 @@ const menClothList = [
         category: cat[0],
         name: '컴포트핏 인터내셔널 우븐 후드티',
         price: '119000',
-        href: 'link2'
+        href: '#!',
+        sports: '',
 
     },
     {
         id: 'men16',
        src: './img/men16.jpg',
-        category: cat[0],
-        name: '컴포트핏 인터내셔널 스몰로고 카라티',
-        price: '79000',
-        href: 'link2'
+       category: cat[0],
+       name: '컴포트핏 인터내셔널 스몰로고 카라티',
+       price: '79000',
+       href: '#!',
+       sports: '',
 
     },
     {
@@ -151,7 +167,8 @@ const menClothList = [
         category: cat[0],
         name: '컴포트핏 플래그 반팔티',
         price: '39000',
-        href: 'link2'
+        href: '#!',
+        sports: '',
 
     },
     {
@@ -160,7 +177,8 @@ const menClothList = [
         category: cat[0],
         name: '컴포트핏 플래그 반팔티',
         price: '39000',
-        href: 'link2'
+        href: '#!',
+        sports: '',
 
     },
     {
@@ -169,7 +187,8 @@ const menClothList = [
         category: cat[0],
         name: '컴포트핏 플래그 반팔티',
         price: '39000',
-        href: 'link2'
+        href: '#!',
+        sports: '',
 
     },
     {
@@ -178,7 +197,8 @@ const menClothList = [
         category: cat[0],
         name: '컴포트핏 마인드블로어 반팔티',
         price: '39000',
-        href: 'link2'
+        href: '#!',
+        sports: '',
 
     },
     {
@@ -187,7 +207,8 @@ const menClothList = [
         category: cat[1],
         name: '핫써머 모노그램 나시티',
         price: '49000',
-        href: 'link2'
+        href: '#!',
+        sports: '',
 
     },
     {
@@ -196,7 +217,8 @@ const menClothList = [
         category: cat[1],
         name: '핫써머 우븐 포켓 반바지',
         price: '69000',
-        href: 'link2'
+        href: '#!',
+        sports: '',
 
     },
     {
@@ -205,7 +227,8 @@ const menClothList = [
         category: cat[0],
         name: '핫써머 씨어서커 우븐반바지',
         price: '69000',
-        href: 'link2'
+        href: '#!',
+        sports: '',
 
     },
     {
@@ -214,7 +237,8 @@ const menClothList = [
         category: cat[0],
         name: '핫써머 씨어서커 아노락 바람막이',
         price: '119000',
-        href: 'link2'
+        href: '#!',
+        sports: '',
 
     },
 

@@ -150,6 +150,17 @@ gnbLists.forEach(function (gnbList, i) {
   });
 });
 
+/* search */
+var searchBtn = document.querySelector('.search_btn');
+var search = document.querySelector('.search');
+var searchClose = document.querySelector('.search .close');
+searchBtn.addEventListener('click', function () {
+  search.style.display = 'block';
+});
+searchClose.addEventListener('click', function () {
+  search.style.display = 'none';
+});
+
 // visual_main
 new Swiper('.vm_slider', {
   loop: true,
@@ -269,12 +280,30 @@ plusBtns.forEach(function (btn, i) {
   btn.addEventListener('click', function () {
     if (!clickState[i]) {
       clickState[i] = 1;
-      recomDesc[i].classList.add('on');
-      plusIcon[i].innerText = 'cancel';
+
+      // recomDesc[i].classList.add('on')
+
+      recomDesc[i].style.display = 'block';
+      gsap.to(recomDesc[i], {
+        opacity: 1,
+        duration: 0.2
+      });
+      gsap.to(plusIcon[i], {
+        rotation: 45,
+        duration: 0.2
+      });
     } else {
       clickState[i] = 0;
-      recomDesc[i].classList.remove('on');
-      plusIcon[i].innerText = 'add_circle';
+      gsap.to(recomDesc[i], {
+        opacity: 0,
+        duration: 0.2
+      }, function () {
+        recomDesc[i].style.display = 'none';
+      });
+      gsap.to(plusIcon[i], {
+        rotation: 0,
+        duration: 0.2
+      });
     }
   }); //click
 }); //forEach
@@ -312,7 +341,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49816" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60899" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];

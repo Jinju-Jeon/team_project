@@ -2,7 +2,7 @@
 
 /* 기본 */
 *{margin: 0; padding: 0;}
-html{font-family: 'Noto Sans KR';color: #333;}
+html,select,button{font-family: 'Noto Sans KR';color: #333;}
 
 li, ul, ol, a{list-style: none; color: inherit; text-decoration: none;}
 h1, h2, h3, h4, h5, h6{font-weight: normal;}
@@ -233,9 +233,13 @@ section,.footer_inner{
     position: relative;
     padding: 10px;
     height: 180px;
+    margin-bottom: 20px;
 
     background: {
         image: url(./img/men_banner.jpg);
+        size: cover;
+        position: bottom;
+        repeat: no-repeat;
         color: rgba(0,0,0,0.5);
         blend-mode: multiply;       
     };
@@ -246,11 +250,128 @@ section,.footer_inner{
         display: flex;
         color: #fff;
         font-size: 36px; font-weight: bold;
-
-        li{}
     }
 
 }
+
+
+/* filter */
+.filter{
+    width: 1320px; margin: 0 auto;
+    .filter_top{
+        @include flexSB();
+        align-items: center;
+        height: 55px;
+
+        .left button{
+            border-right: 1px solid #aaa;
+            padding-right: 10px;
+            span{font-size: 16px; transform: translateY(3px);}
+        }
+        .right{
+            display: flex;
+            #product_sort{
+                width: 165px;
+                margin-right: 20px;
+                border: 1px solid #eee;
+                outline: none;
+            }
+            .view_no{
+                display: flex;
+                align-items: center;
+                span{
+                    width: 40px;
+                    font-size: 32px;
+                    text-align: center;
+                    &:nth-child(2){
+                        font-size: 36px;
+                    }
+                }
+            }
+        }
+    }
+
+    .filter_bottom{
+        display: flex;
+        >div{
+            padding: 0 15px;
+            box-sizing: border-box;
+            width: calc(100%/6);
+
+            p.tit{font-size: 20px; font-weight: bold; margin-bottom: 10px;}
+            li{line-height: 35px;}
+            label{display: block; line-height: 35px;}
+        }//div 공통
+
+        .filter_category{
+
+            li.on{font-size: 20px; font-weight: bold; text-decoration: underline;}
+        }
+        
+
+        .filter_color{
+            input[type=checkbox]{display: none;}
+            background-color: #fff;
+            .color_list{
+                display: flex;
+                
+                flex-wrap: wrap;
+
+                label{
+                    width: calc((100% - 50px)/6); height: 23.33px;
+                    margin-right: 10px;
+                    margin-bottom: 10px;
+                    &:nth-child(6n){margin-right: 0;}
+                    border-radius: 50%;
+                    background-position: center;
+                }
+
+                @for $i from 1 through 13{
+                    label:nth-child(#{$i}){
+                        background-image: url(./img/color_#{$i}.jpg);}
+                }
+            }            
+        }//filter_color
+
+        .filter_size{
+            input[type=checkbox]{display: none;}
+            .size_list{
+                display: flex;
+                flex-wrap: wrap;
+                label{
+                    width: calc((100% - 30px)/4);
+                    margin-right: 10px;
+                    margin-bottom: 10px;
+
+                    box-sizing: border-box;
+                    border: 1px solid #aaa; 
+                    border-radius: 3px;
+
+                    text-align: center;
+
+                    &:nth-child(4n){margin-right: 0;}
+                }
+            }
+
+        }
+
+    }//filter_bottom
+}//filter
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .product_list{
     display: flex;
@@ -260,11 +381,13 @@ section,.footer_inner{
         width: calc((100% - 60px)/4);
         margin-right: 20px;
         &:nth-child(4n){margin-right: 0;}
-        margin-bottom: 20px;
+        margin-bottom: 60px;
 
         .img{
             background-color: #000;
             overflow: hidden;
+            margin-bottom: 10px;
+
             img{width: 100%;}
 
             &:hover .icon{
@@ -312,6 +435,8 @@ section,.footer_inner{
 
                 }//button
             }//icon
+
+            
         }//.img
             .product_info{
                 .info_name{
@@ -320,6 +445,8 @@ section,.footer_inner{
                 }
                 .info_price{}
             }//product_info
+
+            .product_category{font-size: 14px;}
 
         
     }//product    

@@ -37,6 +37,19 @@ gnbLists.forEach((gnbList,i)=>{
 })
 
 
+/* search */
+const searchBtn = document.querySelector('.search_btn')
+const search = document.querySelector('.search')
+const searchClose = document.querySelector('.search .close')
+searchBtn.addEventListener('click',()=>{
+  search.style.display = 'block'
+})
+searchClose.addEventListener('click',()=>{
+  search.style.display = 'none'
+})
+
+
+
 
 
 
@@ -180,12 +193,19 @@ plusBtns.forEach((btn,i)=>{
   btn.addEventListener('click',()=>{
   if(!clickState[i]){
     clickState[i]=1
-    recomDesc[i].classList.add('on')
-    plusIcon[i].innerText = 'cancel'
+
+    // recomDesc[i].classList.add('on')
+
+    recomDesc[i].style.display = 'block'
+    gsap.to(recomDesc[i],{opacity: 1,duration: 0.2,})
+
+    gsap.to(plusIcon[i],{rotation: 45, duration: 0.2,});
   } else{
     clickState[i]=0
-    recomDesc[i].classList.remove('on')
-    plusIcon[i].innerText = 'add_circle'
+    gsap.to(recomDesc[i],{opacity: 0,duration: 0.2,},function(){recomDesc[i].style.display = 'none'})
+    gsap.to(plusIcon[i],{rotation: 0, duration: 0.2,});
+    
+
   }
   
   })//click

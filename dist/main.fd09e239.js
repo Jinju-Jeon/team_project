@@ -131,168 +131,192 @@ var menClothList = [{
   category: cat[0],
   name: '핫써머 씨어서커 우븐반바지',
   price: '69000',
-  href: 'link'
+  href: '#!',
+  sports: ''
 }, {
   id: 'men02',
   src: './img/men02.jpg',
   category: cat[0],
   name: '핫써머 씨어서커 아노락 바람막이',
   price: '119000',
-  href: 'link2'
+  href: '#!',
+  sports: ''
 }, {
   id: 'men03',
   src: './img/men03.jpg',
   category: cat[0],
   name: '컴포트핏 인터내셔널 반팔 카라티',
   price: '69000',
-  href: 'link2'
+  href: '#!',
+  sports: ''
 }, {
   id: 'men04',
   src: './img/men04.jpg',
   category: cat[0],
   name: '핫써머 씨어서커 아노락 바람막이',
   price: '119000',
-  href: 'link2'
+  href: '#!',
+  sports: ''
 }, {
   id: 'men05',
   src: './img/men05.jpg',
   category: cat[0],
   name: '핫써머 사이드프린트 우븐 반바지',
   price: '69000',
-  href: 'link2'
+  href: '#!',
+  sports: ''
 }, {
   id: 'men06',
   src: './img/men06.jpg',
   category: cat[0],
   name: '핫써머 모노그램 우븐 반바지',
   price: '79000',
-  href: 'link2'
+  href: '#!',
+  sports: ''
 }, {
   id: 'men07',
   src: './img/men07.jpg',
   category: cat[0],
   name: '컴포트핏 인터내셔널 6부 반바지',
   price: '59000',
-  href: 'link2'
+  href: '#!',
+  sports: ''
 }, {
   id: 'men08',
   src: './img/men08.jpg',
   category: cat[0],
   name: '페스타 그래픽 티셔츠',
   price: '49000',
-  href: 'link2'
+  href: '#!',
+  sports: ''
 }, {
   id: 'men09',
   src: './img/men09.jpg',
   category: cat[0],
   name: '레터링 그래픽 티셔츠',
   price: '49000',
-  href: 'link2'
+  href: '#!',
+  sports: ''
 }, {
   id: 'men10',
   src: './img/men10.jpg',
   category: cat[0],
   name: '레코드 그래픽 티셔츠',
   price: '59000',
-  href: 'link2'
+  href: '#!',
+  sports: ''
 }, {
   id: 'men11',
   src: './img/men11.jpg',
   category: cat[0],
   name: 'havefun 그래픽 티셔츠',
   price: '49000',
-  href: 'link2'
+  href: '#!',
+  sports: ''
 }, {
   id: 'men12',
   src: './img/men12.jpg',
   category: cat[0],
   name: '컴포트핏 인터내셔널 우븐 후드티',
   price: '119000',
-  href: 'link2'
+  href: '#!',
+  sports: ''
 }, {
   id: 'men13',
   src: './img/men13.jpg',
   category: cat[0],
   name: '컴포트핏 인터내셔널 우븐 후드티',
   price: '119000',
-  href: 'link2'
+  href: '#!',
+  sports: ''
 }, {
   id: 'men14',
   src: './img/men14.jpg',
   category: cat[0],
   name: '컴포트핏 인터내셔널 우븐 후드티',
   price: '119000',
-  href: 'link2'
+  href: '#!',
+  sports: ''
 }, {
   id: 'men15',
   src: './img/men15.jpg',
   category: cat[0],
   name: '컴포트핏 인터내셔널 우븐 후드티',
   price: '119000',
-  href: 'link2'
+  href: '#!',
+  sports: ''
 }, {
   id: 'men16',
   src: './img/men16.jpg',
   category: cat[0],
   name: '컴포트핏 인터내셔널 스몰로고 카라티',
   price: '79000',
-  href: 'link2'
+  href: '#!',
+  sports: ''
 }, {
   id: 'men17',
   src: './img/men17.jpg',
   category: cat[0],
   name: '컴포트핏 플래그 반팔티',
   price: '39000',
-  href: 'link2'
+  href: '#!',
+  sports: ''
 }, {
   id: 'men18',
   src: './img/men18.jpg',
   category: cat[0],
   name: '컴포트핏 플래그 반팔티',
   price: '39000',
-  href: 'link2'
+  href: '#!',
+  sports: ''
 }, {
   id: 'men19',
   src: './img/men19.jpg',
   category: cat[0],
   name: '컴포트핏 플래그 반팔티',
   price: '39000',
-  href: 'link2'
+  href: '#!',
+  sports: ''
 }, {
   id: 'men20',
   src: './img/men20.jpg',
   category: cat[0],
   name: '컴포트핏 마인드블로어 반팔티',
   price: '39000',
-  href: 'link2'
+  href: '#!',
+  sports: ''
 }, {
   id: 'men21',
   src: './img/men21.jpg',
   category: cat[1],
   name: '핫써머 모노그램 나시티',
   price: '49000',
-  href: 'link2'
+  href: '#!',
+  sports: ''
 }, {
   id: 'men22',
   src: './img/men22.jpg',
   category: cat[1],
   name: '핫써머 우븐 포켓 반바지',
   price: '69000',
-  href: 'link2'
+  href: '#!',
+  sports: ''
 }, {
   id: 'men23',
   src: './img/men23.jpg',
   category: cat[0],
   name: '핫써머 씨어서커 우븐반바지',
   price: '69000',
-  href: 'link2'
+  href: '#!',
+  sports: ''
 }, {
   id: 'men24',
   src: './img/men24.jpg',
   category: cat[0],
   name: '핫써머 씨어서커 아노락 바람막이',
   price: '119000',
-  href: 'link2'
+  href: '#!',
+  sports: ''
 }];
 var _default = menClothList;
 exports.default = _default;
@@ -305,54 +329,7 @@ function _createForOfIteratorHelper(o, allowArrayLike) { var it = typeof Symbol 
 function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
 function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i]; return arr2; }
 var productList = document.querySelector('.product_list');
-var makeIcon = function makeIcon() {
-  var icon = document.createElement('div');
-  icon.setAttribute('class', 'icon');
-  var cartBtn = document.createElement('button');
-  cartBtn.setAttribute('class', 'cart_btn');
-  cartBtn.setAttribute('type', 'button');
-  var iconCart = document.createElement('span');
-  iconCart.setAttribute('class', 'material-icons');
-  iconCart.appendChild(document.createTextNode('shopping_cart'));
-  var heartBtn = document.createElement('button');
-  heartBtn.setAttribute('class', 'heart_btn');
-  heartBtn.setAttribute('type', 'button');
-  var iconHeart = document.createElement('span');
-  iconHeart.setAttribute('class', 'material-icons-outlined');
-  iconHeart.appendChild(document.createTextNode('favorite_border'));
-  cartBtn.appendChild(iconCart);
-  heartBtn.appendChild(iconHeart);
-  icon.append(cartBtn, heartBtn);
-  return icon;
-};
-for (var i in _data.default) {
-  var product = document.createElement('div');
-  product.setAttribute('class', 'product');
-  var href = document.createElement('a');
-  href.setAttribute('href', _data.default[i].href);
-  product.appendChild(href);
-  var itemTop = document.createElement('div');
-  itemTop.setAttribute('class', 'item_top img');
-  var productImg = document.createElement('img');
-  productImg.setAttribute('src', _data.default[i].src);
-  itemTop.append(productImg, makeIcon());
-  var productCategory = document.createElement('p');
-  productCategory.setAttribute('class', 'product_category');
-  productCategory.appendChild(document.createTextNode(_data.default[i].category));
-  var productInfo = document.createElement('div');
-  productInfo.setAttribute('class', 'product_info');
-  var infoName = document.createElement('p');
-  infoName.setAttribute('class', 'info_name');
-  infoName.appendChild(document.createTextNode(_data.default[i].name));
-  var infoPrice = document.createElement('p');
-  infoPrice.setAttribute('class', 'info_price');
-  var priceString = _data.default[i].price.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
-  infoPrice.appendChild(document.createTextNode(priceString + '원'));
-  productInfo.append(infoName, infoPrice);
-  href.append(itemTop, productCategory, productInfo);
-  productList.appendChild(product);
-} //sub item 생성
-
+itemLoad();
 var elCart = document.querySelectorAll('.cart_btn');
 var elHeart = document.querySelectorAll('.heart_btn');
 var _iterator = _createForOfIteratorHelper(elCart),
@@ -384,39 +361,72 @@ try {
 } finally {
   _iterator2.f();
 }
-var productImgs = document.querySelectorAll('.item_top img');
-var _iterator3 = _createForOfIteratorHelper(productImgs),
-  _step3;
-try {
-  for (_iterator3.s(); !(_step3 = _iterator3.n()).done;) {
-    var _productImg = _step3.value;
-  }
-  //hover효과
-} catch (err) {
-  _iterator3.e(err);
-} finally {
-  _iterator3.f();
-}
-$(function () {
-  //나중에 바꿀 것: 스크롤탑 0일때만 투명배경 아닐때는 흰배경
-  //스크롤 업/다운 따라서 메뉴 온오프
+var productImgs = document.querySelectorAll('.item_top.img');
+productImgs.forEach(function (img) {
+  img.addEventListener('mouseenter', function () {
+    var src = img.children[0].src;
+    var newSrc = src.replace('.jpg', '-2.jpg');
+    img.children[0].src = newSrc;
+  });
+  img.addEventListener('mouseleave', function () {
+    var src = img.children[0].src;
+    var oldSrc = src.replace('-2.jpg', '.jpg');
+    img.children[0].src = oldSrc;
+  });
+});
+//hover효과
 
-  $(window).scroll(function () {
-    var p = $(this).scrollTop();
-    if (p === 0) {
-      $('.header').addClass('top');
-    } else {
-      $('.header').removeClass('top');
-    }
-  });
-  $('.gnb ul>li').hover(function () {
-    $(this).children('.gnb_hover').stop().fadeIn(300);
-    $('.header').removeClass('top');
-  }, function () {
-    $(this).children('.gnb_hover').stop().fadeOut(300);
-    $('.header').addClass('top');
-  });
-}); ////jquery_END
+//function
+
+function itemLoad() {
+  var makeIcon = function makeIcon() {
+    var icon = document.createElement('div');
+    icon.setAttribute('class', 'icon');
+    var cartBtn = document.createElement('button');
+    cartBtn.setAttribute('class', 'cart_btn');
+    cartBtn.setAttribute('type', 'button');
+    var iconCart = document.createElement('span');
+    iconCart.setAttribute('class', 'material-icons');
+    iconCart.appendChild(document.createTextNode('shopping_cart'));
+    var heartBtn = document.createElement('button');
+    heartBtn.setAttribute('class', 'heart_btn');
+    heartBtn.setAttribute('type', 'button');
+    var iconHeart = document.createElement('span');
+    iconHeart.setAttribute('class', 'material-icons-outlined');
+    iconHeart.appendChild(document.createTextNode('favorite_border'));
+    cartBtn.appendChild(iconCart);
+    heartBtn.appendChild(iconHeart);
+    icon.append(cartBtn, heartBtn);
+    return icon;
+  };
+  for (var i in _data.default) {
+    var product = document.createElement('div');
+    product.setAttribute('class', 'product');
+    var href = document.createElement('a');
+    href.setAttribute('href', _data.default[i].href);
+    product.appendChild(href);
+    var itemTop = document.createElement('div');
+    itemTop.setAttribute('class', 'item_top img');
+    var productImg = document.createElement('img');
+    productImg.setAttribute('src', _data.default[i].src);
+    itemTop.append(productImg, makeIcon());
+    var productCategory = document.createElement('p');
+    productCategory.setAttribute('class', 'product_category');
+    productCategory.appendChild(document.createTextNode(_data.default[i].category));
+    var productInfo = document.createElement('div');
+    productInfo.setAttribute('class', 'product_info');
+    var infoName = document.createElement('p');
+    infoName.setAttribute('class', 'info_name');
+    infoName.appendChild(document.createTextNode(_data.default[i].name));
+    var infoPrice = document.createElement('p');
+    infoPrice.setAttribute('class', 'info_price');
+    var priceString = _data.default[i].price.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
+    infoPrice.appendChild(document.createTextNode(priceString + '원'));
+    productInfo.append(infoName, infoPrice);
+    href.append(itemTop, productCategory, productInfo);
+    productList.appendChild(product);
+  }
+} //sub item 생성
 },{"./data.js":"sub/js/data.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -442,7 +452,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49816" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60899" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];
