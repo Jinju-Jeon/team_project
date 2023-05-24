@@ -3,6 +3,9 @@
 /* scroll-menu */
 const headerInner = document.querySelector('.header_inner')
 let prev = 0
+
+
+//scrollEvent
 window.addEventListener('scroll',()=>{
   /* header view */
 	if(prev < window.scrollY && window.scrollY>500){
@@ -13,8 +16,24 @@ window.addEventListener('scroll',()=>{
     headerInner.classList.add('scroll_up')
   }
 	prev = window.scrollY;
-
   headerStyle();
+
+
+
+
+
+  /* magazine */
+  const magImg = document.querySelectorAll('.magazine .img')
+  const magOn = document.querySelector('.magazine').offsetTop
+  if(window.scrollY > magOn-600){
+    magImg.forEach((img,i)=>{
+      gsap.to(img,{
+        y:0,
+        opacity: 1,
+        duration: 0.8,
+      }).delay(i*0.3)
+    })//foreach
+  }
 });
 
 
@@ -195,6 +214,9 @@ rankList2.forEach((rank,i)=>{
 
 
 
+
+
+
 /* recom */
 const plusBtns = document.querySelectorAll('.recom_detail>button')
 const plusIcon = document.querySelectorAll('.recom_detail>button span')
@@ -203,7 +225,6 @@ const clickState = new Array
 for(let i=0;i<plusBtns.length;i++){
   clickState.push(0)
 }
-
 plusBtns.forEach((btn,i)=>{
   btn.addEventListener('click',()=>{
   if(!clickState[i]){

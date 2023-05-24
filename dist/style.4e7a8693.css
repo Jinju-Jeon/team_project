@@ -81,21 +81,26 @@ section, .footer_inner {
 
 /********** header **********/
 .header {
-  position: sticky;
-  top: 0;
-  z-index: 9999;
+  position: fixed;
+  z-index: 999;
   width: 100%;
   background: #fff;
-  margin-bottom: 30px;
 }
 .header .header_inner {
   height: 100px;
-  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
   color: #333;
+  overflow: hidden;
+  transition: 0.3s;
   /* .gnb */
+}
+.header .header_inner.scroll_down {
+  height: 0;
+}
+.header .header_inner.scroll_up {
+  height: 100px;
 }
 .header .header_inner .logo {
   width: 140px;
@@ -145,8 +150,9 @@ section, .footer_inner {
   border-bottom: 1px solid #333;
 }
 .header .header_inner .gnb > ul > li .gnb_hover {
-  width: 100%;
+  width: 100vw;
   position: absolute;
+  z-index: 99;
   left: 0;
   top: 100px;
   background-color: #fff;
@@ -155,6 +161,9 @@ section, .footer_inner {
   /* .gnb_kids */
   /* gnb_brand */
 }
+.header .header_inner .gnb > ul > li .gnb_hover.hovered {
+  display: block;
+}
 .header .header_inner .gnb > ul > li .gnb_hover a {
   display: inline;
 }
@@ -162,11 +171,14 @@ section, .footer_inner {
   color: #0E0057;
   border-bottom: 1px solid #0E0057;
 }
+.header .header_inner .gnb > ul > li .gnb_hover a .img {
+  overflow: hidden;
+}
+.header .header_inner .gnb > ul > li .gnb_hover a .img img {
+  transition: 0.3s;
+}
 .header .header_inner .gnb > ul > li .gnb_hover .gnb_brand > a:hover {
   border-bottom: 0px;
-}
-.header .header_inner .gnb > ul > li .gnb_hover .gnb_brand > a:hover .img {
-  overflow: hidden;
 }
 .header .header_inner .gnb > ul > li .gnb_hover .gnb_brand > a:hover img {
   transform: scale(1.1);
@@ -245,16 +257,93 @@ section, .footer_inner {
   font-size: 40px;
   color: #333;
 }
+.header .search {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  width: 100vw;
+  height: 500px;
+  background-color: #fff;
+  display: none;
+}
+.header .search .search_inner {
+  width: 1100px;
+  height: 500px;
+  margin: 0 auto;
+}
+.header .search .search_inner .top {
+  position: relative;
+  height: 100px;
+  box-sizing: border-box;
+  padding: 20px 0;
+}
+.header .search .search_inner .top input[type=search] {
+  width: 100%;
+  height: 60px;
+  box-sizing: border-box;
+  padding: 10px 20px;
+  border-radius: 40px;
+  background-color: #eee;
+  border: none;
+  outline: none;
+  font-size: 20px;
+}
+.header .search .search_inner .top .close {
+  position: absolute;
+  left: 100%;
+  top: 50%;
+  margin-left: 10px;
+  margin-top: -12px;
+  cursor: pointer;
+}
+.header .search .search_inner .top .search_submit {
+  position: absolute;
+  top: 30px;
+  right: 10px;
+}
+.header .search .search_inner .top .search_submit span {
+  font-size: 40px;
+}
+.header .search .search_inner .top ::-webkit-search-cancel-button {
+  display: none;
+}
+.header .search .search_inner .bottom {
+  display: flex;
+  justify-content: space-between;
+}
+.header .search .search_inner .bottom > div {
+  width: 33.3333333333%;
+}
+.header .search .search_inner .bottom > div h4 {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+.header .search .search_inner .bottom > div p {
+  line-height: 35px;
+}
+.header .bg_opacity {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  background-color: #000;
+  z-index: 9;
+  opacity: 0.5;
+  display: none;
+}
 
 /* header */
 .banner {
   width: 1320px;
   margin: 0 auto;
   box-sizing: border-box;
+  padding-top: 150px;
+}
+.banner .banner_bg {
   position: relative;
   padding: 10px;
   height: 180px;
-  margin-bottom: 20px;
   background-image: url(/men_banner.81470bc1.jpg);
   background-size: cover;
   background-position: bottom;
@@ -262,7 +351,7 @@ section, .footer_inner {
   background-color: rgba(0, 0, 0, 0.5);
   background-blend-mode: multiply;
 }
-.banner ul {
+.banner .banner_bg ul {
   position: absolute;
   bottom: 10px;
   display: flex;

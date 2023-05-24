@@ -5,6 +5,59 @@ itemLoad(menClothList)
 prE()
 
 
+
+/* scroll-menu */
+const headerInner = document.querySelector('.header_inner')
+let prev = 0
+window.addEventListener('scroll',()=>{
+  /* header view */
+	if(prev < window.scrollY && window.scrollY>300){
+    headerInner.classList.remove('scroll_up')
+    headerInner.classList.add('scroll_down')
+  } else{
+    headerInner.classList.remove('scroll_down')
+    headerInner.classList.add('scroll_up')
+  }
+	prev = window.scrollY;
+});
+
+
+/* header-hover */
+const gnbLists = document.querySelectorAll('.gnb>ul>li')
+const gnbHovers = document.querySelectorAll('.gnb .gnb_hover')
+
+gnbLists.forEach((gnbList,i)=>{
+  gnbList.addEventListener('mouseenter',function(){
+    document.querySelector('.header').classList.remove('top')
+    gnbHovers[i].classList.add('hovered')
+    document.querySelector('.bg_opacity').style.display = 'block'
+  })
+
+  gnbList.addEventListener('mouseleave',function(){
+    gnbHovers[i].classList.remove('hovered')
+    document.querySelector('.bg_opacity').style.display = 'none'
+  })
+})
+
+
+/* search */
+const searchBtn = document.querySelector('.search_btn')
+const search = document.querySelector('.search')
+const searchClose = document.querySelector('.search .close')
+searchBtn.addEventListener('click',()=>{
+  search.style.display = 'block'
+})
+searchClose.addEventListener('click',()=>{
+  search.style.display = 'none'
+})
+
+
+
+
+
+
+
+
 //item정렬기능
 const productSort = document.getElementById('product_sort')
 productSort.addEventListener('change',function(){

@@ -6,22 +6,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FILA - Team Project</title>
-    
-    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
-    
 
     <link href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp" rel="stylesheet">
-
+    
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
     
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollToPlugin.min.js"></script>
-    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
     
     <!-- my -->
     <link rel="stylesheet" href="./css/style.scss">
-    <script src="./js/main.js" type="module" defer></script>
+    <script src="./js/main.js" module defer></script>
 </head>
 
 
@@ -31,23 +28,23 @@
             <div class="logo">
                 <a href="/">
                     <div class="img">
-                        <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 32.939'>
-                            <g id='Logo' transform='translate(-88.414 -468.005)'>
-                                <path id='패스_1' data-name='패스 1'
-                                    d='M150.8,496.543l0-24.144a4.325,4.325,0,0,1,4.316-4.394h.47a4.394,4.394,0,0,1,4.394,4.394v24.144a4.394,4.394,0,0,1-4.4,4.39h-.5a4.3,4.3,0,0,1-4.282-4.39'
-                                    transform='translate(-30.302)'  />
-                                <path id='패스_2' data-name='패스 2'
-                                    d='M218.424,470.885l9.763,15.889c2.107,3.434,2.6,4.327,2.6,6.853a7.254,7.254,0,0,1-6.818,7.048H210.773a4.117,4.117,0,0,1-4.343-4.067v-.279a4.341,4.341,0,0,1,4.343-4.342l8.086,0c.509,0,.822-.069.96-.387a.855.855,0,0,0-.133-.939l-5.757-9.238c-.093-.155-.2-.367-.379-.367s-.313.212-.393.379l-8.792,15.1c-1.373,2.392-2.981,4.146-5.382,4.146H182.069a6.878,6.878,0,0,1-6.426-6.429V472.412a4.347,4.347,0,0,1,4.342-4.349h.555a4.351,4.351,0,0,1,4.348,4.349l0,17.839a1.146,1.146,0,0,0,1.185,1.179l8.4,0a3.259,3.259,0,0,0,3.131-1.818l11.306-18.729a5.462,5.462,0,0,1,4.834-2.739,5.246,5.246,0,0,1,4.682,2.739'
-                                    transform='translate(-42.369 -0.028)'  />
-                                <path id='패스_3' data-name='패스 3'
-                                    d='M98.841,501.022a1.181,1.181,0,0,0-1.18,1.184l0,6.076a4.345,4.345,0,0,1-4.346,4.344h-.555a4.345,4.345,0,0,1-4.341-4.344V497.233a5.1,5.1,0,0,1,5.177-5.177h17.652a4.348,4.348,0,0,1,4.343,4.344v.281a4.343,4.343,0,0,1-4.343,4.341Z'
-                                    transform='translate(-0.001 -11.682)'  />
-                                <path id='패스_4' data-name='패스 4'
-                                    d='M92.809,469.229h20.567a4.323,4.323,0,0,1,4.392,4.31v.273a4.393,4.393,0,0,1-4.392,4.4H92.809a4.4,4.4,0,0,1-4.4-4.4v-.3a4.3,4.3,0,0,1,4.4-4.279'
-                                    transform='translate(0 -0.595)'  />
-                            </g>
-                        </svg>
-                    </div>
+                    <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 32.939'>
+                        <g id='Logo' transform='translate(-88.414 -468.005)'>
+                            <path id='패스_1' data-name='패스 1'
+                                d='M150.8,496.543l0-24.144a4.325,4.325,0,0,1,4.316-4.394h.47a4.394,4.394,0,0,1,4.394,4.394v24.144a4.394,4.394,0,0,1-4.4,4.39h-.5a4.3,4.3,0,0,1-4.282-4.39'
+                                transform='translate(-30.302)'  />
+                            <path id='패스_2' data-name='패스 2'
+                                d='M218.424,470.885l9.763,15.889c2.107,3.434,2.6,4.327,2.6,6.853a7.254,7.254,0,0,1-6.818,7.048H210.773a4.117,4.117,0,0,1-4.343-4.067v-.279a4.341,4.341,0,0,1,4.343-4.342l8.086,0c.509,0,.822-.069.96-.387a.855.855,0,0,0-.133-.939l-5.757-9.238c-.093-.155-.2-.367-.379-.367s-.313.212-.393.379l-8.792,15.1c-1.373,2.392-2.981,4.146-5.382,4.146H182.069a6.878,6.878,0,0,1-6.426-6.429V472.412a4.347,4.347,0,0,1,4.342-4.349h.555a4.351,4.351,0,0,1,4.348,4.349l0,17.839a1.146,1.146,0,0,0,1.185,1.179l8.4,0a3.259,3.259,0,0,0,3.131-1.818l11.306-18.729a5.462,5.462,0,0,1,4.834-2.739,5.246,5.246,0,0,1,4.682,2.739'
+                                transform='translate(-42.369 -0.028)'  />
+                            <path id='패스_3' data-name='패스 3'
+                                d='M98.841,501.022a1.181,1.181,0,0,0-1.18,1.184l0,6.076a4.345,4.345,0,0,1-4.346,4.344h-.555a4.345,4.345,0,0,1-4.341-4.344V497.233a5.1,5.1,0,0,1,5.177-5.177h17.652a4.348,4.348,0,0,1,4.343,4.344v.281a4.343,4.343,0,0,1-4.343,4.341Z'
+                                transform='translate(-0.001 -11.682)'  />
+                            <path id='패스_4' data-name='패스 4'
+                                d='M92.809,469.229h20.567a4.323,4.323,0,0,1,4.392,4.31v.273a4.393,4.393,0,0,1-4.392,4.4H92.809a4.4,4.4,0,0,1-4.4-4.4v-.3a4.3,4.3,0,0,1,4.4-4.279'
+                                transform='translate(0 -0.595)'  />
+                        </g>
+                    </svg>
+                </div>
                 </a>
             </div><!-- ////logo -->
             <nav class="gnb">
@@ -135,7 +132,7 @@
                             </div>
                         </div><!-- ///gnb_women -->
                     </li>
-                    <li><a href="#!">MEN</a>
+                    <li><a href="./">MEN</a>
                         <div class="gnb_hover">
                             <div class="gnb_men">
                                 <div class="gnb_new">
@@ -216,7 +213,7 @@
                             </div>
                         </div><!-- ////gnb_men -->
                     </li>
-                    <li><a href="#!">KIDS</a>
+                    <li><a href="./">KIDS</a>
                         <div class="gnb_hover">
                             <div class="gnb_kids">
                                 <div class="gnb_new">
@@ -307,19 +304,61 @@
             <nav class="user_menu">
                 <ul>
                     <li><a href="#!"><span class="material-icons-outlined">place</span></a></li>
-                    <li><a href="#!"><span class="material-icons-outlined">search </span>  </a></li>
+                    <li class="search_btn"><a href="#!"><span class="material-icons-outlined">search </span></a></li>
                     <li><a href="#!"><span class="material-icons-outlined">person</span></a></li>
                     <li><a href="#!"><span class="material-icons-outlined">shopping_bag</span></a></li>
                 </ul>
             </nav>
         </div><!-- ////header_inner -->
+
+        <div class="search">
+            <div class="search_inner">
+                <div class="top">
+                    <input type="search" id="item_search" value="" placeholder="검색어를 입력하세요">
+                    <button class="close"><span class="material-icons-outlined"> close </span></button>
+                    <button class="search_submit"><span class="material-icons-outlined">search </span></button>
+                </div>
+                <div class="bottom">
+                    <div class="search_pop">
+                        <h4>인기검색어</h4>
+                        <p>검색어1</p>
+                        <p>검색어2</p>
+                        <p>검색어3</p>
+                        <p>검색어4</p>
+                        <p>검색어5</p>
+                    </div>
+                    <div class="search_recom">
+                        <h4>추천검색어</h4>
+                        <p>검색어1</p>
+                        <p>검색어2</p>
+                        <p>검색어3</p>
+                        <p>검색어4</p>
+                        <p>검색어5</p>
+                    </div>
+                    <div class="search_recent">
+                        <h4>최근검색어</h4>
+                        <p>검색어1</p>
+                        <p>검색어2</p>
+                        <p>검색어3</p>
+                        <p>검색어4</p>
+                        <p>검색어5</p>
+                    </div>
+                </div>
+            </div>
+        </div><!-- search -->
+
+
+
+        <div class="bg_opacity"></div>
     </header><!-- ////header -->
 
     <div class="banner">
-        <ul>
-            <li>MEN<span class="material-icons"> chevron_right </span></li>
-            <li>의류</li>
-        </ul>
+        <div class="banner_bg">
+            <ul>
+                <li>MEN<span class="material-icons"> chevron_right </span></li>
+                <li>의류</li>
+            </ul>
+        </div>
     </div>
 
     <div class="filter">

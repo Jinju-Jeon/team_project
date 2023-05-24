@@ -667,6 +667,10 @@ section,.footer_inner{
                 margin-bottom: 20px;
                 overflow: hidden;
 
+                /* animate용 */
+                transform: translateY(300px);
+                opacity: 0;
+
                 &:hover .mag_desc{
                     opacity: .8;
                 }

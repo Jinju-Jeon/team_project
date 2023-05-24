@@ -710,6 +710,9 @@ section, .footer_inner {
 .magazine .mag_cover .mag_detail .img {
   margin-bottom: 20px;
   overflow: hidden;
+  /* animate용 */
+  transform: translateY(300px);
+  opacity: 0;
 }
 .magazine .mag_cover .mag_detail .img:hover .mag_desc {
   opacity: 0.8;
