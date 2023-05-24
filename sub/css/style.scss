@@ -267,6 +267,18 @@ section,.footer_inner{
             border-right: 1px solid #aaa;
             padding-right: 10px;
             span{font-size: 16px; transform: translateY(3px);}
+
+            /* 실제로 나오지 않을 부분 */
+            position: relative;
+            &::after{
+                content: "구현된 기능: 정렬 / 구현할 기능: 가격,성별필터. 레이아웃 변경";
+                display: block;
+                position: absolute;
+                top: 0; left: 100%;
+                width: 800px;
+                text-align: left;
+                color: #aaa;
+            }
         }
         .right{
             display: flex;
@@ -299,7 +311,7 @@ section,.footer_inner{
             width: calc(100%/6);
 
             p.tit{font-size: 20px; font-weight: bold; margin-bottom: 10px;}
-            li{line-height: 35px;}
+            li{line-height: 35px; cursor: pointer;}
             label{display: block; line-height: 35px;}
         }//div 공통
 

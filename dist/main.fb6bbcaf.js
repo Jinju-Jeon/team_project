@@ -216,10 +216,11 @@ var rankSlider1 = new Swiper(".rank_slider1", {
   slideToClickedSlide: true,
   loop: true,
   loopAdditionalSlides: 1,
-  autoplay: {
+  /* autoplay: {
     delay: 3000,
-    disableOnInteraction: false
-  },
+    disableOnInteraction: false,
+  },  */
+
   on: {
     activeIndexChange: function activeIndexChange() {
       var _this = this;
@@ -238,6 +239,9 @@ rankList1.forEach(function (rank, i) {
     rankSlider1.slideToLoop(i, 300, true);
   });
 });
+var rank1El = rankSlider1.el.querySelectorAll('.swiper-slide');
+console.log(rank1El);
+//현재 이동한 슬라이더가 리스트 안에서 가장 마지막인 slider라면.. 뒤에 첫째를 append한다 < 이런걸 하고싶음
 
 //rankslider2
 var rankSlider2 = new Swiper(".rank_slider2", {
@@ -341,7 +345,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60899" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49834" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];

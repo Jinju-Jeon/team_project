@@ -1,24 +1,36 @@
 import menClothList  from "./data.js"
 
 const productList = document.querySelector('.product_list')
-itemLoad()
-const elCart = document.querySelectorAll('.cart_btn')
-const elHeart = document.querySelectorAll('.heart_btn')
-for(let item of elCart){
-    item.addEventListener('click',function(e){
-      e.preventDefault()
-
-    })
-} 
-for(let item of elHeart){
-    item.addEventListener('click',function(e){
-      e.preventDefault()
-      
-    })
-}
-//a태그 이동 방지
+itemLoad(menClothList)
+prE()
 
 
+//item정렬기능
+const productSort = document.getElementById('product_sort')
+productSort.addEventListener('change',function(){
+  
+  const soldArray = _.sortBy(menClothList,'sold').reverse()
+  const lowPriceArray = _.sortBy(menClothList,'price')
+
+  switch(productSort.selectedIndex){
+    case 0: 
+      itemLoad(menClothList)
+      break;
+    case 1:
+      itemLoad(soldArray)
+      break;
+    case 2:
+      itemLoad(lowPriceArray)
+      break;
+    case 3:
+      itemLoad(lowPriceArray.reverse())
+
+  }
+})
+
+
+
+//hover효과
 const productImgs = document.querySelectorAll('.item_top.img')
 productImgs.forEach((img)=>{
   img.addEventListener('mouseenter',function(){
@@ -33,15 +45,12 @@ productImgs.forEach((img)=>{
     img.children[0].src = oldSrc
   })
 })
-//hover효과
-
-
-
-
 
 //function
+//sub item 생성
+function itemLoad(itemArray){
+  productList.replaceChildren()
 
-function itemLoad(){
   const makeIcon = () =>{
     const icon = document.createElement('div')
     icon.setAttribute('class','icon')
@@ -70,13 +79,13 @@ function itemLoad(){
     
     return icon
   } 
-  for(let i in menClothList){
+  for(let i in itemArray){
   
     const product = document.createElement('div')
     product.setAttribute('class','product')
   
     const href = document.createElement('a')
-    href.setAttribute('href',menClothList[i].href)
+    href.setAttribute('href',itemArray[i].href)
   
     product.appendChild(href)
     
@@ -84,13 +93,13 @@ function itemLoad(){
     itemTop.setAttribute('class','item_top img')
     
     const productImg = document.createElement('img')
-    productImg.setAttribute('src',menClothList[i].src)
+    productImg.setAttribute('src',itemArray[i].src)
     
     itemTop.append(productImg,makeIcon())
     
     const productCategory = document.createElement('p')
     productCategory.setAttribute('class','product_category')
-    productCategory.appendChild(document.createTextNode(menClothList[i].category))
+    productCategory.appendChild(document.createTextNode(itemArray[i].category))
     
     
     const productInfo = document.createElement('div')
@@ -99,11 +108,11 @@ function itemLoad(){
     
     const infoName = document.createElement('p')
     infoName.setAttribute('class','info_name')
-    infoName.appendChild(document.createTextNode(menClothList[i].name))
+    infoName.appendChild(document.createTextNode(itemArray[i].name))
     
     const infoPrice = document.createElement('p')
     infoPrice.setAttribute('class','info_price')
-    let priceString = menClothList[i].price.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
+    let priceString = itemArray[i].price.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
   
   
     infoPrice.appendChild(document.createTextNode(priceString+'원'))
@@ -117,6 +126,45 @@ function itemLoad(){
     productList.appendChild(product)
   
   
-  } 
+  } //forEach
+  
+  prE()
 
-}//sub item 생성
+}
+
+//a태그 이동 방지
+function prE(){
+  const elCart = document.querySelectorAll('.cart_btn')
+  const elHeart = document.querySelectorAll('.heart_btn')
+  for(let item of elCart){
+      item.addEventListener('click',function(e){
+        e.preventDefault()
+  
+      })
+  } 
+  for(let item of elHeart){
+      item.addEventListener('click',function(e){
+        e.preventDefault()
+        
+      })
+  }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+//가격필터
+const priceFilter = document.querySelectorAll('.price_list input')
+
+
+
+
+

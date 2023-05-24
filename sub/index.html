@@ -6,6 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FILA - Team Project</title>
+    
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
+    
+
     <link href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp" rel="stylesheet">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
@@ -17,7 +21,7 @@
     
     <!-- my -->
     <link rel="stylesheet" href="./css/style.scss">
-    <script src="./js/main.js" defer></script>
+    <script src="./js/main.js" type="module" defer></script>
 </head>
 
 
@@ -398,11 +402,11 @@
             <div class="filter_price">
                 <p class="tit">가격</p>
                 <div class="price_list">
-                    <label for="price_1"><input type="checkbox" id="price_1">39,000 이하</label>
-                    <label for="price_2"><input type="checkbox" id="price_2">39,000 ~ 49,000</label>
-                    <label for="price_3"><input type="checkbox" id="price_3">49,000 ~ 59,000</label>
-                    <label for="price_4"><input type="checkbox" id="price_4">59,000 ~ 79,000</label>
-                    <label for="price_5"><input type="checkbox" id="price_5">79,000 초과</label>                    
+                    <label for="price_1"><input type="checkbox" id="price_1" value="39000">39,000 이하</label>
+                    <label for="price_2"><input type="checkbox" id="price_2" value="49000">39,000 ~ 49,000</label>
+                    <label for="price_3"><input type="checkbox" id="price_3" value="59000">49,000 ~ 59,000</label>
+                    <label for="price_4"><input type="checkbox" id="price_4" value="79000">59,000 ~ 79,000</label>
+                    <label for="price_5"><input type="checkbox" id="price_5" value="">79,000 초과</label>                    
                 </div>
             </div><!-- ///price -->
             <div class="filter_gender">

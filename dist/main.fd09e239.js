@@ -130,193 +130,193 @@ var menClothList = [{
   src: './img/men01.jpg',
   category: cat[0],
   name: '핫써머 씨어서커 우븐반바지',
-  price: '69000',
+  price: 69000,
   href: '#!',
-  sports: ''
+  sold: 12
 }, {
   id: 'men02',
   src: './img/men02.jpg',
   category: cat[0],
   name: '핫써머 씨어서커 아노락 바람막이',
-  price: '119000',
+  price: 119000,
   href: '#!',
-  sports: ''
+  sold: 6
 }, {
   id: 'men03',
   src: './img/men03.jpg',
   category: cat[0],
   name: '컴포트핏 인터내셔널 반팔 카라티',
-  price: '69000',
+  price: 69000,
   href: '#!',
-  sports: ''
+  sold: 2
 }, {
   id: 'men04',
   src: './img/men04.jpg',
   category: cat[0],
   name: '핫써머 씨어서커 아노락 바람막이',
-  price: '119000',
+  price: 119000,
   href: '#!',
-  sports: ''
+  sold: 24
 }, {
   id: 'men05',
   src: './img/men05.jpg',
   category: cat[0],
   name: '핫써머 사이드프린트 우븐 반바지',
-  price: '69000',
+  price: 69000,
   href: '#!',
-  sports: ''
+  sold: 19
 }, {
   id: 'men06',
   src: './img/men06.jpg',
   category: cat[0],
   name: '핫써머 모노그램 우븐 반바지',
-  price: '79000',
+  price: 79000,
   href: '#!',
-  sports: ''
+  sold: 3
 }, {
   id: 'men07',
   src: './img/men07.jpg',
   category: cat[0],
   name: '컴포트핏 인터내셔널 6부 반바지',
-  price: '59000',
+  price: 59000,
   href: '#!',
-  sports: ''
+  sold: 16
 }, {
   id: 'men08',
   src: './img/men08.jpg',
   category: cat[0],
   name: '페스타 그래픽 티셔츠',
-  price: '49000',
+  price: 49000,
   href: '#!',
-  sports: ''
+  sold: 21
 }, {
   id: 'men09',
   src: './img/men09.jpg',
   category: cat[0],
   name: '레터링 그래픽 티셔츠',
-  price: '49000',
+  price: 49000,
   href: '#!',
-  sports: ''
+  sold: 15
 }, {
   id: 'men10',
   src: './img/men10.jpg',
   category: cat[0],
   name: '레코드 그래픽 티셔츠',
-  price: '59000',
+  price: 59000,
   href: '#!',
-  sports: ''
+  sold: 4
 }, {
   id: 'men11',
   src: './img/men11.jpg',
   category: cat[0],
   name: 'havefun 그래픽 티셔츠',
-  price: '49000',
+  price: 49000,
   href: '#!',
-  sports: ''
+  sold: 5
 }, {
   id: 'men12',
   src: './img/men12.jpg',
   category: cat[0],
   name: '컴포트핏 인터내셔널 우븐 후드티',
-  price: '119000',
+  price: 119000,
   href: '#!',
-  sports: ''
+  sold: 13
 }, {
   id: 'men13',
   src: './img/men13.jpg',
   category: cat[0],
   name: '컴포트핏 인터내셔널 우븐 후드티',
-  price: '119000',
+  price: 119000,
   href: '#!',
-  sports: ''
+  sold: 23
 }, {
   id: 'men14',
   src: './img/men14.jpg',
   category: cat[0],
   name: '컴포트핏 인터내셔널 우븐 후드티',
-  price: '119000',
+  price: 119000,
   href: '#!',
-  sports: ''
+  sold: 22
 }, {
   id: 'men15',
   src: './img/men15.jpg',
   category: cat[0],
   name: '컴포트핏 인터내셔널 우븐 후드티',
-  price: '119000',
+  price: 119000,
   href: '#!',
-  sports: ''
+  sold: 1
 }, {
   id: 'men16',
   src: './img/men16.jpg',
   category: cat[0],
   name: '컴포트핏 인터내셔널 스몰로고 카라티',
-  price: '79000',
+  price: 79000,
   href: '#!',
-  sports: ''
+  sold: 18
 }, {
   id: 'men17',
   src: './img/men17.jpg',
   category: cat[0],
   name: '컴포트핏 플래그 반팔티',
-  price: '39000',
+  price: 39000,
   href: '#!',
-  sports: ''
+  sold: 14
 }, {
   id: 'men18',
   src: './img/men18.jpg',
   category: cat[0],
   name: '컴포트핏 플래그 반팔티',
-  price: '39000',
+  price: 39000,
   href: '#!',
-  sports: ''
+  sold: 8
 }, {
   id: 'men19',
   src: './img/men19.jpg',
   category: cat[0],
   name: '컴포트핏 플래그 반팔티',
-  price: '39000',
+  price: 39000,
   href: '#!',
-  sports: ''
+  sold: 7
 }, {
   id: 'men20',
   src: './img/men20.jpg',
   category: cat[0],
   name: '컴포트핏 마인드블로어 반팔티',
-  price: '39000',
+  price: 39000,
   href: '#!',
-  sports: ''
+  sold: 20
 }, {
   id: 'men21',
   src: './img/men21.jpg',
   category: cat[1],
   name: '핫써머 모노그램 나시티',
-  price: '49000',
+  price: 49000,
   href: '#!',
-  sports: ''
+  sold: 10
 }, {
   id: 'men22',
   src: './img/men22.jpg',
   category: cat[1],
   name: '핫써머 우븐 포켓 반바지',
-  price: '69000',
+  price: 69000,
   href: '#!',
-  sports: ''
+  sold: 11
 }, {
   id: 'men23',
   src: './img/men23.jpg',
   category: cat[0],
   name: '핫써머 씨어서커 우븐반바지',
-  price: '69000',
+  price: 69000,
   href: '#!',
-  sports: ''
+  sold: 17
 }, {
   id: 'men24',
   src: './img/men24.jpg',
   category: cat[0],
   name: '핫써머 씨어서커 아노락 바람막이',
-  price: '119000',
+  price: 119000,
   href: '#!',
-  sports: ''
+  sold: 9
 }];
 var _default = menClothList;
 exports.default = _default;
@@ -329,38 +329,30 @@ function _createForOfIteratorHelper(o, allowArrayLike) { var it = typeof Symbol 
 function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
 function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i]; return arr2; }
 var productList = document.querySelector('.product_list');
-itemLoad();
-var elCart = document.querySelectorAll('.cart_btn');
-var elHeart = document.querySelectorAll('.heart_btn');
-var _iterator = _createForOfIteratorHelper(elCart),
-  _step;
-try {
-  for (_iterator.s(); !(_step = _iterator.n()).done;) {
-    var item = _step.value;
-    item.addEventListener('click', function (e) {
-      e.preventDefault();
-    });
+itemLoad(_data.default);
+prE();
+
+//item정렬기능
+var productSort = document.getElementById('product_sort');
+productSort.addEventListener('change', function () {
+  var soldArray = _.sortBy(_data.default, 'sold').reverse();
+  var lowPriceArray = _.sortBy(_data.default, 'price');
+  switch (productSort.selectedIndex) {
+    case 0:
+      itemLoad(_data.default);
+      break;
+    case 1:
+      itemLoad(soldArray);
+      break;
+    case 2:
+      itemLoad(lowPriceArray);
+      break;
+    case 3:
+      itemLoad(lowPriceArray.reverse());
   }
-} catch (err) {
-  _iterator.e(err);
-} finally {
-  _iterator.f();
-}
-var _iterator2 = _createForOfIteratorHelper(elHeart),
-  _step2;
-try {
-  for (_iterator2.s(); !(_step2 = _iterator2.n()).done;) {
-    var _item = _step2.value;
-    _item.addEventListener('click', function (e) {
-      e.preventDefault();
-    });
-  }
-  //a태그 이동 방지
-} catch (err) {
-  _iterator2.e(err);
-} finally {
-  _iterator2.f();
-}
+});
+
+//hover효과
 var productImgs = document.querySelectorAll('.item_top.img');
 productImgs.forEach(function (img) {
   img.addEventListener('mouseenter', function () {
@@ -374,11 +366,11 @@ productImgs.forEach(function (img) {
     img.children[0].src = oldSrc;
   });
 });
-//hover효과
 
 //function
-
-function itemLoad() {
+//sub item 생성
+function itemLoad(itemArray) {
+  productList.replaceChildren();
   var makeIcon = function makeIcon() {
     var icon = document.createElement('div');
     icon.setAttribute('class', 'icon');
@@ -399,34 +391,73 @@ function itemLoad() {
     icon.append(cartBtn, heartBtn);
     return icon;
   };
-  for (var i in _data.default) {
+  for (var i in itemArray) {
     var product = document.createElement('div');
     product.setAttribute('class', 'product');
     var href = document.createElement('a');
-    href.setAttribute('href', _data.default[i].href);
+    href.setAttribute('href', itemArray[i].href);
     product.appendChild(href);
     var itemTop = document.createElement('div');
     itemTop.setAttribute('class', 'item_top img');
     var productImg = document.createElement('img');
-    productImg.setAttribute('src', _data.default[i].src);
+    productImg.setAttribute('src', itemArray[i].src);
     itemTop.append(productImg, makeIcon());
     var productCategory = document.createElement('p');
     productCategory.setAttribute('class', 'product_category');
-    productCategory.appendChild(document.createTextNode(_data.default[i].category));
+    productCategory.appendChild(document.createTextNode(itemArray[i].category));
     var productInfo = document.createElement('div');
     productInfo.setAttribute('class', 'product_info');
     var infoName = document.createElement('p');
     infoName.setAttribute('class', 'info_name');
-    infoName.appendChild(document.createTextNode(_data.default[i].name));
+    infoName.appendChild(document.createTextNode(itemArray[i].name));
     var infoPrice = document.createElement('p');
     infoPrice.setAttribute('class', 'info_price');
-    var priceString = _data.default[i].price.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
+    var priceString = itemArray[i].price.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
     infoPrice.appendChild(document.createTextNode(priceString + '원'));
     productInfo.append(infoName, infoPrice);
     href.append(itemTop, productCategory, productInfo);
     productList.appendChild(product);
+  } //forEach
+
+  prE();
+}
+
+//a태그 이동 방지
+function prE() {
+  var elCart = document.querySelectorAll('.cart_btn');
+  var elHeart = document.querySelectorAll('.heart_btn');
+  var _iterator = _createForOfIteratorHelper(elCart),
+    _step;
+  try {
+    for (_iterator.s(); !(_step = _iterator.n()).done;) {
+      var item = _step.value;
+      item.addEventListener('click', function (e) {
+        e.preventDefault();
+      });
+    }
+  } catch (err) {
+    _iterator.e(err);
+  } finally {
+    _iterator.f();
   }
-} //sub item 생성
+  var _iterator2 = _createForOfIteratorHelper(elHeart),
+    _step2;
+  try {
+    for (_iterator2.s(); !(_step2 = _iterator2.n()).done;) {
+      var _item = _step2.value;
+      _item.addEventListener('click', function (e) {
+        e.preventDefault();
+      });
+    }
+  } catch (err) {
+    _iterator2.e(err);
+  } finally {
+    _iterator2.f();
+  }
+}
+
+//가격필터
+var priceFilter = document.querySelectorAll('.price_list input');
 },{"./data.js":"sub/js/data.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -452,7 +483,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60899" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49834" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];
