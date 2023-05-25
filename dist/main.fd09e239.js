@@ -373,24 +373,53 @@ searchClose.addEventListener('click', function () {
   search.style.display = 'none';
 });
 
-//item정렬기능
+//정렬기능
 var productSort = document.getElementById('product_sort');
 productSort.addEventListener('change', function () {
-  var soldArray = _.sortBy(_data.default, 'sold').reverse();
-  var lowPriceArray = _.sortBy(_data.default, 'price');
+  var soldArray = _.orderBy(_data.default, ['sold'], ['desc']);
+  var lowPriceArray = _.sortBy(soldArray, ['price']);
+  var highPriceArray = _.orderBy(_data.default, ['price', 'sold'], ['asc']);
   switch (productSort.selectedIndex) {
     case 0:
       itemLoad(_data.default);
       break;
     case 1:
       itemLoad(soldArray);
+      soldArray.forEach(function (item, i) {
+        console.log(item.sold);
+      });
       break;
     case 2:
       itemLoad(lowPriceArray);
+      lowPriceArray.forEach(function (item, i) {
+        console.log('가격: ' + item.price + '\t판매량: ' + item.sold);
+      });
       break;
     case 3:
-      itemLoad(lowPriceArray.reverse());
+      itemLoad(highPriceArray.reverse());
+      highPriceArray.forEach(function (item, i) {
+        console.log('가격: ' + item.price + '\t판매량: ' + item.sold);
+      });
   }
+});
+
+//아이템 표시 방식(3,4)
+var viewType = document.getElementsByName('view_type');
+var nowProduct = document.querySelectorAll('.product');
+viewType[0].addEventListener('change', function () {
+  if (this) {
+    nowProduct.forEach(function (item, i) {
+      item.classList.add('v3');
+    }); //foreach
+  } //if-else
+});
+
+viewType[1].addEventListener('change', function () {
+  if (this) {
+    nowProduct.forEach(function (item, i) {
+      item.classList.remove('v3');
+    }); //foreach
+  } //if-else
 });
 
 //hover효과
@@ -524,7 +553,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50533" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55909" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];

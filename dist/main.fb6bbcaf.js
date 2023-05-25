@@ -171,9 +171,40 @@ var search = document.querySelector('.search');
 var searchClose = document.querySelector('.search .close');
 searchBtn.addEventListener('click', function () {
   search.style.display = 'block';
+  document.querySelector('.bg_opacity').style.display = 'block';
 });
 searchClose.addEventListener('click', function () {
   search.style.display = 'none';
+  document.querySelector('.bg_opacity').style.display = 'none';
+});
+
+/* search변화 */
+var popSearch = ['데일리 슈즈', '키즈 바람막', '베이직리니어반팔티', '운동화', '스피드서브'];
+var recomSearch = ['TENNIS COLLECTION', 'DAILY SHOES RAYFLIDE', '스포츠 언더웨어', '가볍고 편한 키즈 운동화 #문더스트'];
+var recentSearch = ['씨어서커', '온라인 단독', '테니스 스커트'];
+var searchAll = [popSearch, recomSearch, recentSearch];
+var searchList = document.querySelectorAll('.search .bottom>div>ul');
+searchAll.forEach(function (searchItem, i) {
+  var listCover = searchList[i];
+  searchItem.forEach(function (keyword, j) {
+    var list = document.createElement('li');
+    list.innerText = keyword;
+    if (i == 2) {
+      var xBox = document.createElement('span');
+      xBox.innerText = 'x';
+      list.appendChild(xBox);
+    }
+    listCover.appendChild(list);
+  });
+});
+var madeX = document.querySelectorAll('.search ul span');
+console.log(madeX);
+madeX.forEach(function (x, i) {
+  x.addEventListener('click', function () {
+    var ul = this.parentNode.parentNode;
+    console.log(i);
+    ul.removeChild(i);
+  });
 });
 
 // visual_main
@@ -251,11 +282,10 @@ var rankSlider1 = new Swiper(".rank_slider1", {
 
 rankList1.forEach(function (rank, i) {
   rank.addEventListener('click', function () {
-    rankSlider1.slideToLoop(i, 300, true);
+    /* rankSlider1.slideToLoop(i,300,true) */
   });
 });
 var rank1El = rankSlider1.el.querySelectorAll('.swiper-slide');
-console.log(rank1El);
 //현재 이동한 슬라이더가 리스트 안에서 가장 마지막인 slider라면.. 뒤에 첫째를 append한다 < 이런걸 하고싶음
 
 //rankslider2
@@ -360,7 +390,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50533" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55909" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];

@@ -253,7 +253,7 @@ section,.footer_inner{
         width: 100vw;
         height: 500px;
         background-color: #fff;
-        display: none;
+        // display: none;
 
         .search_inner{
             width: 1100px;
@@ -297,7 +297,15 @@ section,.footer_inner{
                 @include flexSB();
                 >div{width: calc(100%/3);
                     h4{font-size: 20px;font-weight: bold; margin-bottom: 20px;}
-                    p{line-height: 35px;}
+                    li{line-height: 35px; position: relative;}
+                }
+
+                .search_recent span{
+                    cursor: pointer;
+                    color: #777;
+                    position: absolute;
+                    top: 0;
+                    right: 100px;
                 }
                 
             }
@@ -312,6 +320,7 @@ section,.footer_inner{
         z-index: 9;
         opacity: .5;
         display: none;
+        backdrop-filter: blur(10px);
         
     }
 }/* header */
@@ -557,15 +566,12 @@ section,.footer_inner{
 /********** new **********/
 .new{
     input[type=radio]{display: none;}
-    #new_tab_btn1:checked ~ .new_tab_cover .new_tab:nth-child(1){display: block;}
-    #new_tab_btn2:checked ~ .new_tab_cover .new_tab:nth-child(2){display: block;}
-    #new_tab_btn3:checked ~ .new_tab_cover .new_tab:nth-child(3){display: block;}
 
-    #new_tab_btn1:checked ~ .tab_list label:nth-child(1){background-color: $mainC; color: #fff;}
-    #new_tab_btn2:checked ~ .tab_list label:nth-child(2){background-color: $mainC; color: #fff;}
-    #new_tab_btn3:checked ~ .tab_list label:nth-child(3){background-color: $mainC; color: #fff;}
+    @for $i from 1 through 3{
+        input[type=radio]:nth-child(#{$i}):checked ~ .new_tab_cover .new_tab:nth-child(#{$i}){display: block;}
 
-    //이거 for로 못돌리나?
+        input[type=radio]:nth-child(#{$i}):checked ~ .tab_list label:nth-child(#{$i}){background-color: $mainC; color: #fff;}
+    }
 
 
     .new_tab_cover{}
@@ -609,6 +615,7 @@ section,.footer_inner{
             &.swiper-slide-active,&.swiper-slide-next{
                 justify-content: start;
                 .new_txt{
+                    transition: 0s;
                     width: calc(55% - 20px);
                 }
 

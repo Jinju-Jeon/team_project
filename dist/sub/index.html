@@ -361,21 +361,22 @@
                 </button>
             </div>
             <div class="right">
+                <input type="radio" name="view_type" id="view3">
+                <input type="radio" name="view_type" id="view4" checked="">
+
                 <select name="product_sort" id="product_sort">
                     <option value="new">신상품순</option>
                     <option value="new">판매순</option>
                     <option value="new">낮은 가격순</option>
                     <option value="new">높은 가격순</option>
                 </select>
-                <div class="view_no">
-                    <span class="material-icons-sharp"> grid_view </span>
-                    <span class="material-icons-sharp"> apps </span>
+                <div class="view_type_c">
+                    <label for="view3"><span class="material-icons-sharp"> grid_view </span></label>
+                    <label for="view4"><span class="material-icons-sharp"> apps </span></label>
                 </div>
-            </div>
-
-
-                
+            </div>        
         </div><!-- ////filter_top -->
+        <p>구현된 기능: 정렬. 레이아웃 변경 / 구현할 기능: 가격,성별필터.</p>
         <div class="filter_bottom">
             <div class="filter_category">
                 <ul>
@@ -451,8 +452,8 @@
         </div><!-- ////filter_bottom -->
     </div>
 
-    <section class="product_list">
 
+    <section class="product_list">
     </section> <!-- JS생성 -->
 
     <footer class="footer">

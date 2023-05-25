@@ -374,22 +374,10 @@ section, .footer_inner {
 .filter .filter_top .left button {
   border-right: 1px solid #aaa;
   padding-right: 10px;
-  /* 실제로 나오지 않을 부분 */
-  position: relative;
 }
 .filter .filter_top .left button span {
   font-size: 16px;
   transform: translateY(3px);
-}
-.filter .filter_top .left button::after {
-  content: "구현된 기능: 정렬 / 구현할 기능: 가격,성별필터. 레이아웃 변경";
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 100%;
-  width: 800px;
-  text-align: left;
-  color: #aaa;
 }
 .filter .filter_top .right {
   display: flex;
@@ -400,16 +388,27 @@ section, .footer_inner {
   border: 1px solid #eee;
   outline: none;
 }
-.filter .filter_top .right .view_no {
+.filter .filter_top .right input[type=radio] {
+  display: none;
+}
+.filter .filter_top .right input[type=radio]:nth-child(1):checked ~ .view_type_c label:nth-child(1) span {
+  color: #000;
+}
+.filter .filter_top .right input[type=radio]:nth-child(2):checked ~ .view_type_c label:nth-child(2) span {
+  color: #000;
+}
+.filter .filter_top .right .view_type_c {
   display: flex;
   align-items: center;
+  cursor: pointer;
 }
-.filter .filter_top .right .view_no span {
+.filter .filter_top .right .view_type_c span {
   width: 40px;
   font-size: 32px;
   text-align: center;
+  color: #aaa;
 }
-.filter .filter_top .right .view_no span:nth-child(2) {
+.filter .filter_top .right .view_type_c span:nth-child(2) {
   font-size: 36px;
 }
 .filter .filter_bottom {
@@ -528,6 +527,13 @@ section, .footer_inner {
   margin-bottom: 60px;
 }
 .product_list .product:nth-child(4n) {
+  margin-right: 0;
+}
+.product_list .product.v3 {
+  width: calc((100% - 40px) / 3);
+  margin-right: 20px;
+}
+.product_list .product.v3:nth-child(3n) {
   margin-right: 0;
 }
 .product_list .product .img {

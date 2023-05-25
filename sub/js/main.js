@@ -53,17 +53,15 @@ searchClose.addEventListener('click',()=>{
 
 
 
-
-
-
-
-
-//item정렬기능
+//정렬기능
 const productSort = document.getElementById('product_sort')
 productSort.addEventListener('change',function(){
   
-  const soldArray = _.sortBy(menClothList,'sold').reverse()
-  const lowPriceArray = _.sortBy(menClothList,'price')
+  const soldArray = _.orderBy(menClothList,['sold'],['desc'])
+  const lowPriceArray = _.sortBy(soldArray,['price'])
+  const highPriceArray = _.orderBy(menClothList,['price','sold'],['asc'])
+
+  
 
   switch(productSort.selectedIndex){
     case 0: 
@@ -71,16 +69,44 @@ productSort.addEventListener('change',function(){
       break;
     case 1:
       itemLoad(soldArray)
+      soldArray.forEach((item,i)=>{
+        console.log(item.sold)
+      })
+      
       break;
     case 2:
       itemLoad(lowPriceArray)
+      lowPriceArray.forEach((item,i)=>{
+        console.log('가격: '+item.price+'\t판매량: '+item.sold)
+      })
+      
       break;
     case 3:
-      itemLoad(lowPriceArray.reverse())
+      itemLoad(highPriceArray.reverse())
+      highPriceArray.forEach((item,i)=>{
+        console.log('가격: '+item.price+'\t판매량: '+item.sold)
+      })
 
   }
 })
 
+//아이템 표시 방식(3,4)
+const viewType = document.getElementsByName('view_type')
+let nowProduct = document.querySelectorAll('.product')
+viewType[0].addEventListener('change',function(){  
+  if(this){
+    nowProduct.forEach((item,i)=>{
+      item.classList.add('v3')
+    })//foreach
+  }//if-else
+})
+viewType[1].addEventListener('change',function(){  
+  if(this){
+    nowProduct.forEach((item,i)=>{
+      item.classList.remove('v3')
+    })//foreach
+  }//if-else
+})
 
 
 //hover효과
@@ -203,15 +229,6 @@ function prE(){
   }
 
 }
-
-
-
-
-
-
-
-
-
 
 
 //가격필터
