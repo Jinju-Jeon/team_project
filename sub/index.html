@@ -321,29 +321,21 @@
                 <div class="bottom">
                     <div class="search_pop">
                         <h4>인기검색어</h4>
-                        <p>검색어1</p>
-                        <p>검색어2</p>
-                        <p>검색어3</p>
-                        <p>검색어4</p>
-                        <p>검색어5</p>
+                        <ul>
+                        </ul>
                     </div>
                     <div class="search_recom">
                         <h4>추천검색어</h4>
-                        <p>검색어1</p>
-                        <p>검색어2</p>
-                        <p>검색어3</p>
-                        <p>검색어4</p>
-                        <p>검색어5</p>
+                        <ul>
+                        </ul>
                     </div>
                     <div class="search_recent">
                         <h4>최근검색어</h4>
-                        <p>검색어1</p>
-                        <p>검색어2</p>
-                        <p>검색어3</p>
-                        <p>검색어4</p>
-                        <p>검색어5</p>
+                        <ul>
+                        </ul>
                     </div>
-                </div>
+                    <!-- 검색어 동적생성 -->
+                </div><!-- //bottom -->
             </div>
         </div><!-- search -->
 
@@ -408,21 +400,22 @@
                 <label for="sports_golf"><input type="checkbox" id="sports_golf">골프</label>
             </div>
             <div class="filter_color">
+                <input type="checkbox" id="color_whit" value="white">
+                <input type="checkbox" id="color_blck" value="black">
+                <input type="checkbox" id="color_blue" value="blue">
+                <input type="checkbox" id="color_gray" value="gray">
+                <input type="checkbox" id="color_pink" value="pink">
+                <input type="checkbox" id="color_redd" value="red">
+                <input type="checkbox" id="color_yell" value="yellow">
                 <p class="tit">색상</p>
                 <div class="color_list">
-                    <label for="color_bage"><input type="checkbox" id="color_bage"></label>
-                    <label for="color_blck"><input type="checkbox" id="color_blck"></label>
-                    <label for="color_blue"><input type="checkbox" id="color_blue"></label>
-                    <label for="color_gren"><input type="checkbox" id="color_gren"></label>
-                    <label for="color_gray"><input type="checkbox" id="color_gray"></label>
-                    <label for="color_pink"><input type="checkbox" id="color_pink"></label>
-                    <label for="color_redd"><input type="checkbox" id="color_redd"></label>
-                    <label for="color_whit"><input type="checkbox" id="color_whit"></label>
-                    <label for="color_yell"><input type="checkbox" id="color_yell"></label>
-                    <label for="color_oran"><input type="checkbox" id="color_oran"></label>
-                    <label for="color_fila"><input type="checkbox" id="color_fila"></label>
-                    <label for="color_navy"><input type="checkbox" id="color_navy"></label>
-                    <label for="color_oliv"><input type="checkbox" id="color_oliv"></label>
+                    <label for="color_whit"></label>
+                    <label for="color_blck"></label>
+                    <label for="color_blue"></label>
+                    <label for="color_gray"></label>
+                    <label for="color_pink"></label>
+                    <label for="color_redd"></label>
+                    <label for="color_yell"></label>
                 </div>
             </div>
             <div class="filter_size">
@@ -460,9 +453,25 @@
         </div><!-- ////filter_bottom -->
     </div>
 
-
     <section class="product_list">
     </section> <!-- JS생성 -->
+    <div class="page">
+        <p>
+            <span class="material-icons"> keyboard_double_arrow_left </span>
+            <span class="material-icons"> keyboard_arrow_left </span>
+        </p>
+            <ul>
+                <li class="now">1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+                <li>5</li>
+            </ul>
+        <p>
+            <span class="material-icons"> keyboard_arrow_right </span>
+            <span class="material-icons"> keyboard_double_arrow_right </span>
+        </p>
+    </div>
 
     <footer class="footer">
         <div class="footer_inner">
@@ -580,6 +589,27 @@
             </div>
         </div>
     </footer>
+
+    <div class="quick">
+        <ul class="quick_top">
+            <li>
+                <span class="material-icons"> person </span>
+                <p>로그인</p>
+            </li>
+            <li>
+                <span class="material-icons-outlined"> local_shipping </span>
+                <p>주문배송</p>
+            </li>
+            <li>
+                <span class="material-icons"> work_history </span>
+                <p>최근 본 상품</p>
+            </li>
+        </ul><!-- ///quick_top -->
+        <ul class="quick_bottom">
+            <li><span class="material-icons"> arrow_drop_up </span></li>
+            <li><span class="material-icons"> arrow_drop_down </span></li>
+        </ul>
+    </div>
 
 
 

@@ -279,6 +279,7 @@ section, .footer_inner {
   width: 100vw;
   height: 500px;
   background-color: #fff;
+  display: none;
 }
 .header .search .search_inner {
   width: 1100px;
@@ -312,6 +313,7 @@ section, .footer_inner {
 }
 .header .search .search_inner .top .search_submit {
   position: absolute;
+  cursor: pointer;
   top: 30px;
   right: 10px;
 }

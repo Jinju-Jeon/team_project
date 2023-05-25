@@ -6,8 +6,9 @@ prE()
 
 
 
-/* scroll-menu */
+/* scroll-event */
 const headerInner = document.querySelector('.header_inner')
+const quickMenu = document.querySelector('.quick')
 let prev = 0
 window.addEventListener('scroll',()=>{
   /* header view */
@@ -19,6 +20,13 @@ window.addEventListener('scroll',()=>{
     headerInner.classList.add('scroll_up')
   }
 	prev = window.scrollY;
+
+
+  /* quickmenu위치 */
+  gsap.to(quickMenu,0.5,{
+    top: window.scrollY + window.innerHeight*0.3
+  })
+  
 });
 
 
@@ -46,9 +54,30 @@ const search = document.querySelector('.search')
 const searchClose = document.querySelector('.search .close')
 searchBtn.addEventListener('click',()=>{
   search.style.display = 'block'
+  document.querySelector('.bg_opacity').style.display = 'block'
 })
-searchClose.addEventListener('click',()=>{
+searchClose.addEventListener('click',function(){
   search.style.display = 'none'
+  document.querySelector('.bg_opacity').style.display = 'none'
+})
+document.querySelector('.bg_opacity').addEventListener('click',function(){
+  search.style.display = 'none'
+  this.style.display = 'none'
+})
+
+/* search변화 */
+const popSearch = ['데일리 슈즈','키즈 바람막','베이직리니어반팔티','운동화','스피드서브']
+const recomSearch = ['TENNIS COLLECTION','DAILY SHOES RAYFLIDE','스포츠 언더웨어','가볍고 편한 키즈 운동화 #문더스트']
+const recentSearch = ['씨어서커','온라인 단독','테니스 스커트']
+const searchAll = [popSearch,recomSearch,recentSearch]
+const searchList = document.querySelectorAll('.search .bottom>div>ul')
+makeSearch() //
+
+const madeX = document.querySelectorAll('.search ul span')
+madeX.forEach((x,i)=>{
+  x.addEventListener('click',function(){
+    this.parentNode.parentNode.removeChild(this.parentNode)
+  })
 })
 
 
@@ -108,6 +137,23 @@ viewType[1].addEventListener('change',function(){
   }//if-else
 })
 
+//컬러필터
+const colorChk = document.querySelectorAll('.filter_color input')
+colorChk.forEach((item)=>{
+  console.log(item.value)
+})
+
+
+
+
+
+
+
+
+
+
+
+
 
 //hover효과
 const productImgs = document.querySelectorAll('.item_top.img')
@@ -124,6 +170,26 @@ productImgs.forEach((img)=>{
     img.children[0].src = oldSrc
   })
 })
+
+
+
+//quickmenu 버튼
+const scrollUD = document.querySelectorAll('.quick_bottom li')
+scrollUD[0].addEventListener('click',()=>{
+  gsap.to(window,1,{
+    scrollTo: 0,
+  })
+})
+scrollUD[1].addEventListener('click',()=>{
+  gsap.to(window,1,{
+    scrollTo: document.body.scrollHeight,
+  })
+})
+
+
+
+
+
 
 //function
 //sub item 생성
@@ -230,11 +296,19 @@ function prE(){
 
 }
 
+function makeSearch(){searchAll.forEach((searchItem,i)=>{
+  const listCover = searchList[i]
+  searchItem.forEach((keyword,j)=>{
+    const list = document.createElement('li')
+    list.innerText = keyword
 
-//가격필터
-const priceFilter = document.querySelectorAll('.price_list input')
+    if(i==2){
+      const xBox = document.createElement('span')
+      xBox.innerText = 'x'
+      list.appendChild(xBox)
+    }
 
-
-
-
-
+    listCover.appendChild(list)
+  })
+})
+}

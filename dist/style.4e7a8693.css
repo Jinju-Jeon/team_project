@@ -74,7 +74,7 @@ section, .header_inner, .footer_inner {
   box-sizing: border-box;
 }
 
-section, .footer_inner {
+.footer_inner {
   padding: 80px 10px;
   box-sizing: border-box;
 }
@@ -299,6 +299,7 @@ section, .footer_inner {
 }
 .header .search .search_inner .top .search_submit {
   position: absolute;
+  cursor: pointer;
   top: 30px;
   right: 10px;
 }
@@ -320,8 +321,16 @@ section, .footer_inner {
   font-weight: bold;
   margin-bottom: 20px;
 }
-.header .search .search_inner .bottom > div p {
+.header .search .search_inner .bottom > div li {
   line-height: 35px;
+  position: relative;
+}
+.header .search .search_inner .bottom .search_recent span {
+  cursor: pointer;
+  color: #777;
+  position: absolute;
+  top: 0;
+  right: 100px;
 }
 .header .bg_opacity {
   width: 100vw;
@@ -331,9 +340,11 @@ section, .footer_inner {
   z-index: 9;
   opacity: 0.5;
   display: none;
+  backdrop-filter: blur(10px);
 }
 
 /* header */
+/* banner */
 .banner {
   width: 1320px;
   margin: 0 auto;
@@ -437,11 +448,29 @@ section, .footer_inner {
   font-weight: bold;
   text-decoration: underline;
 }
-.filter .filter_bottom .filter_color {
-  background-color: #fff;
-}
 .filter .filter_bottom .filter_color input[type=checkbox] {
   display: none;
+}
+.filter .filter_bottom .filter_color input[type=checkbox]:nth-child(1):checked ~ .color_list label:nth-child(1)::after {
+  font-size: 16px;
+}
+.filter .filter_bottom .filter_color input[type=checkbox]:nth-child(2):checked ~ .color_list label:nth-child(2)::after {
+  font-size: 16px;
+}
+.filter .filter_bottom .filter_color input[type=checkbox]:nth-child(3):checked ~ .color_list label:nth-child(3)::after {
+  font-size: 16px;
+}
+.filter .filter_bottom .filter_color input[type=checkbox]:nth-child(4):checked ~ .color_list label:nth-child(4)::after {
+  font-size: 16px;
+}
+.filter .filter_bottom .filter_color input[type=checkbox]:nth-child(5):checked ~ .color_list label:nth-child(5)::after {
+  font-size: 16px;
+}
+.filter .filter_bottom .filter_color input[type=checkbox]:nth-child(6):checked ~ .color_list label:nth-child(6)::after {
+  font-size: 16px;
+}
+.filter .filter_bottom .filter_color input[type=checkbox]:nth-child(7):checked ~ .color_list label:nth-child(7)::after {
+  font-size: 16px;
 }
 .filter .filter_bottom .filter_color .color_list {
   display: flex;
@@ -450,6 +479,7 @@ section, .footer_inner {
 .filter .filter_bottom .filter_color .color_list label {
   width: calc((100% - 50px) / 6);
   height: 23.33px;
+  position: relative;
   margin-right: 10px;
   margin-bottom: 10px;
   border-radius: 50%;
@@ -457,6 +487,20 @@ section, .footer_inner {
 }
 .filter .filter_bottom .filter_color .color_list label:nth-child(6n) {
   margin-right: 0;
+}
+.filter .filter_bottom .filter_color .color_list label:nth-child(2)::after, .filter .filter_bottom .filter_color .color_list label:nth-child(3)::after, .filter .filter_bottom .filter_color .color_list label:nth-child(6)::after {
+  color: #fff;
+}
+.filter .filter_bottom .filter_color .color_list label::after {
+  content: "\e5ca";
+  font-family: "Material Icons Outlined";
+  font-size: 0;
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  line-height: 23px;
 }
 .filter .filter_bottom .filter_color .color_list label:nth-child(1) {
   background-image: url(/color_1.3b692af7.jpg);
@@ -479,24 +523,6 @@ section, .footer_inner {
 .filter .filter_bottom .filter_color .color_list label:nth-child(7) {
   background-image: url(/color_7.2df19a5e.jpg);
 }
-.filter .filter_bottom .filter_color .color_list label:nth-child(8) {
-  background-image: url(/color_8.415f37c7.jpg);
-}
-.filter .filter_bottom .filter_color .color_list label:nth-child(9) {
-  background-image: url(/color_9.ecd64a3f.jpg);
-}
-.filter .filter_bottom .filter_color .color_list label:nth-child(10) {
-  background-image: url(/color_10.3d6a6d39.jpg);
-}
-.filter .filter_bottom .filter_color .color_list label:nth-child(11) {
-  background-image: url(/color_11.fb6845b2.jpg);
-}
-.filter .filter_bottom .filter_color .color_list label:nth-child(12) {
-  background-image: url(/color_12.c0027027.jpg);
-}
-.filter .filter_bottom .filter_color .color_list label:nth-child(13) {
-  background-image: url(/color_13.d7d29fef.jpg);
-}
 .filter .filter_bottom .filter_size input[type=checkbox] {
   display: none;
 }
@@ -517,6 +543,7 @@ section, .footer_inner {
   margin-right: 0;
 }
 
+/* product_list */
 .product_list {
   display: flex;
   flex-wrap: wrap;
@@ -590,6 +617,40 @@ section, .footer_inner {
 }
 .product_list .product .product_category {
   font-size: 14px;
+}
+
+.page {
+  width: 1320px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 80px;
+}
+.page p > span,
+.page li {
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  line-height: 30px;
+  display: block;
+  margin-right: 10px;
+  border: 1px solid #333;
+  color: #333;
+  border-radius: 3px;
+  cursor: pointer;
+}
+.page p > span.now,
+.page li.now {
+  border-color: #0E0057;
+  background-color: #0E0057;
+  color: #fff;
+}
+.page ul, .page p {
+  display: flex;
+}
+.page p:last-child span:last-child {
+  margin-right: 0;
 }
 
 /********** footer **********/
@@ -730,6 +791,61 @@ section, .footer_inner {
 .footer .foot_bottom .cs .contact p {
   font-size: 14px;
   font-weight: bold;
+}
+
+.quick {
+  position: absolute;
+  z-index: 99;
+  top: 30%;
+  right: 0;
+  background-color: #fff;
+  transition: width 0.3s;
+  transition: background-color 0.3s;
+  cursor: pointer;
+}
+.quick li {
+  transition: 0.3s;
+}
+.quick li:hover {
+  color: #fff;
+  background-color: #0E0057;
+}
+.quick:hover .quick_top li {
+  width: 150px;
+}
+.quick:hover .quick_top p {
+  width: 90px;
+  font-size: 16px;
+}
+.quick .quick_top > li {
+  width: 60px;
+  overflow: hidden;
+}
+.quick .quick_top > li p {
+  float: left;
+  width: 0px;
+  height: 60px;
+  text-align: center;
+  line-height: 60px;
+  font-size: 0px;
+  transition: width 0.3s;
+}
+.quick .quick_top > li p::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+.quick .quick_top > li span {
+  display: block;
+  float: left;
+  width: 60px;
+  height: 60px;
+  text-align: center;
+  line-height: 60px;
+  font-size: 52px;
+}
+.quick .quick_bottom {
+  text-align: center;
 }
 
 /*# sourceMappingURL=/style.4e7a8693.css.map */

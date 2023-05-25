@@ -1,4 +1,7 @@
 const cat = ['공용', '남성', '여성']
+const color = ['white','black','blue','gray','pink','red','yellow']
+
+
 
 const menClothList = [{
         id: 'men01',
@@ -8,6 +11,8 @@ const menClothList = [{
         price: 69000,
         href: '#!',
         sold: 12,
+        color: color[0],
+        size: [75,80,85]
     },
     {
         id: 'men02',
@@ -17,6 +22,8 @@ const menClothList = [{
         price: 119000,
         href: '#!',
         sold: 6,
+        color: color[2],
+        size: [80,90,100]
     },
     {
         id: 'men03',
@@ -26,6 +33,8 @@ const menClothList = [{
         price: 69000,
         href: '#!',
         sold: 2,
+        color: color[0],
+        size: [75,85,95]
     },
     {
         id: 'men04',
@@ -35,6 +44,8 @@ const menClothList = [{
         price: 119000,
         href: '#!',
         sold: 24,
+        color: color[0],
+        size: [100,105,110]
     },
     {
         id: 'men05',
@@ -44,6 +55,8 @@ const menClothList = [{
         price: 69000,
         href: '#!',
         sold: 19,
+        color: color[1],
+        size: [105,110,115],
     },
     {
         id: 'men06',
@@ -53,6 +66,8 @@ const menClothList = [{
         price: 79000,
         href: '#!',
         sold: 3,
+        color: color[2],
+        size: [90,95,100],
     },
     {
         id: 'men07',
@@ -62,6 +77,8 @@ const menClothList = [{
         price: 59000,
         href: '#!',
         sold: 16,
+        color: color[0],
+        size: [80,85,90]
     },
     {
         id: 'men08',
@@ -71,6 +88,8 @@ const menClothList = [{
         price: 49000,
         href: '#!',
         sold: 21,
+        color: color[0],
+        size: [95,100,105],
     },
     {
         id: 'men09',
@@ -80,6 +99,8 @@ const menClothList = [{
         price: 49000,
         href: '#!',
         sold: 15,
+        color: color[2],
+        size: [80,85,90,95,100],
     },
     {
         id: 'men10',
@@ -89,6 +110,8 @@ const menClothList = [{
         price: 59000,
         href: '#!',
         sold: 4,
+        color: color[4],
+        size: [95,100,105],
     },
     {
         id: 'men11',
@@ -98,6 +121,8 @@ const menClothList = [{
         price: 49000,
         href: '#!',
         sold: 5,
+        color: color[0],
+        size: [100,105,110],
     },
     {
         id: 'men12',
@@ -107,6 +132,8 @@ const menClothList = [{
         price: 119000,
         href: '#!',
         sold: 13,
+        color: color[3],
+        size: [75,80,85,100],
     },
     {
         id: 'men13',
@@ -116,6 +143,8 @@ const menClothList = [{
         price: 119000,
         href: '#!',
         sold: 23,
+        color: color[4],
+        size: [90,95,100,105],
     },
     {
         id: 'men14',
@@ -125,6 +154,8 @@ const menClothList = [{
         price: 119000,
         href: '#!',
         sold: 22,
+        color: color[5],
+        size: [85,90,95,100],
     },
     {
         id: 'men15',
@@ -134,6 +165,8 @@ const menClothList = [{
         price: 119000,
         href: '#!',
         sold: 1,
+        color: color[1],
+        size: [90,95,100,105],
     },
     {
         id: 'men16',
@@ -143,6 +176,8 @@ const menClothList = [{
         price: 79000,
         href: '#!',
         sold: 18,
+        color: color[1],
+        size: [75,80,85,90],
     },
     {
         id: 'men17',
@@ -152,6 +187,8 @@ const menClothList = [{
         price: 39000,
         href: '#!',
         sold: 14,
+        color: color[4],
+        size: [95,100,105,110],
     },
     {
         id: 'men18',
@@ -161,6 +198,8 @@ const menClothList = [{
         price: 39000,
         href: '#!',
         sold: 8,
+        color: color[0],
+        size: [75,95],
     },
     {
         id: 'men19',
@@ -170,6 +209,8 @@ const menClothList = [{
         price: 39000,
         href: '#!',
         sold: 7,
+        color: color[1],
+        size: [75,85,95,105],
     },
     {
         id: 'men20',
@@ -179,6 +220,8 @@ const menClothList = [{
         price: 39000,
         href: '#!',
         sold: 20,
+        color: color[1],
+        size: [80,90,100,110],
     },
     {
         id: 'men21',
@@ -188,6 +231,8 @@ const menClothList = [{
         price: 49000,
         href: '#!',
         sold: 10,
+        color: color[2],
+        size: [75,80,85,90,95],
     },
     {
         id: 'men22',
@@ -197,6 +242,8 @@ const menClothList = [{
         price: 69000,
         href: '#!',
         sold: 11,
+        color: color[2],
+        size: [80,85,90,100],
     },
     {
         id: 'men23',
@@ -206,6 +253,8 @@ const menClothList = [{
         price: 69000,
         href: '#!',
         sold: 17,
+        color: color[2],
+        size: [90,100,110],
     },
     {
         id: 'men24',
@@ -215,6 +264,8 @@ const menClothList = [{
         price: 119000,
         href: '#!',
         sold: 9,
+        color: color[0],
+        size: [85,90,95],
     },
 
 

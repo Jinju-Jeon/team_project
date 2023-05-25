@@ -172,7 +172,7 @@ module.exports = reloadCSS;
 var reloadCSS = require('_css_loader');
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
-},{"./img\\men_banner.jpg":[["men_banner.81470bc1.jpg","sub/css/img/men_banner.jpg"],"sub/css/img/men_banner.jpg"],"./img\\color_1.jpg":[["color_1.3b692af7.jpg","sub/css/img/color_1.jpg"],"sub/css/img/color_1.jpg"],"./img\\color_2.jpg":[["color_2.b6a385da.jpg","sub/css/img/color_2.jpg"],"sub/css/img/color_2.jpg"],"./img\\color_3.jpg":[["color_3.c18f7ed8.jpg","sub/css/img/color_3.jpg"],"sub/css/img/color_3.jpg"],"./img\\color_4.jpg":[["color_4.fe84e523.jpg","sub/css/img/color_4.jpg"],"sub/css/img/color_4.jpg"],"./img\\color_5.jpg":[["color_5.b35a11cd.jpg","sub/css/img/color_5.jpg"],"sub/css/img/color_5.jpg"],"./img\\color_6.jpg":[["color_6.6d7d3518.jpg","sub/css/img/color_6.jpg"],"sub/css/img/color_6.jpg"],"./img\\color_7.jpg":[["color_7.2df19a5e.jpg","sub/css/img/color_7.jpg"],"sub/css/img/color_7.jpg"],"./img\\color_8.jpg":[["color_8.415f37c7.jpg","sub/css/img/color_8.jpg"],"sub/css/img/color_8.jpg"],"./img\\color_9.jpg":[["color_9.ecd64a3f.jpg","sub/css/img/color_9.jpg"],"sub/css/img/color_9.jpg"],"./img\\color_10.jpg":[["color_10.3d6a6d39.jpg","sub/css/img/color_10.jpg"],"sub/css/img/color_10.jpg"],"./img\\color_11.jpg":[["color_11.fb6845b2.jpg","sub/css/img/color_11.jpg"],"sub/css/img/color_11.jpg"],"./img\\color_12.jpg":[["color_12.c0027027.jpg","sub/css/img/color_12.jpg"],"sub/css/img/color_12.jpg"],"./img\\color_13.jpg":[["color_13.d7d29fef.jpg","sub/css/img/color_13.jpg"],"sub/css/img/color_13.jpg"],"_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"./img\\men_banner.jpg":[["men_banner.81470bc1.jpg","sub/css/img/men_banner.jpg"],"sub/css/img/men_banner.jpg"],"./img\\color_1.jpg":[["color_1.3b692af7.jpg","sub/css/img/color_1.jpg"],"sub/css/img/color_1.jpg"],"./img\\color_2.jpg":[["color_2.b6a385da.jpg","sub/css/img/color_2.jpg"],"sub/css/img/color_2.jpg"],"./img\\color_3.jpg":[["color_3.c18f7ed8.jpg","sub/css/img/color_3.jpg"],"sub/css/img/color_3.jpg"],"./img\\color_4.jpg":[["color_4.fe84e523.jpg","sub/css/img/color_4.jpg"],"sub/css/img/color_4.jpg"],"./img\\color_5.jpg":[["color_5.b35a11cd.jpg","sub/css/img/color_5.jpg"],"sub/css/img/color_5.jpg"],"./img\\color_6.jpg":[["color_6.6d7d3518.jpg","sub/css/img/color_6.jpg"],"sub/css/img/color_6.jpg"],"./img\\color_7.jpg":[["color_7.2df19a5e.jpg","sub/css/img/color_7.jpg"],"sub/css/img/color_7.jpg"],"_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -197,7 +197,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55909" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61331" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];

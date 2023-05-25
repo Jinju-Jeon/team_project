@@ -125,6 +125,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 var cat = ['공용', '남성', '여성'];
+var color = ['white', 'black', 'blue', 'gray', 'pink', 'red', 'yellow'];
 var menClothList = [{
   id: 'men01',
   src: './img/men01.jpg',
@@ -132,7 +133,9 @@ var menClothList = [{
   name: '핫써머 씨어서커 우븐반바지',
   price: 69000,
   href: '#!',
-  sold: 12
+  sold: 12,
+  color: color[0],
+  size: [75, 80, 85]
 }, {
   id: 'men02',
   src: './img/men02.jpg',
@@ -140,7 +143,9 @@ var menClothList = [{
   name: '핫써머 씨어서커 아노락 바람막이',
   price: 119000,
   href: '#!',
-  sold: 6
+  sold: 6,
+  color: color[2],
+  size: [80, 90, 100]
 }, {
   id: 'men03',
   src: './img/men03.jpg',
@@ -148,7 +153,9 @@ var menClothList = [{
   name: '컴포트핏 인터내셔널 반팔 카라티',
   price: 69000,
   href: '#!',
-  sold: 2
+  sold: 2,
+  color: color[0],
+  size: [75, 85, 95]
 }, {
   id: 'men04',
   src: './img/men04.jpg',
@@ -156,7 +163,9 @@ var menClothList = [{
   name: '핫써머 씨어서커 아노락 바람막이',
   price: 119000,
   href: '#!',
-  sold: 24
+  sold: 24,
+  color: color[0],
+  size: [100, 105, 110]
 }, {
   id: 'men05',
   src: './img/men05.jpg',
@@ -164,7 +173,9 @@ var menClothList = [{
   name: '핫써머 사이드프린트 우븐 반바지',
   price: 69000,
   href: '#!',
-  sold: 19
+  sold: 19,
+  color: color[1],
+  size: [105, 110, 115]
 }, {
   id: 'men06',
   src: './img/men06.jpg',
@@ -172,7 +183,9 @@ var menClothList = [{
   name: '핫써머 모노그램 우븐 반바지',
   price: 79000,
   href: '#!',
-  sold: 3
+  sold: 3,
+  color: color[2],
+  size: [90, 95, 100]
 }, {
   id: 'men07',
   src: './img/men07.jpg',
@@ -180,7 +193,9 @@ var menClothList = [{
   name: '컴포트핏 인터내셔널 6부 반바지',
   price: 59000,
   href: '#!',
-  sold: 16
+  sold: 16,
+  color: color[0],
+  size: [80, 85, 90]
 }, {
   id: 'men08',
   src: './img/men08.jpg',
@@ -188,7 +203,9 @@ var menClothList = [{
   name: '페스타 그래픽 티셔츠',
   price: 49000,
   href: '#!',
-  sold: 21
+  sold: 21,
+  color: color[0],
+  size: [95, 100, 105]
 }, {
   id: 'men09',
   src: './img/men09.jpg',
@@ -196,7 +213,9 @@ var menClothList = [{
   name: '레터링 그래픽 티셔츠',
   price: 49000,
   href: '#!',
-  sold: 15
+  sold: 15,
+  color: color[2],
+  size: [80, 85, 90, 95, 100]
 }, {
   id: 'men10',
   src: './img/men10.jpg',
@@ -204,7 +223,9 @@ var menClothList = [{
   name: '레코드 그래픽 티셔츠',
   price: 59000,
   href: '#!',
-  sold: 4
+  sold: 4,
+  color: color[4],
+  size: [95, 100, 105]
 }, {
   id: 'men11',
   src: './img/men11.jpg',
@@ -212,7 +233,9 @@ var menClothList = [{
   name: 'havefun 그래픽 티셔츠',
   price: 49000,
   href: '#!',
-  sold: 5
+  sold: 5,
+  color: color[0],
+  size: [100, 105, 110]
 }, {
   id: 'men12',
   src: './img/men12.jpg',
@@ -220,7 +243,9 @@ var menClothList = [{
   name: '컴포트핏 인터내셔널 우븐 후드티',
   price: 119000,
   href: '#!',
-  sold: 13
+  sold: 13,
+  color: color[3],
+  size: [75, 80, 85, 100]
 }, {
   id: 'men13',
   src: './img/men13.jpg',
@@ -228,7 +253,9 @@ var menClothList = [{
   name: '컴포트핏 인터내셔널 우븐 후드티',
   price: 119000,
   href: '#!',
-  sold: 23
+  sold: 23,
+  color: color[4],
+  size: [90, 95, 100, 105]
 }, {
   id: 'men14',
   src: './img/men14.jpg',
@@ -236,7 +263,9 @@ var menClothList = [{
   name: '컴포트핏 인터내셔널 우븐 후드티',
   price: 119000,
   href: '#!',
-  sold: 22
+  sold: 22,
+  color: color[5],
+  size: [85, 90, 95, 100]
 }, {
   id: 'men15',
   src: './img/men15.jpg',
@@ -244,7 +273,9 @@ var menClothList = [{
   name: '컴포트핏 인터내셔널 우븐 후드티',
   price: 119000,
   href: '#!',
-  sold: 1
+  sold: 1,
+  color: color[1],
+  size: [90, 95, 100, 105]
 }, {
   id: 'men16',
   src: './img/men16.jpg',
@@ -252,7 +283,9 @@ var menClothList = [{
   name: '컴포트핏 인터내셔널 스몰로고 카라티',
   price: 79000,
   href: '#!',
-  sold: 18
+  sold: 18,
+  color: color[1],
+  size: [75, 80, 85, 90]
 }, {
   id: 'men17',
   src: './img/men17.jpg',
@@ -260,7 +293,9 @@ var menClothList = [{
   name: '컴포트핏 플래그 반팔티',
   price: 39000,
   href: '#!',
-  sold: 14
+  sold: 14,
+  color: color[4],
+  size: [95, 100, 105, 110]
 }, {
   id: 'men18',
   src: './img/men18.jpg',
@@ -268,7 +303,9 @@ var menClothList = [{
   name: '컴포트핏 플래그 반팔티',
   price: 39000,
   href: '#!',
-  sold: 8
+  sold: 8,
+  color: color[0],
+  size: [75, 95]
 }, {
   id: 'men19',
   src: './img/men19.jpg',
@@ -276,7 +313,9 @@ var menClothList = [{
   name: '컴포트핏 플래그 반팔티',
   price: 39000,
   href: '#!',
-  sold: 7
+  sold: 7,
+  color: color[1],
+  size: [75, 85, 95, 105]
 }, {
   id: 'men20',
   src: './img/men20.jpg',
@@ -284,7 +323,9 @@ var menClothList = [{
   name: '컴포트핏 마인드블로어 반팔티',
   price: 39000,
   href: '#!',
-  sold: 20
+  sold: 20,
+  color: color[1],
+  size: [80, 90, 100, 110]
 }, {
   id: 'men21',
   src: './img/men21.jpg',
@@ -292,7 +333,9 @@ var menClothList = [{
   name: '핫써머 모노그램 나시티',
   price: 49000,
   href: '#!',
-  sold: 10
+  sold: 10,
+  color: color[2],
+  size: [75, 80, 85, 90, 95]
 }, {
   id: 'men22',
   src: './img/men22.jpg',
@@ -300,7 +343,9 @@ var menClothList = [{
   name: '핫써머 우븐 포켓 반바지',
   price: 69000,
   href: '#!',
-  sold: 11
+  sold: 11,
+  color: color[2],
+  size: [80, 85, 90, 100]
 }, {
   id: 'men23',
   src: './img/men23.jpg',
@@ -308,7 +353,9 @@ var menClothList = [{
   name: '핫써머 씨어서커 우븐반바지',
   price: 69000,
   href: '#!',
-  sold: 17
+  sold: 17,
+  color: color[2],
+  size: [90, 100, 110]
 }, {
   id: 'men24',
   src: './img/men24.jpg',
@@ -316,7 +363,9 @@ var menClothList = [{
   name: '핫써머 씨어서커 아노락 바람막이',
   price: 119000,
   href: '#!',
-  sold: 9
+  sold: 9,
+  color: color[0],
+  size: [85, 90, 95]
 }];
 var _default = menClothList;
 exports.default = _default;
@@ -332,8 +381,9 @@ var productList = document.querySelector('.product_list');
 itemLoad(_data.default);
 prE();
 
-/* scroll-menu */
+/* scroll-event */
 var headerInner = document.querySelector('.header_inner');
+var quickMenu = document.querySelector('.quick');
 var prev = 0;
 window.addEventListener('scroll', function () {
   /* header view */
@@ -345,6 +395,11 @@ window.addEventListener('scroll', function () {
     headerInner.classList.add('scroll_up');
   }
   prev = window.scrollY;
+
+  /* quickmenu위치 */
+  gsap.to(quickMenu, 0.5, {
+    top: window.scrollY + window.innerHeight * 0.3
+  });
 });
 
 /* header-hover */
@@ -368,9 +423,30 @@ var search = document.querySelector('.search');
 var searchClose = document.querySelector('.search .close');
 searchBtn.addEventListener('click', function () {
   search.style.display = 'block';
+  document.querySelector('.bg_opacity').style.display = 'block';
 });
 searchClose.addEventListener('click', function () {
   search.style.display = 'none';
+  document.querySelector('.bg_opacity').style.display = 'none';
+});
+document.querySelector('.bg_opacity').addEventListener('click', function () {
+  search.style.display = 'none';
+  this.style.display = 'none';
+});
+
+/* search변화 */
+var popSearch = ['데일리 슈즈', '키즈 바람막', '베이직리니어반팔티', '운동화', '스피드서브'];
+var recomSearch = ['TENNIS COLLECTION', 'DAILY SHOES RAYFLIDE', '스포츠 언더웨어', '가볍고 편한 키즈 운동화 #문더스트'];
+var recentSearch = ['씨어서커', '온라인 단독', '테니스 스커트'];
+var searchAll = [popSearch, recomSearch, recentSearch];
+var searchList = document.querySelectorAll('.search .bottom>div>ul');
+makeSearch(); //
+
+var madeX = document.querySelectorAll('.search ul span');
+madeX.forEach(function (x, i) {
+  x.addEventListener('click', function () {
+    this.parentNode.parentNode.removeChild(this.parentNode);
+  });
 });
 
 //정렬기능
@@ -422,6 +498,12 @@ viewType[1].addEventListener('change', function () {
   } //if-else
 });
 
+//컬러필터
+var colorChk = document.querySelectorAll('.filter_color input');
+colorChk.forEach(function (item) {
+  console.log(item.value);
+});
+
 //hover효과
 var productImgs = document.querySelectorAll('.item_top.img');
 productImgs.forEach(function (img) {
@@ -434,6 +516,19 @@ productImgs.forEach(function (img) {
     var src = img.children[0].src;
     var oldSrc = src.replace('-2.jpg', '.jpg');
     img.children[0].src = oldSrc;
+  });
+});
+
+//quickmenu 버튼
+var scrollUD = document.querySelectorAll('.quick_bottom li');
+scrollUD[0].addEventListener('click', function () {
+  gsap.to(window, 1, {
+    scrollTo: 0
+  });
+});
+scrollUD[1].addEventListener('click', function () {
+  gsap.to(window, 1, {
+    scrollTo: document.body.scrollHeight
   });
 });
 
@@ -525,9 +620,21 @@ function prE() {
     _iterator2.f();
   }
 }
-
-//가격필터
-var priceFilter = document.querySelectorAll('.price_list input');
+function makeSearch() {
+  searchAll.forEach(function (searchItem, i) {
+    var listCover = searchList[i];
+    searchItem.forEach(function (keyword, j) {
+      var list = document.createElement('li');
+      list.innerText = keyword;
+      if (i == 2) {
+        var xBox = document.createElement('span');
+        xBox.innerText = 'x';
+        list.appendChild(xBox);
+      }
+      listCover.appendChild(list);
+    });
+  });
+}
 },{"./data.js":"sub/js/data.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -553,7 +660,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55909" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61331" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];

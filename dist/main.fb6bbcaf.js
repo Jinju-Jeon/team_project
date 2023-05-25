@@ -140,10 +140,9 @@ window.addEventListener('scroll', function () {
   var magOn = document.querySelector('.magazine').offsetTop;
   if (window.scrollY > magOn - 600) {
     magImg.forEach(function (img, i) {
-      gsap.to(img, {
+      gsap.to(img, 0.8, {
         y: 0,
-        opacity: 1,
-        duration: 0.8
+        opacity: 1
       }).delay(i * 0.3);
     }); //foreach
   }
@@ -177,6 +176,10 @@ searchClose.addEventListener('click', function () {
   search.style.display = 'none';
   document.querySelector('.bg_opacity').style.display = 'none';
 });
+document.querySelector('.bg_opacity').addEventListener('click', function () {
+  search.style.display = 'none';
+  this.style.display = 'none';
+});
 
 /* search변화 */
 var popSearch = ['데일리 슈즈', '키즈 바람막', '베이직리니어반팔티', '운동화', '스피드서브'];
@@ -184,26 +187,13 @@ var recomSearch = ['TENNIS COLLECTION', 'DAILY SHOES RAYFLIDE', '스포츠 언�
 var recentSearch = ['씨어서커', '온라인 단독', '테니스 스커트'];
 var searchAll = [popSearch, recomSearch, recentSearch];
 var searchList = document.querySelectorAll('.search .bottom>div>ul');
-searchAll.forEach(function (searchItem, i) {
-  var listCover = searchList[i];
-  searchItem.forEach(function (keyword, j) {
-    var list = document.createElement('li');
-    list.innerText = keyword;
-    if (i == 2) {
-      var xBox = document.createElement('span');
-      xBox.innerText = 'x';
-      list.appendChild(xBox);
-    }
-    listCover.appendChild(list);
-  });
-});
+makeSearch(); //
+
 var madeX = document.querySelectorAll('.search ul span');
 console.log(madeX);
 madeX.forEach(function (x, i) {
   x.addEventListener('click', function () {
-    var ul = this.parentNode.parentNode;
-    console.log(i);
-    ul.removeChild(i);
+    this.parentNode.parentNode.removeChild(this.parentNode);
   });
 });
 
@@ -282,7 +272,7 @@ var rankSlider1 = new Swiper(".rank_slider1", {
 
 rankList1.forEach(function (rank, i) {
   rank.addEventListener('click', function () {
-    /* rankSlider1.slideToLoop(i,300,true) */
+    rankSlider1.slideToLoop(i, 300, true);
   });
 });
 var rank1El = rankSlider1.el.querySelectorAll('.swiper-slide');
@@ -333,25 +323,21 @@ plusBtns.forEach(function (btn, i) {
       // recomDesc[i].classList.add('on')
 
       recomDesc[i].style.display = 'block';
-      gsap.to(recomDesc[i], {
-        opacity: 1,
-        duration: 0.2
+      gsap.to(recomDesc[i], 0.2, {
+        opacity: 1
       });
-      gsap.to(plusIcon[i], {
-        rotation: 45,
-        duration: 0.2
+      gsap.to(plusIcon[i], 0.2, {
+        rotation: 45
       });
     } else {
       clickState[i] = 0;
-      gsap.to(recomDesc[i], {
-        opacity: 0,
-        duration: 0.2
+      gsap.to(recomDesc[i], 0.2, {
+        opacity: 0
       }, function () {
         recomDesc[i].style.display = 'none';
       });
-      gsap.to(plusIcon[i], {
-        rotation: 0,
-        duration: 0.2
+      gsap.to(plusIcon[i], 0.2, {
+        rotation: 0
       });
     }
   }); //click
@@ -364,6 +350,21 @@ function headerStyle() {
   } else {
     document.querySelector('.header').classList.remove('top');
   }
+}
+function makeSearch() {
+  searchAll.forEach(function (searchItem, i) {
+    var listCover = searchList[i];
+    searchItem.forEach(function (keyword, j) {
+      var list = document.createElement('li');
+      list.innerText = keyword;
+      if (i == 2) {
+        var xBox = document.createElement('span');
+        xBox.innerText = 'x';
+        list.appendChild(xBox);
+      }
+      listCover.appendChild(list);
+    });
+  });
 }
 },{}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
@@ -390,7 +391,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55909" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61331" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];

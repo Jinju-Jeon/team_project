@@ -25,10 +25,9 @@ window.addEventListener('scroll',()=>{
   const magOn = document.querySelector('.magazine').offsetTop
   if(window.scrollY > magOn-600){
     magImg.forEach((img,i)=>{
-      gsap.to(img,{
+      gsap.to(img,0.8,{
         y:0,
         opacity: 1,
-        duration: 0.8,
       }).delay(i*0.3)
     })//foreach
   }
@@ -62,9 +61,13 @@ searchBtn.addEventListener('click',()=>{
   search.style.display = 'block'
   document.querySelector('.bg_opacity').style.display = 'block'
 })
-searchClose.addEventListener('click',()=>{
+searchClose.addEventListener('click',function(){
   search.style.display = 'none'
   document.querySelector('.bg_opacity').style.display = 'none'
+})
+document.querySelector('.bg_opacity').addEventListener('click',function(){
+  search.style.display = 'none'
+  this.style.display = 'none'
 })
 
 /* search변화 */
@@ -72,36 +75,17 @@ const popSearch = ['데일리 슈즈','키즈 바람막','베이직리니어반�
 const recomSearch = ['TENNIS COLLECTION','DAILY SHOES RAYFLIDE','스포츠 언더웨어','가볍고 편한 키즈 운동화 #문더스트']
 const recentSearch = ['씨어서커','온라인 단독','테니스 스커트']
 const searchAll = [popSearch,recomSearch,recentSearch]
-
 const searchList = document.querySelectorAll('.search .bottom>div>ul')
-
-searchAll.forEach((searchItem,i)=>{
-  const listCover = searchList[i]
-  searchItem.forEach((keyword,j)=>{
-    const list = document.createElement('li')
-    list.innerText = keyword
-
-    if(i==2){
-      const xBox = document.createElement('span')
-      xBox.innerText = 'x'
-      list.appendChild(xBox)
-    }
-
-    listCover.appendChild(list)
-  })
-})
+makeSearch() //
 
 const madeX = document.querySelectorAll('.search ul span')
 console.log(madeX)
 madeX.forEach((x,i)=>{
   x.addEventListener('click',function(){
-    let ul = this.parentNode.parentNode
-    console.log(i)
-    ul.removeChild(i)
-    
-
+    this.parentNode.parentNode.removeChild(this.parentNode)
   })
 })
+
 
 
 
@@ -204,7 +188,7 @@ const rankSlider1 = new Swiper(".rank_slider1", {
 
 rankList1.forEach((rank,i)=>{
   rank.addEventListener('click',function(){
-    /* rankSlider1.slideToLoop(i,300,true) */
+    rankSlider1.slideToLoop(i,300,true) 
     
   })
 })
@@ -271,13 +255,13 @@ plusBtns.forEach((btn,i)=>{
     // recomDesc[i].classList.add('on')
 
     recomDesc[i].style.display = 'block'
-    gsap.to(recomDesc[i],{opacity: 1,duration: 0.2,})
+    gsap.to(recomDesc[i],0.2,{opacity: 1,})
 
-    gsap.to(plusIcon[i],{rotation: 45, duration: 0.2,});
+    gsap.to(plusIcon[i],0.2,{rotation: 45, });
   } else{
     clickState[i]=0
-    gsap.to(recomDesc[i],{opacity: 0,duration: 0.2,},function(){recomDesc[i].style.display = 'none'})
-    gsap.to(plusIcon[i],{rotation: 0, duration: 0.2,});
+    gsap.to(recomDesc[i],0.2,{opacity: 0,},function(){recomDesc[i].style.display = 'none'})
+    gsap.to(plusIcon[i],0.2,{rotation: 0, });
     
 
   }
@@ -299,4 +283,21 @@ function headerStyle(){
     document.querySelector('.header').classList.remove('top')
   }
 
+}
+
+function makeSearch(){searchAll.forEach((searchItem,i)=>{
+  const listCover = searchList[i]
+  searchItem.forEach((keyword,j)=>{
+    const list = document.createElement('li')
+    list.innerText = keyword
+
+    if(i==2){
+      const xBox = document.createElement('span')
+      xBox.innerText = 'x'
+      list.appendChild(xBox)
+    }
+
+    listCover.appendChild(list)
+  })
+})
 }
