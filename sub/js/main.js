@@ -135,6 +135,7 @@ colorChk.forEach((item)=>{
     productSort()
     sizeFilter()
     genderFilter()
+    priceFilter()
     
     //필터링
     colorFilter()
@@ -155,20 +156,49 @@ sizeChk.forEach((item)=>{
     productSort()
     colorFilter()
     genderFilter()
+    priceFilter()
 
     //sizeFilter적용
     sizeFilter()
 
-    itemLoad(nowList)  
+
+    //필터링 적용
+    itemLoad(nowList)
+ 
     
   })
 })
 
 
+//가격필터
+const priceChk = document.getElementsByName('price')
+priceChk.forEach((item)=>{
+  item.addEventListener('click',function(){
+    //전체 리스트 로드
+    nowList = menClothList 
+  
+    //nowList에 기존 정렬 및 필터 필터 적용
+    productSort()
+    colorFilter()
+    genderFilter()
+    sizeFilter()
+    
+    //sizeFilter적용
+    priceFilter()
+
+
+    //필터링 적용
+    itemLoad(nowList)
+    
+  })//aEL
+})///forEach
+
+
+
+
 
 //성별필터
 const genderChk = document.querySelectorAll('.filter_gender input')
-console.log(genderChk)
 genderChk.forEach((item)=>{
   item.addEventListener('click',function(){
     
@@ -481,10 +511,30 @@ function genderFilter(){
 
     })//filter
   }//if
-
-  
-
+}
 
 
+function priceFilter(){
+  let checked = parseInt(document.querySelector('input[name=price]:checked').value)
+    
+  switch(checked){
+    case 1:
+      break;
+    case 2:
+      nowList = nowList.filter((item)=> (item.price<=39000))
+      break;
+    case 3:
+      nowList = nowList.filter((item)=> (item.price>39000 && item.price<=49000))
+      break;
+    case 4:
+      nowList = nowList.filter((item)=> (item.price>49000 && item.price<=59000))
+      break;
+    case 5:
+      nowList = nowList.filter((item)=> (item.price>59000 && item.price<=79000))
+      break;
+    case 6:
+      nowList = nowList.filter((item)=> (item.price>79000))
+      break; 
+  }
 }
 

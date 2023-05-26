@@ -368,7 +368,7 @@
                 </div>
             </div>        
         </div><!-- ////filter_top -->
-        <p>구현된 기능: 정렬. 레이아웃 변경, 가격/스포츠 제외 필터 / 구현할 기능: 가격 필터.</p>
+        
         <div class="filter_bottom">
             <div class="filter_category">
                 <ul>
@@ -441,11 +441,12 @@
             <div class="filter_price">
                 <p class="tit">가격</p>
                 <div class="price_list">
-                    <label for="price_1"><input type="checkbox" id="price_1" value="39000">39,000 이하</label>
-                    <label for="price_2"><input type="checkbox" id="price_2" value="49000">39,000 ~ 49,000</label>
-                    <label for="price_3"><input type="checkbox" id="price_3" value="59000">49,000 ~ 59,000</label>
-                    <label for="price_4"><input type="checkbox" id="price_4" value="79000">59,000 ~ 79,000</label>
-                    <label for="price_5"><input type="checkbox" id="price_5" value="">79,000 초과</label>                    
+                    <label for="price_1"><input type="radio" name="price" id="price_1" value="1" checked="">전체</label>
+                    <label for="price_2"><input type="radio" name="price" id="price_2" value="2">39,000 이하</label>
+                    <label for="price_3"><input type="radio" name="price" id="price_3" value="3">39,000 ~ 49,000</label>
+                    <label for="price_4"><input type="radio" name="price" id="price_4" value="4">49,000 ~ 59,000</label>
+                    <label for="price_5"><input type="radio" name="price" id="price_5" value="5">59,000 ~ 79,000</label>
+                    <label for="price_6"><input type="radio" name="price" id="price_6" value="6">79,000 초과</label>                    
                 </div>
             </div><!-- ///price -->
             <div class="filter_gender">
