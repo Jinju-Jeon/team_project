@@ -2,6 +2,8 @@
 import menClothList  from "./data.js"
 
 const productList = document.querySelector('.product_list')
+const viewType = document.getElementsByName('view_type')
+
 let nowList = menClothList
 let state = 0
 
@@ -89,7 +91,6 @@ madeX.forEach((x,i)=>{
 
 
 //아이템 표시 방식(3,4)
-const viewType = document.getElementsByName('view_type')
 viewType[0].addEventListener('change',function(){ 
 let nowProduct = document.querySelectorAll('.product') 
   if(this){
@@ -307,10 +308,13 @@ function itemLoad(itemArray){
     
     return icon
   } 
+  
   for(let i in itemArray){
   
     const product = document.createElement('div')
     product.setAttribute('class','product')
+    
+    
   
     const href = document.createElement('a')
     href.setAttribute('href',itemArray[i].href)
@@ -351,7 +355,11 @@ function itemLoad(itemArray){
     href.append(itemTop,productCategory,productInfo)
   
   
-    productList.appendChild(product)
+    productList.appendChild(product)  
+
+    if(viewType[0].checked===true){
+      product.classList.add('v3')
+    }
   
   
   } //forEach

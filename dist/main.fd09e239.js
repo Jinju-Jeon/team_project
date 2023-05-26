@@ -378,6 +378,7 @@ function _createForOfIteratorHelper(o, allowArrayLike) { var it = typeof Symbol 
 function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
 function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i]; return arr2; }
 var productList = document.querySelector('.product_list');
+var viewType = document.getElementsByName('view_type');
 var nowList = _data.default;
 var state = 0;
 itemLoad(nowList);
@@ -452,7 +453,6 @@ madeX.forEach(function (x, i) {
 });
 
 //아이템 표시 방식(3,4)
-var viewType = document.getElementsByName('view_type');
 viewType[0].addEventListener('change', function () {
   var nowProduct = document.querySelectorAll('.product');
   if (this) {
@@ -638,6 +638,9 @@ function itemLoad(itemArray) {
     productInfo.append(infoName, infoPrice);
     href.append(itemTop, productCategory, productInfo);
     productList.appendChild(product);
+    if (viewType[0].checked === true) {
+      product.classList.add('v3');
+    }
   } //forEach
 
   if (itemArray.length === 0) {
@@ -843,7 +846,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56261" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57335" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];
