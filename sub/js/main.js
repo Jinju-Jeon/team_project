@@ -128,20 +128,20 @@ sortType.addEventListener('change',()=>{
 const colorChk = document.querySelectorAll('.filter_color input')
 colorChk.forEach((item)=>{
   item.addEventListener('click',()=>{
-    //전체 리스트 로드
+
     nowList = menClothList 
-  
-    //nowList에 기존 정렬 및 필터 적용
+
     productSort()
     sizeFilter()
-    genderFilter()
     priceFilter()
-    
-    //필터링
-    colorFilter()
+    genderFilter()
 
-    //필터링 완료된 nowList 적용
+    colorFilter()
     itemLoad(nowList)
+    
+
+
+
   })//aEL
 })//forEach
 
@@ -149,21 +149,16 @@ colorChk.forEach((item)=>{
 const sizeChk = document.querySelectorAll('.filter_size input')
 sizeChk.forEach((item)=>{
   item.addEventListener('click',()=>{
-    //전체 리스트 로드
-    nowList = menClothList 
+
+  nowList = menClothList 
+
+  productSort()
+  colorFilter()
+  priceFilter()
+  genderFilter()
   
-    //nowList에 기존 정렬 및 필터 필터 적용
-    productSort()
-    colorFilter()
-    genderFilter()
-    priceFilter()
-
-    //sizeFilter적용
-    sizeFilter()
-
-
-    //필터링 적용
-    itemLoad(nowList)
+  sizeFilter()
+  itemLoad(nowList)
  
     
   })
@@ -174,20 +169,14 @@ sizeChk.forEach((item)=>{
 const priceChk = document.getElementsByName('price')
 priceChk.forEach((item)=>{
   item.addEventListener('click',function(){
-    //전체 리스트 로드
     nowList = menClothList 
-  
-    //nowList에 기존 정렬 및 필터 필터 적용
+
     productSort()
     colorFilter()
-    genderFilter()
     sizeFilter()
+    genderFilter()
     
-    //sizeFilter적용
     priceFilter()
-
-
-    //필터링 적용
     itemLoad(nowList)
     
   })//aEL
@@ -201,14 +190,14 @@ priceChk.forEach((item)=>{
 const genderChk = document.querySelectorAll('.filter_gender input')
 genderChk.forEach((item)=>{
   item.addEventListener('click',function(){
-    
-    nowList = menClothList
-  
-    //nowList에 기존 정렬 및 필터 적용
+
+    nowList = menClothList 
+
     productSort()
     colorFilter()
     sizeFilter()
-
+    priceFilter()
+    
     genderFilter()
     itemLoad(nowList)
 

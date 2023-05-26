@@ -489,19 +489,12 @@ sortType.addEventListener('change', function () {
 var colorChk = document.querySelectorAll('.filter_color input');
 colorChk.forEach(function (item) {
   item.addEventListener('click', function () {
-    //전체 리스트 로드
     nowList = _data.default;
-
-    //nowList에 기존 정렬 및 필터 적용
     productSort();
     sizeFilter();
-    genderFilter();
     priceFilter();
-
-    //필터링
+    genderFilter();
     colorFilter();
-
-    //필터링 완료된 nowList 적용
     itemLoad(nowList);
   }); //aEL
 }); //forEach
@@ -510,19 +503,12 @@ colorChk.forEach(function (item) {
 var sizeChk = document.querySelectorAll('.filter_size input');
 sizeChk.forEach(function (item) {
   item.addEventListener('click', function () {
-    //전체 리스트 로드
     nowList = _data.default;
-
-    //nowList에 기존 정렬 및 필터 필터 적용
     productSort();
     colorFilter();
-    genderFilter();
     priceFilter();
-
-    //sizeFilter적용
+    genderFilter();
     sizeFilter();
-
-    //필터링 적용
     itemLoad(nowList);
   });
 });
@@ -531,19 +517,12 @@ sizeChk.forEach(function (item) {
 var priceChk = document.getElementsByName('price');
 priceChk.forEach(function (item) {
   item.addEventListener('click', function () {
-    //전체 리스트 로드
     nowList = _data.default;
-
-    //nowList에 기존 정렬 및 필터 필터 적용
     productSort();
     colorFilter();
-    genderFilter();
     sizeFilter();
-
-    //sizeFilter적용
+    genderFilter();
     priceFilter();
-
-    //필터링 적용
     itemLoad(nowList);
   }); //aEL
 }); ///forEach
@@ -553,11 +532,10 @@ var genderChk = document.querySelectorAll('.filter_gender input');
 genderChk.forEach(function (item) {
   item.addEventListener('click', function () {
     nowList = _data.default;
-
-    //nowList에 기존 정렬 및 필터 적용
     productSort();
     colorFilter();
     sizeFilter();
+    priceFilter();
     genderFilter();
     itemLoad(nowList);
   });
@@ -865,7 +843,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53833" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56261" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];
