@@ -250,13 +250,11 @@ var rankList2 = document.querySelectorAll('.rank_list2 li');
 var rankSlider1 = new Swiper(".rank_slider1", {
   slidesPerView: 'auto',
   slideToClickedSlide: true,
-  loop: true,
-  loopAdditionalSlides: 1,
-  /* autoplay: {
+  rewind: true,
+  autoplay: {
     delay: 3000,
-    disableOnInteraction: false,
-  },  */
-
+    disableOnInteraction: false
+  },
   on: {
     activeIndexChange: function activeIndexChange() {
       var _this = this;
@@ -265,6 +263,12 @@ var rankSlider1 = new Swiper(".rank_slider1", {
         if (i === _this.realIndex) {
           rank.classList.add('on');
         } //if
+
+        if (_this.realIndex == 5) {
+          setTimeout(function () {
+            rankSlider1.slideTo(0, 300, true);
+          }, 3000);
+        }
       }); //forEach
     } //activeIndex
   } //on    
@@ -272,18 +276,15 @@ var rankSlider1 = new Swiper(".rank_slider1", {
 
 rankList1.forEach(function (rank, i) {
   rank.addEventListener('click', function () {
-    rankSlider1.slideToLoop(i, 300, true);
+    rankSlider1.slideTo(i, 300, true);
   });
 });
-var rank1El = rankSlider1.el.querySelectorAll('.swiper-slide');
-//현재 이동한 슬라이더가 리스트 안에서 가장 마지막인 slider라면.. 뒤에 첫째를 append한다 < 이런걸 하고싶음
 
 //rankslider2
 var rankSlider2 = new Swiper(".rank_slider2", {
   slidesPerView: 'auto',
   slideToClickedSlide: true,
-  loop: true,
-  loopAdditionalSlides: 1,
+  rewind: true,
   autoplay: {
     delay: 3000,
     disableOnInteraction: false
@@ -296,6 +297,12 @@ var rankSlider2 = new Swiper(".rank_slider2", {
         if (i === _this2.realIndex) {
           rank.classList.add('on');
         } //if
+
+        if (_this2.realIndex == 5) {
+          setTimeout(function () {
+            rankSlider2.slideTo(0, 300, true);
+          }, 3000);
+        }
       }); //forEach
     } //activeIndex
   } //on    
@@ -303,7 +310,7 @@ var rankSlider2 = new Swiper(".rank_slider2", {
 
 rankList2.forEach(function (rank, i) {
   rank.addEventListener('click', function () {
-    rankSlider2.slideToLoop(i, 300, true);
+    rankSlider2.slideTo(i, 300, true);
   });
 });
 
@@ -391,7 +398,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61331" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "64379" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];

@@ -350,6 +350,7 @@ section, .header_inner, .footer_inner {
   margin: 0 auto;
   box-sizing: border-box;
   padding-top: 150px;
+  margin-bottom: 80px;
 }
 .banner .banner_bg {
   position: relative;
@@ -374,7 +375,7 @@ section, .header_inner, .footer_inner {
 /* filter */
 .filter {
   width: 1320px;
-  margin: 0 auto;
+  margin: 0 auto 100px;
 }
 .filter .filter_top {
   display: flex;
@@ -385,9 +386,11 @@ section, .header_inner, .footer_inner {
 .filter .filter_top .left button {
   border-right: 1px solid #aaa;
   padding-right: 10px;
+  font-size: 20px;
+  cursor: pointer;
 }
 .filter .filter_top .left button span {
-  font-size: 16px;
+  font-size: inherit;
   transform: translateY(3px);
 }
 .filter .filter_top .right {
@@ -424,6 +427,8 @@ section, .header_inner, .footer_inner {
 }
 .filter .filter_bottom {
   display: flex;
+  height: 0px;
+  overflow: hidden;
 }
 .filter .filter_bottom > div {
   padding: 0 15px;
@@ -526,20 +531,57 @@ section, .header_inner, .footer_inner {
 .filter .filter_bottom .filter_size input[type=checkbox] {
   display: none;
 }
-.filter .filter_bottom .filter_size .size_list {
+.filter .filter_bottom .filter_size input[type=checkbox]:nth-child(1):checked ~ .label_cover label:nth-child(1) {
+  border-color: #0E0057;
+  color: #0E0057;
+}
+.filter .filter_bottom .filter_size input[type=checkbox]:nth-child(2):checked ~ .label_cover label:nth-child(2) {
+  border-color: #0E0057;
+  color: #0E0057;
+}
+.filter .filter_bottom .filter_size input[type=checkbox]:nth-child(3):checked ~ .label_cover label:nth-child(3) {
+  border-color: #0E0057;
+  color: #0E0057;
+}
+.filter .filter_bottom .filter_size input[type=checkbox]:nth-child(4):checked ~ .label_cover label:nth-child(4) {
+  border-color: #0E0057;
+  color: #0E0057;
+}
+.filter .filter_bottom .filter_size input[type=checkbox]:nth-child(5):checked ~ .label_cover label:nth-child(5) {
+  border-color: #0E0057;
+  color: #0E0057;
+}
+.filter .filter_bottom .filter_size input[type=checkbox]:nth-child(6):checked ~ .label_cover label:nth-child(6) {
+  border-color: #0E0057;
+  color: #0E0057;
+}
+.filter .filter_bottom .filter_size input[type=checkbox]:nth-child(7):checked ~ .label_cover label:nth-child(7) {
+  border-color: #0E0057;
+  color: #0E0057;
+}
+.filter .filter_bottom .filter_size input[type=checkbox]:nth-child(8):checked ~ .label_cover label:nth-child(8) {
+  border-color: #0E0057;
+  color: #0E0057;
+}
+.filter .filter_bottom .filter_size input[type=checkbox]:nth-child(9):checked ~ .label_cover label:nth-child(9) {
+  border-color: #0E0057;
+  color: #0E0057;
+}
+.filter .filter_bottom .filter_size .size_list .label_cover {
   display: flex;
   flex-wrap: wrap;
 }
-.filter .filter_bottom .filter_size .size_list label {
+.filter .filter_bottom .filter_size .size_list .label_cover label {
   width: calc((100% - 30px) / 4);
   margin-right: 10px;
   margin-bottom: 10px;
   box-sizing: border-box;
-  border: 1px solid #aaa;
+  border: 1px solid #ccc;
+  color: #aaa;
   border-radius: 3px;
   text-align: center;
 }
-.filter .filter_bottom .filter_size .size_list label:nth-child(4n) {
+.filter .filter_bottom .filter_size .size_list .label_cover label:nth-child(4n) {
   margin-right: 0;
 }
 
@@ -617,6 +659,11 @@ section, .header_inner, .footer_inner {
 }
 .product_list .product .product_category {
   font-size: 14px;
+}
+.product_list .no_product {
+  padding: 100px 0 200px;
+  width: 100%;
+  text-align: center;
 }
 
 .page {

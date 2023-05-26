@@ -581,6 +581,10 @@ section, .footer_inner {
   width: 100%;
   margin-top: 0;
 }
+.ranking .rank_slider .swiper-slide:empty {
+  transition: 0;
+  height: 10px;
+}
 
 /********** mid_banner **********/
 .mid_banner .img {

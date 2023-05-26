@@ -1,7 +1,11 @@
+
 import menClothList  from "./data.js"
 
 const productList = document.querySelector('.product_list')
-itemLoad(menClothList)
+let nowList = menClothList
+let state = 0
+
+itemLoad(nowList)
 prE()
 
 
@@ -82,54 +86,20 @@ madeX.forEach((x,i)=>{
 
 
 
-//정렬기능
-const productSort = document.getElementById('product_sort')
-productSort.addEventListener('change',function(){
-  
-  const soldArray = _.orderBy(menClothList,['sold'],['desc'])
-  const lowPriceArray = _.sortBy(soldArray,['price'])
-  const highPriceArray = _.orderBy(menClothList,['price','sold'],['asc'])
 
-  
-
-  switch(productSort.selectedIndex){
-    case 0: 
-      itemLoad(menClothList)
-      break;
-    case 1:
-      itemLoad(soldArray)
-      soldArray.forEach((item,i)=>{
-        console.log(item.sold)
-      })
-      
-      break;
-    case 2:
-      itemLoad(lowPriceArray)
-      lowPriceArray.forEach((item,i)=>{
-        console.log('가격: '+item.price+'\t판매량: '+item.sold)
-      })
-      
-      break;
-    case 3:
-      itemLoad(highPriceArray.reverse())
-      highPriceArray.forEach((item,i)=>{
-        console.log('가격: '+item.price+'\t판매량: '+item.sold)
-      })
-
-  }
-})
 
 //아이템 표시 방식(3,4)
 const viewType = document.getElementsByName('view_type')
-let nowProduct = document.querySelectorAll('.product')
-viewType[0].addEventListener('change',function(){  
+viewType[0].addEventListener('change',function(){ 
+let nowProduct = document.querySelectorAll('.product') 
   if(this){
     nowProduct.forEach((item,i)=>{
       item.classList.add('v3')
     })//foreach
   }//if-else
 })
-viewType[1].addEventListener('change',function(){  
+viewType[1].addEventListener('change',function(){ 
+let nowProduct = document.querySelectorAll('.product') 
   if(this){
     nowProduct.forEach((item,i)=>{
       item.classList.remove('v3')
@@ -137,11 +107,105 @@ viewType[1].addEventListener('change',function(){
   }//if-else
 })
 
+//정렬 적용
+const sortType = document.getElementById('product_sort')
+sortType.addEventListener('change',()=>{
+  productSort()
+  itemLoad(nowList)
+
+})
+
+
+/* 
+전체 리스트 로드 > 정렬 적용 > 다른 필터 적용 
+>>전부true 혹은 전부 false인가? > 그대로 로드
+>>일부만 true인가? > 필터 적용
+*/
+
+
+/********** 필터링 **********/
 //컬러필터
 const colorChk = document.querySelectorAll('.filter_color input')
 colorChk.forEach((item)=>{
-  console.log(item.value)
+  item.addEventListener('click',()=>{
+    //전체 리스트 로드
+    nowList = menClothList 
+  
+    //nowList에 기존 정렬 및 필터 적용
+    productSort()
+    sizeFilter()
+    genderFilter()
+    
+    //필터링
+    colorFilter()
+
+    //필터링 완료된 nowList 적용
+    itemLoad(nowList)
+  })//aEL
+})//forEach
+
+//사이즈필터
+const sizeChk = document.querySelectorAll('.filter_size input')
+sizeChk.forEach((item)=>{
+  item.addEventListener('click',()=>{
+    //전체 리스트 로드
+    nowList = menClothList 
+  
+    //nowList에 기존 정렬 및 필터 필터 적용
+    productSort()
+    colorFilter()
+    genderFilter()
+
+    //sizeFilter적용
+    sizeFilter()
+
+    itemLoad(nowList)  
+    
+  })
 })
+
+
+
+//성별필터
+const genderChk = document.querySelectorAll('.filter_gender input')
+console.log(genderChk)
+genderChk.forEach((item)=>{
+  item.addEventListener('click',function(){
+    
+    nowList = menClothList
+  
+    //nowList에 기존 정렬 및 필터 적용
+    productSort()
+    colorFilter()
+    sizeFilter()
+
+    genderFilter()
+    itemLoad(nowList)
+
+
+  })
+})//forEach
+
+
+
+const filterToggle = document.getElementById('filter_toggle')
+const filterBottom = document.querySelector('.filter_bottom')
+
+let stateT = 0
+filterToggle.addEventListener('click',function(){
+  if(!stateT){
+    stateT = 1
+    this.innerHTML = '필터 닫기<span class="material-icons"> remove </span>'
+    gsap.to(filterBottom,0.3,{height: 400})
+
+
+  } else{
+    stateT = 0
+    this.innerHTML = '필터 열기<span class="material-icons"> add </span>'
+    gsap.to(filterBottom,0.3,{height: 0})
+  }
+})
+
 
 
 
@@ -191,8 +255,8 @@ scrollUD[1].addEventListener('click',()=>{
 
 
 
-//function
-//sub item 생성
+/********** function **********/
+
 function itemLoad(itemArray){
   productList.replaceChildren()
 
@@ -244,7 +308,7 @@ function itemLoad(itemArray){
     
     const productCategory = document.createElement('p')
     productCategory.setAttribute('class','product_category')
-    productCategory.appendChild(document.createTextNode(itemArray[i].category))
+    productCategory.appendChild(document.createTextNode(itemArray[i].gender))
     
     
     const productInfo = document.createElement('div')
@@ -272,12 +336,20 @@ function itemLoad(itemArray){
   
   
   } //forEach
+
+  if(itemArray.length===0){
+    const noP = document.createElement('p')
+    noP.setAttribute('class','no_product')
+    noP.textContent = '해당하는 상품이 없습니다.'
+    productList.appendChild(noP)
+  }
   
   prE()
 
 }
+//sub item 생성
 
-//a태그 이동 방지
+
 function prE(){
   const elCart = document.querySelectorAll('.cart_btn')
   const elHeart = document.querySelectorAll('.heart_btn')
@@ -294,7 +366,7 @@ function prE(){
       })
   }
 
-}
+}//a태그 이동 방지
 
 function makeSearch(){searchAll.forEach((searchItem,i)=>{
   const listCover = searchList[i]
@@ -311,4 +383,108 @@ function makeSearch(){searchAll.forEach((searchItem,i)=>{
     listCover.appendChild(list)
   })
 })
+}//Search란 함수
+
+
+function productSort(){
+  
+  const soldArray = _.orderBy(nowList,['sold'],['desc'])
+  const lowPriceArray = _.sortBy(soldArray,['price'])
+  const highPriceArray = _.orderBy(soldArray,['price'],['desc'])
+
+  
+
+  switch(sortType.selectedIndex){
+    case 0: 
+      nowList = _.sortBy(nowList,['id'])
+      break;
+    case 1:
+      nowList = soldArray
+      
+      break;
+    case 2:
+      nowList = lowPriceArray
+      
+      break;
+    case 3:
+      nowList = highPriceArray
+
+  }//switch-case
+}//정렬적용
+
+
+
+function allChk(array){
+  if(array.length===2){
+    if(array[0].checked===array[1].checked){state = 1}
+    else{state=0}
+
+    return
+  } //2일때(전체에서 왜 안 먹지)
+
+  for(let i=0;i<array.length-1;i++){
+    if(array[i].checked !== array[i+1].checked){
+      state=0;
+      break;
+    } else{state = 1}    
+  }//for
+
+}//전체체크확인
+
+function colorFilter(){ 
+
+  //전체체크여부확인
+  allChk(colorChk)
+
+  //아닐시 nowList 변경
+  if(state===0){
+    nowList = nowList.filter(function(item){
+      let chk = document.querySelector('input[value='+item.color+']')
+      return chk.checked == true
+    })//filter
+  } //if
+
+}//colorFilter
+
+
+function sizeFilter(){
+  //전체체크여부확인
+  allChk(sizeChk)
+
+  //아닐시 nowList 변경
+  if(state===0){
+    nowList = nowList.filter(function(product){
+      let size = product.size
+      for(let i=0;i<size.length;i++){
+        let chk = document.querySelector('input[value="'+size[i]+'"]')
+        if(chk.checked==true){
+          return true
+        }
+      }//for 끝
+      return false      
+    })//filter
+  } //if
+
 }
+
+function genderFilter(){
+  //전체로드
+
+  allChk(genderChk)
+
+  if(state===0){
+    nowList = nowList.filter(function(product){
+      let chk = document.querySelector('input[value='+product.gender+']')
+        if(chk.checked===true){
+          return true
+        } else {return false} //return
+
+    })//filter
+  }//if
+
+  
+
+
+
+}
+

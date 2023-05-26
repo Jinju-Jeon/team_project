@@ -124,12 +124,12 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = void 0;
-var cat = ['공용', '남성', '여성'];
+var gender = ['공용', '남성', '여성'];
 var color = ['white', 'black', 'blue', 'gray', 'pink', 'red', 'yellow'];
 var menClothList = [{
   id: 'men01',
   src: './img/men01.jpg',
-  category: cat[0],
+  gender: gender[1],
   name: '핫써머 씨어서커 우븐반바지',
   price: 69000,
   href: '#!',
@@ -139,7 +139,7 @@ var menClothList = [{
 }, {
   id: 'men02',
   src: './img/men02.jpg',
-  category: cat[0],
+  gender: gender[0],
   name: '핫써머 씨어서커 아노락 바람막이',
   price: 119000,
   href: '#!',
@@ -149,7 +149,7 @@ var menClothList = [{
 }, {
   id: 'men03',
   src: './img/men03.jpg',
-  category: cat[0],
+  gender: gender[1],
   name: '컴포트핏 인터내셔널 반팔 카라티',
   price: 69000,
   href: '#!',
@@ -159,7 +159,7 @@ var menClothList = [{
 }, {
   id: 'men04',
   src: './img/men04.jpg',
-  category: cat[0],
+  gender: gender[0],
   name: '핫써머 씨어서커 아노락 바람막이',
   price: 119000,
   href: '#!',
@@ -169,7 +169,7 @@ var menClothList = [{
 }, {
   id: 'men05',
   src: './img/men05.jpg',
-  category: cat[0],
+  gender: gender[1],
   name: '핫써머 사이드프린트 우븐 반바지',
   price: 69000,
   href: '#!',
@@ -179,7 +179,7 @@ var menClothList = [{
 }, {
   id: 'men06',
   src: './img/men06.jpg',
-  category: cat[0],
+  gender: gender[0],
   name: '핫써머 모노그램 우븐 반바지',
   price: 79000,
   href: '#!',
@@ -189,7 +189,7 @@ var menClothList = [{
 }, {
   id: 'men07',
   src: './img/men07.jpg',
-  category: cat[0],
+  gender: gender[0],
   name: '컴포트핏 인터내셔널 6부 반바지',
   price: 59000,
   href: '#!',
@@ -199,7 +199,7 @@ var menClothList = [{
 }, {
   id: 'men08',
   src: './img/men08.jpg',
-  category: cat[0],
+  gender: gender[1],
   name: '페스타 그래픽 티셔츠',
   price: 49000,
   href: '#!',
@@ -209,7 +209,7 @@ var menClothList = [{
 }, {
   id: 'men09',
   src: './img/men09.jpg',
-  category: cat[0],
+  gender: gender[0],
   name: '레터링 그래픽 티셔츠',
   price: 49000,
   href: '#!',
@@ -219,7 +219,7 @@ var menClothList = [{
 }, {
   id: 'men10',
   src: './img/men10.jpg',
-  category: cat[0],
+  gender: gender[1],
   name: '레코드 그래픽 티셔츠',
   price: 59000,
   href: '#!',
@@ -229,7 +229,7 @@ var menClothList = [{
 }, {
   id: 'men11',
   src: './img/men11.jpg',
-  category: cat[0],
+  gender: gender[1],
   name: 'havefun 그래픽 티셔츠',
   price: 49000,
   href: '#!',
@@ -239,7 +239,7 @@ var menClothList = [{
 }, {
   id: 'men12',
   src: './img/men12.jpg',
-  category: cat[0],
+  gender: gender[0],
   name: '컴포트핏 인터내셔널 우븐 후드티',
   price: 119000,
   href: '#!',
@@ -249,27 +249,27 @@ var menClothList = [{
 }, {
   id: 'men13',
   src: './img/men13.jpg',
-  category: cat[0],
+  gender: gender[1],
   name: '컴포트핏 인터내셔널 우븐 후드티',
   price: 119000,
   href: '#!',
   sold: 23,
-  color: color[4],
+  color: color[5],
   size: [90, 95, 100, 105]
 }, {
   id: 'men14',
   src: './img/men14.jpg',
-  category: cat[0],
+  gender: gender[0],
   name: '컴포트핏 인터내셔널 우븐 후드티',
   price: 119000,
   href: '#!',
   sold: 22,
-  color: color[5],
+  color: color[6],
   size: [85, 90, 95, 100]
 }, {
   id: 'men15',
   src: './img/men15.jpg',
-  category: cat[0],
+  gender: gender[1],
   name: '컴포트핏 인터내셔널 우븐 후드티',
   price: 119000,
   href: '#!',
@@ -279,7 +279,7 @@ var menClothList = [{
 }, {
   id: 'men16',
   src: './img/men16.jpg',
-  category: cat[0],
+  gender: gender[0],
   name: '컴포트핏 인터내셔널 스몰로고 카라티',
   price: 79000,
   href: '#!',
@@ -289,7 +289,7 @@ var menClothList = [{
 }, {
   id: 'men17',
   src: './img/men17.jpg',
-  category: cat[0],
+  gender: gender[0],
   name: '컴포트핏 플래그 반팔티',
   price: 39000,
   href: '#!',
@@ -299,7 +299,7 @@ var menClothList = [{
 }, {
   id: 'men18',
   src: './img/men18.jpg',
-  category: cat[0],
+  gender: gender[1],
   name: '컴포트핏 플래그 반팔티',
   price: 39000,
   href: '#!',
@@ -309,7 +309,7 @@ var menClothList = [{
 }, {
   id: 'men19',
   src: './img/men19.jpg',
-  category: cat[0],
+  gender: gender[0],
   name: '컴포트핏 플래그 반팔티',
   price: 39000,
   href: '#!',
@@ -319,7 +319,7 @@ var menClothList = [{
 }, {
   id: 'men20',
   src: './img/men20.jpg',
-  category: cat[0],
+  gender: gender[1],
   name: '컴포트핏 마인드블로어 반팔티',
   price: 39000,
   href: '#!',
@@ -329,7 +329,7 @@ var menClothList = [{
 }, {
   id: 'men21',
   src: './img/men21.jpg',
-  category: cat[1],
+  gender: gender[1],
   name: '핫써머 모노그램 나시티',
   price: 49000,
   href: '#!',
@@ -339,7 +339,7 @@ var menClothList = [{
 }, {
   id: 'men22',
   src: './img/men22.jpg',
-  category: cat[1],
+  gender: gender[1],
   name: '핫써머 우븐 포켓 반바지',
   price: 69000,
   href: '#!',
@@ -349,7 +349,7 @@ var menClothList = [{
 }, {
   id: 'men23',
   src: './img/men23.jpg',
-  category: cat[0],
+  gender: gender[0],
   name: '핫써머 씨어서커 우븐반바지',
   price: 69000,
   href: '#!',
@@ -359,7 +359,7 @@ var menClothList = [{
 }, {
   id: 'men24',
   src: './img/men24.jpg',
-  category: cat[0],
+  gender: gender[0],
   name: '핫써머 씨어서커 아노락 바람막이',
   price: 119000,
   href: '#!',
@@ -378,7 +378,9 @@ function _createForOfIteratorHelper(o, allowArrayLike) { var it = typeof Symbol 
 function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
 function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i]; return arr2; }
 var productList = document.querySelector('.product_list');
-itemLoad(_data.default);
+var nowList = _data.default;
+var state = 0;
+itemLoad(nowList);
 prE();
 
 /* scroll-event */
@@ -449,40 +451,10 @@ madeX.forEach(function (x, i) {
   });
 });
 
-//정렬기능
-var productSort = document.getElementById('product_sort');
-productSort.addEventListener('change', function () {
-  var soldArray = _.orderBy(_data.default, ['sold'], ['desc']);
-  var lowPriceArray = _.sortBy(soldArray, ['price']);
-  var highPriceArray = _.orderBy(_data.default, ['price', 'sold'], ['asc']);
-  switch (productSort.selectedIndex) {
-    case 0:
-      itemLoad(_data.default);
-      break;
-    case 1:
-      itemLoad(soldArray);
-      soldArray.forEach(function (item, i) {
-        console.log(item.sold);
-      });
-      break;
-    case 2:
-      itemLoad(lowPriceArray);
-      lowPriceArray.forEach(function (item, i) {
-        console.log('가격: ' + item.price + '\t판매량: ' + item.sold);
-      });
-      break;
-    case 3:
-      itemLoad(highPriceArray.reverse());
-      highPriceArray.forEach(function (item, i) {
-        console.log('가격: ' + item.price + '\t판매량: ' + item.sold);
-      });
-  }
-});
-
 //아이템 표시 방식(3,4)
 var viewType = document.getElementsByName('view_type');
-var nowProduct = document.querySelectorAll('.product');
 viewType[0].addEventListener('change', function () {
+  var nowProduct = document.querySelectorAll('.product');
   if (this) {
     nowProduct.forEach(function (item, i) {
       item.classList.add('v3');
@@ -491,6 +463,7 @@ viewType[0].addEventListener('change', function () {
 });
 
 viewType[1].addEventListener('change', function () {
+  var nowProduct = document.querySelectorAll('.product');
   if (this) {
     nowProduct.forEach(function (item, i) {
       item.classList.remove('v3');
@@ -498,10 +471,91 @@ viewType[1].addEventListener('change', function () {
   } //if-else
 });
 
+//정렬 적용
+var sortType = document.getElementById('product_sort');
+sortType.addEventListener('change', function () {
+  productSort();
+  itemLoad(nowList);
+});
+
+/* 
+전체 리스트 로드 > 정렬 적용 > 다른 필터 적용 
+>>전부true 혹은 전부 false인가? > 그대로 로드
+>>일부만 true인가? > 필터 적용
+*/
+
+/********** 필터링 **********/
 //컬러필터
 var colorChk = document.querySelectorAll('.filter_color input');
 colorChk.forEach(function (item) {
-  console.log(item.value);
+  item.addEventListener('click', function () {
+    //전체 리스트 로드
+    nowList = _data.default;
+
+    //nowList에 기존 정렬 및 필터 적용
+    productSort();
+    sizeFilter();
+    genderFilter();
+
+    //필터링
+    colorFilter();
+
+    //필터링 완료된 nowList 적용
+    itemLoad(nowList);
+  }); //aEL
+}); //forEach
+
+//사이즈필터
+var sizeChk = document.querySelectorAll('.filter_size input');
+sizeChk.forEach(function (item) {
+  item.addEventListener('click', function () {
+    //전체 리스트 로드
+    nowList = _data.default;
+
+    //nowList에 기존 정렬 및 필터 필터 적용
+    productSort();
+    colorFilter();
+    genderFilter();
+
+    //sizeFilter적용
+    sizeFilter();
+    itemLoad(nowList);
+  });
+});
+
+//성별필터
+var genderChk = document.querySelectorAll('.filter_gender input');
+console.log(genderChk);
+genderChk.forEach(function (item) {
+  item.addEventListener('click', function () {
+    nowList = _data.default;
+
+    //nowList에 기존 정렬 및 필터 적용
+    productSort();
+    colorFilter();
+    sizeFilter();
+    genderFilter();
+    itemLoad(nowList);
+  });
+}); //forEach
+
+var filterToggle = document.getElementById('filter_toggle');
+var filterBottom = document.querySelector('.filter_bottom');
+var stateT = 0;
+filterToggle.addEventListener('click', function () {
+  if (!stateT) {
+    stateT = 1;
+    this.innerHTML = '필터 닫기<span class="material-icons"> remove </span>';
+    gsap.to(filterBottom, 0.3, {
+      height: 400
+    });
+  } else {
+    stateT = 0;
+    this.innerHTML = '필터 열기<span class="material-icons"> add </span>';
+    gsap.to(filterBottom, 0.3, {
+      height: 0
+    });
+  }
 });
 
 //hover효과
@@ -532,8 +586,8 @@ scrollUD[1].addEventListener('click', function () {
   });
 });
 
-//function
-//sub item 생성
+/********** function **********/
+
 function itemLoad(itemArray) {
   productList.replaceChildren();
   var makeIcon = function makeIcon() {
@@ -569,7 +623,7 @@ function itemLoad(itemArray) {
     itemTop.append(productImg, makeIcon());
     var productCategory = document.createElement('p');
     productCategory.setAttribute('class', 'product_category');
-    productCategory.appendChild(document.createTextNode(itemArray[i].category));
+    productCategory.appendChild(document.createTextNode(itemArray[i].gender));
     var productInfo = document.createElement('div');
     productInfo.setAttribute('class', 'product_info');
     var infoName = document.createElement('p');
@@ -584,10 +638,16 @@ function itemLoad(itemArray) {
     productList.appendChild(product);
   } //forEach
 
+  if (itemArray.length === 0) {
+    var noP = document.createElement('p');
+    noP.setAttribute('class', 'no_product');
+    noP.textContent = '해당하는 상품이 없습니다.';
+    productList.appendChild(noP);
+  }
   prE();
 }
+//sub item 생성
 
-//a태그 이동 방지
 function prE() {
   var elCart = document.querySelectorAll('.cart_btn');
   var elHeart = document.querySelectorAll('.heart_btn');
@@ -619,7 +679,8 @@ function prE() {
   } finally {
     _iterator2.f();
   }
-}
+} //a태그 이동 방지
+
 function makeSearch() {
   searchAll.forEach(function (searchItem, i) {
     var listCover = searchList[i];
@@ -634,6 +695,93 @@ function makeSearch() {
       listCover.appendChild(list);
     });
   });
+} //Search란 함수
+
+function productSort() {
+  var soldArray = _.orderBy(nowList, ['sold'], ['desc']);
+  var lowPriceArray = _.sortBy(soldArray, ['price']);
+  var highPriceArray = _.orderBy(soldArray, ['price'], ['desc']);
+  switch (sortType.selectedIndex) {
+    case 0:
+      nowList = _.sortBy(nowList, ['id']);
+      break;
+    case 1:
+      nowList = soldArray;
+      break;
+    case 2:
+      nowList = lowPriceArray;
+      break;
+    case 3:
+      nowList = highPriceArray;
+  } //switch-case
+} //정렬적용
+
+function allChk(array) {
+  if (array.length === 2) {
+    if (array[0].checked === array[1].checked) {
+      state = 1;
+    } else {
+      state = 0;
+    }
+    return;
+  } //2일때(전체에서 왜 안 먹지)
+
+  for (var i = 0; i < array.length - 1; i++) {
+    if (array[i].checked !== array[i + 1].checked) {
+      state = 0;
+      break;
+    } else {
+      state = 1;
+    }
+  } //for
+} //전체체크확인
+
+function colorFilter() {
+  //전체체크여부확인
+  allChk(colorChk);
+
+  //아닐시 nowList 변경
+  if (state === 0) {
+    nowList = nowList.filter(function (item) {
+      var chk = document.querySelector('input[value=' + item.color + ']');
+      return chk.checked == true;
+    }); //filter
+  } //if
+} //colorFilter
+
+function sizeFilter() {
+  //전체체크여부확인
+  allChk(sizeChk);
+
+  //아닐시 nowList 변경
+  if (state === 0) {
+    nowList = nowList.filter(function (product) {
+      var size = product.size;
+      for (var i = 0; i < size.length; i++) {
+        var chk = document.querySelector('input[value="' + size[i] + '"]');
+        if (chk.checked == true) {
+          return true;
+        }
+      } //for 끝
+      return false;
+    }); //filter
+  } //if
+}
+
+function genderFilter() {
+  //전체로드
+
+  allChk(genderChk);
+  if (state === 0) {
+    nowList = nowList.filter(function (product) {
+      var chk = document.querySelector('input[value=' + product.gender + ']');
+      if (chk.checked === true) {
+        return true;
+      } else {
+        return false;
+      } //return
+    }); //filter
+  } //if
 }
 },{"./data.js":"sub/js/data.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
@@ -660,7 +808,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61331" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "64379" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];

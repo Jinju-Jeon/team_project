@@ -324,10 +324,13 @@ section,.header_inner,.footer_inner{@include secWidth;}
     @include secWidth();
 
     padding-top: 150px;
+    margin-bottom: 80px;
+
     .banner_bg{
         position: relative;
         padding: 10px;
         height: 180px;
+        
     
         background: {
             image: url(./img/men_banner.jpg);
@@ -352,7 +355,7 @@ section,.header_inner,.footer_inner{@include secWidth;}
 
 /* filter */
 .filter{
-    width: 1320px; margin: 0 auto;
+    width: 1320px; margin: 0 auto 100px;
     .filter_top{
         @include flexSB();
         align-items: center;
@@ -361,7 +364,9 @@ section,.header_inner,.footer_inner{@include secWidth;}
         .left button{
             border-right: 1px solid #aaa;
             padding-right: 10px;
-            span{font-size: 16px; transform: translateY(3px);}
+            font-size: 20px;
+            cursor: pointer;
+            span{font-size: inherit; transform: translateY(3px);}
         }
         .right{
             display: flex;
@@ -395,6 +400,9 @@ section,.header_inner,.footer_inner{@include secWidth;}
 
     .filter_bottom{
         display: flex;
+        height: 0px;
+        overflow: hidden;
+
         >div{
             padding: 0 15px;
             box-sizing: border-box;
@@ -460,7 +468,15 @@ section,.header_inner,.footer_inner{@include secWidth;}
 
         .filter_size{
             input[type=checkbox]{display: none;}
-            .size_list{
+            
+            @for $i from 1 through 9{
+                input[type=checkbox]:nth-child(#{$i}):checked ~ .label_cover label:nth-child(#{$i}){
+                    border-color: $mainC;
+                    color: $mainC;
+                }
+            }
+
+            .size_list .label_cover{
                 display: flex;
                 flex-wrap: wrap;
                 label{
@@ -469,16 +485,19 @@ section,.header_inner,.footer_inner{@include secWidth;}
                     margin-bottom: 10px;
 
                     box-sizing: border-box;
-                    border: 1px solid #aaa; 
+                    border: 1px solid #ccc; 
+                    color: #aaa;
                     border-radius: 3px;
 
                     text-align: center;
 
                     &:nth-child(4n){margin-right: 0;}
                 }
-            }
+            }//label_cover
 
-        }
+        }//filter_size
+
+
 
     }//filter_bottom
 }//filter
@@ -568,6 +587,13 @@ section,.header_inner,.footer_inner{@include secWidth;}
 
         
     }//product    
+
+    .no_product{
+        padding: 100px 0 200px;
+        width: 100%;
+        text-align: center;
+    }
+
 }//product_list
 
 

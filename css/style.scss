@@ -538,6 +538,11 @@ section,.footer_inner{
                 img{opacity: 1; width: 100%; margin-top: 0;}
             }
 
+            &:empty{
+                transition: 0;
+                height: 10px;
+            }
+
             
         }//swiper_slide
 

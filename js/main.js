@@ -165,13 +165,12 @@ const rankList2 = document.querySelectorAll('.rank_list2 li')
 const rankSlider1 = new Swiper(".rank_slider1", {
     slidesPerView: 'auto',
     slideToClickedSlide: true,
-    loop: true,
-    loopAdditionalSlides: 1,
+    rewind: true,
 
-    /* autoplay: {
+    autoplay: {
       delay: 3000,
       disableOnInteraction: false,
-    },  */
+    },
 
     on: {
       activeIndexChange: function(){
@@ -181,40 +180,35 @@ const rankSlider1 = new Swiper(".rank_slider1", {
             rank.classList.add('on')            
           } //if
 
+
+          if(this.realIndex == 5){
+            setTimeout(function(){
+              rankSlider1.slideTo(0,300,true) 
+            },3000)
+            
+          }
+
         })//forEach
       }//activeIndex
     }//on    
   });
-
 rankList1.forEach((rank,i)=>{
   rank.addEventListener('click',function(){
-    rankSlider1.slideToLoop(i,300,true) 
-    
+    rankSlider1.slideTo(i,300,true)     
   })
 })
-
-let rank1El = rankSlider1.el.querySelectorAll('.swiper-slide')
-//현재 이동한 슬라이더가 리스트 안에서 가장 마지막인 slider라면.. 뒤에 첫째를 append한다 < 이런걸 하고싶음
-
-
-
-
-
-
-
 
 
 //rankslider2
 const rankSlider2 = new Swiper(".rank_slider2", {
   slidesPerView: 'auto',
   slideToClickedSlide: true,
-  loop: true,
-  loopAdditionalSlides: 1,
+  rewind: true,
 
   autoplay: {
     delay: 3000,
     disableOnInteraction: false,
-  }, 
+  },
 
   on: {
     activeIndexChange: function(){
@@ -224,19 +218,24 @@ const rankSlider2 = new Swiper(".rank_slider2", {
           rank.classList.add('on')            
         } //if
 
+
+        if(this.realIndex == 5){
+          setTimeout(function(){
+            rankSlider2.slideTo(0,300,true) 
+          },3000)
+          
+        }
+
       })//forEach
     }//activeIndex
   }//on    
 });
+
 rankList2.forEach((rank,i)=>{
-  rank.addEventListener('click',function(){
-    rankSlider2.slideToLoop(i,300,true)
-  })
+rank.addEventListener('click',function(){
+  rankSlider2.slideTo(i,300,true)     
 })
-
-
-
-
+})
 
 
 /* recom */
