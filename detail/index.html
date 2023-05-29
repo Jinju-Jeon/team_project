@@ -351,7 +351,7 @@
                 <div class="img"><img src="./img/product_img1.jpg" alt="핫써머 씨어서커 아노락 바람막이"></div>
             </div>
             <div class="ev_banner">
-                여기에 뭔가 배너를 넣기
+                <a href="#!"><img src="./img/ev_banner.jpg" alt="fila 이벤트"></a>
             </div>
         </div>
         
@@ -362,6 +362,7 @@
                     <li>라이프스타일</li>
                 </ul>
                 <h2 class="tit">핫써머 씨어서커 아노락 바람막이</h2>
+                <h4 class="price">119,000원</h4>
                 <p class="desc">
                     여름철 시원하게 착용할 수 있는 통기성이 우수한 경량 씨어서커 소재를 사용했습니다.
                     앞판 빅 포켓 디테일로 캐주얼한 무드로 착장이 가능합니다.
@@ -370,19 +371,57 @@
                 </p>
             </div><!-- name  -->
             <div class="color_opt">
-                <h4></h4>
+                <h4 class="opt_tit">색상</h4>
                 <ul>
                     <li class="now"><img src="./img/thum02.jpg" alt="cobalt"></li>
                     <li><img src="./img/color_opt2.jpg" alt="white"></li>
                 </ul>
             </div>
             <div class="size_opt">
-                <label for="size1"></label><input type="radio" name="size" id="size1">
-                <label for="size2"></label><input type="radio" name="size" id="size2">
-                <label for="size3"></label><input type="radio" name="size" id="size3">
+                <h4 class="opt_tit">사이즈</h4>
+                <div class="label_cover">                
+                <input type="radio" name="size" id="size1">
+                <input type="radio" name="size" id="size2">
+                <input type="radio" name="size" id="size3">
+                    <div class="labels">
+                        <label for="size1">095(M)</label>
+                        <label for="size2">100(L)</label>
+                        <label for="size3">105(XL)</label>
+                    </div>
+                </div> <!-- label_cover -->
             </div>
-        </div>
+            <div class="qunt_opt">
+                <button type="button" id="qunt_minus">-</button>
+                <input type="number" id="qunt" value="1">
+                <button type="button" id="qunt_plut">+</button>
+            </div>
+        </div><!-- top_right -->
     </div><!-- info_top -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -504,7 +543,7 @@
         </div>
     </footer>
 
-    <div class="quick">
+    <div class="quick" style="display: none;">
         <ul class="quick_top">
             <li>
                 <span class="material-icons"> person </span>
