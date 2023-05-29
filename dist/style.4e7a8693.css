@@ -356,7 +356,7 @@ section, .header_inner, .footer_inner {
   position: relative;
   padding: 10px;
   height: 180px;
-  background-image: url(./men_banner.81470bc1.jpg);
+  background-image: url(/men_banner.81470bc1.jpg);
   background-size: cover;
   background-position: bottom;
   background-repeat: no-repeat;
@@ -508,25 +508,25 @@ section, .header_inner, .footer_inner {
   line-height: 23px;
 }
 .filter .filter_bottom .filter_color .color_list label:nth-child(1) {
-  background-image: url(./color_1.3b692af7.jpg);
+  background-image: url(/color_1.3b692af7.jpg);
 }
 .filter .filter_bottom .filter_color .color_list label:nth-child(2) {
-  background-image: url(./color_2.b6a385da.jpg);
+  background-image: url(/color_2.b6a385da.jpg);
 }
 .filter .filter_bottom .filter_color .color_list label:nth-child(3) {
-  background-image: url(./color_3.c18f7ed8.jpg);
+  background-image: url(/color_3.c18f7ed8.jpg);
 }
 .filter .filter_bottom .filter_color .color_list label:nth-child(4) {
-  background-image: url(./color_4.fe84e523.jpg);
+  background-image: url(/color_4.fe84e523.jpg);
 }
 .filter .filter_bottom .filter_color .color_list label:nth-child(5) {
-  background-image: url(./color_5.b35a11cd.jpg);
+  background-image: url(/color_5.b35a11cd.jpg);
 }
 .filter .filter_bottom .filter_color .color_list label:nth-child(6) {
-  background-image: url(./color_6.6d7d3518.jpg);
+  background-image: url(/color_6.6d7d3518.jpg);
 }
 .filter .filter_bottom .filter_color .color_list label:nth-child(7) {
-  background-image: url(./color_7.2df19a5e.jpg);
+  background-image: url(/color_7.2df19a5e.jpg);
 }
 .filter .filter_bottom .filter_size input[type=checkbox] {
   display: none;
