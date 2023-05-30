@@ -20,7 +20,13 @@
     <link rel="stylesheet" href="./css/style.scss">
 </head>
 
+<!-- 
+    npm uninstall parcel-bundler
+    npm i --save-dev parcel-bundler@1.12.3
+    gitignore재추가해주기!!!
 
+    해줘야함!
+ -->
 <body>
     <header class="header top">
         <div class="header_inner">
@@ -403,13 +409,13 @@
         <input type="radio" name="mid_btn" id="mid_tab1" checked>
         <input type="radio" name="mid_btn" id="mid_tab2">
         <input type="radio" name="mid_btn" id="mid_tab3">
-        <div class="mid_labels tab_label">
+        <div class="mid_labels tab_labels">
             <label for="mid_tab1">상품 정보</label>
             <label for="mid_tab2">배송 정보</label>
             <label for="mid_tab3">교환 및 반품</label>
         </div>
         <div class="mid_tabs">
-            <div class="mid_tab notice">
+            <div class="notice">
                 <div class="notice_info">
                     <h4 class="mid_tit">상품 정보</h4>
                     <div class="graph img">
@@ -496,10 +502,10 @@
                     </dl>
                 </div><!-- //notice_detail -->
             </div>
-            <div class="mid_tab delivery">
+            <div class="delivery">
                 오늘도착/배송사/배송기간/배송비 etc
             </div>
-            <div class="mid_tab exchange">
+            <div class="exchange">
                 교환/반품. 신청 방법 및 유의사항 etc
             </div>
         </div><!-- ////mid_tabs -->
@@ -510,7 +516,7 @@
     <section class="info_bottom">
         <input type="radio" name="bottom_btn" id="bottom_tab1" checked>
         <input type="radio" name="bottom_btn" id="bottom_tab2">
-        <div class="bottom_labels tab_label">
+        <div class="bottom_labels tab_labels">
             <label for="bottom_tab1">상품 리뷰</label>
             <label for="bottom_tab2">상품 문의</label>
         </div>
