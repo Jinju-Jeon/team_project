@@ -9,7 +9,7 @@ h1, h2, h3, h4, h5, h6{font-weight: normal; font-size: inherit;}
 .img{position: relative;}
 a{display: block;}
 img{display: block; width: 100%; height: auto;}
-button{background: none; border: none; display: block;}
+button{background: none; border: none; display: block; cursor: pointer;}
 
 
 /* 양식 통일용 */
@@ -42,7 +42,7 @@ $mainC: #0E0057;
 @mixin flexSB{display: flex; justify-content: space-between;}
 
 section,.header_inner,.footer_inner{@include secWidth;}
-section{margin-bottom: 80px;}
+section{margin-bottom: 150px;}
 .footer_inner{
     padding: 80px 10px;
     box-sizing: border-box;
@@ -409,7 +409,6 @@ section{margin-bottom: 80px;}
 
             @for $i from 1 through 3{
                 input[type=radio]:nth-child(#{$i}):checked ~ .labels label:nth-child(#{$i}){
-                    font-weight: bold;
                     color: $mainC;
                     border-color: $mainC;
                 }
@@ -444,10 +443,33 @@ section{margin-bottom: 80px;}
         input[type=radio]:nth-child(#{$i}):checked ~ .mid_tabs>div:nth-child(#{$i}){display: block;}
         input[type=radio]:nth-child(#{$i}):checked ~ .mid_labels>label:nth-child(#{$i}){background-color: $mainC; color: #fff;}
     }
+
+    dl{
+        display: flex;
+        width: 100%;
+        font-size: 14px;
+        border-bottom: 1px solid #ccc;
+        padding: 20px 0;
+        &:first-child{border-top: 1px solid #ccc;}
+        dt{
+            width: 270px; 
+            font-weight: bold;
+            text-align: center; 
+        }//dt
+        dd{
+            line-height: 1.8;
+            ul{
+                li{
+                    &::before{
+                        content: "·";
+                        margin-right: 3px;
+                    }
+                }
+            }
+        }//dd
+    }//dl
     
-    
-    
-    
+
     .mid_tabs{
         >div{display: none;}
     }
@@ -483,31 +505,78 @@ section{margin-bottom: 80px;}
                 
             }//table
         }//notice_size
+        
 
         .notice_detail{
-            dl{
-                display: flex;
-                width: 740px;
-                font-size: 14px;
-                border-bottom: 1px solid #ccc;
-                &:first-child{border-top: 1px solid #ccc;}
-                dt{
-                    width: 270px; height: 50px;
-                    text-align: center; line-height: 50px;
-                }
-                dd{
-                    width: 570px; height: 50px;
-                    line-height: 50px;
-                }
-            }
+            dl{width: 820px;}
         }//notice_detail
 
 
 
     }//notice
+
+    .delivery{
+        .today{
+            padding: 20px 10px;
+            border-radius: 5px;
+            background-color: #eee;
+            margin-bottom: 5px;
+        }
+
+    }
+
+    .exchange{
+        .exchange_top{
+            height: 100px;
+            @include flexSB();
+            align-items: center;
+            border-top: 1px solid #ccc;
+            p{
+                font-weight: bold;
+            }
+            a{
+                border: 1px solid #333;
+                padding: 15px;
+                border-radius: 100px;
+            }
+        }
+    }
 }
 
 
+
+
+/********** bottom **********/
+.info_bottom{
+    input[type=radio]{display: none;}
+    @for $i from 1 through 2{
+        input[type=radio]:nth-child(#{$i}):checked ~ .bottom_tabs>div:nth-child(#{$i}){display: block;}
+        input[type=radio]:nth-child(#{$i}):checked ~ .bottom_labels>label:nth-child(#{$i}){background-color: $mainC; color: #fff;}
+    }//for
+
+    .bottom_tabs>div{display: none;}
+    .bottom_tit{font-size: 24px; font-weight: bold; margin: 50px 0 10px;}
+
+    .review{
+        .review_top{
+            .review_point{
+                .stars{
+                    width: 370px;
+                    margin-right: 20px;
+                    span{
+                        font-size: 90px;
+                        margin-right: -20px;
+                    }
+                }
+                .point{}
+            }
+        }//review_top
+    }//review
+
+
+    .inquiry{}
+
+}//bottom
 
 
 
