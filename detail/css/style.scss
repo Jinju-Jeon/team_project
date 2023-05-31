@@ -554,22 +554,40 @@ section{margin-bottom: 150px;}
         input[type=radio]:nth-child(#{$i}):checked ~ .bottom_labels>label:nth-child(#{$i}){background-color: $mainC; color: #fff;}
     }//for
 
-    .bottom_tabs>div{display: none;}
-    .bottom_tit{font-size: 24px; font-weight: bold; margin: 50px 0 10px;}
+    .bottom_tabs>div{display: none; padding-top: 50px;}
 
     .review{
         .review_top{
-            .review_point{
-                .stars{
-                    width: 370px;
-                    margin-right: 20px;
-                    span{
-                        font-size: 90px;
-                        margin-right: -20px;
+            .review_total{
+                @include flexSB();
+
+                .review_point{
+                    display: flex;
+                    .stars{
+                        width: 370px; 
+                        margin-right: 20px;
+
+                        span{
+                            font-size: 88px;
+                            margin-right: -20px;
+                        }
+                    }//stars
+                    .point{
+                        line-height: 90px;
+                        font-size: 60px;
+                        font-weight: bold;
                     }
+                }//review_point
+
+                >button{
+                    font-size: 24px;
+                    margin-right: 20px;
+                    width: 200px; line-height: 90px;
+                    background-color: $mainC;
+                    color: #fff;
                 }
-                .point{}
-            }
+
+        }//review_total
         }//review_top
     }//review
 
