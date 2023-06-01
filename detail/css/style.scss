@@ -9,7 +9,7 @@ h1, h2, h3, h4, h5, h6{font-weight: normal; font-size: inherit;}
 .img{position: relative;}
 a{display: block;}
 img{display: block; width: 100%; height: auto;}
-button{background: none; border: none; display: block; cursor: pointer;}
+button{background: none; border: none; display: block; cursor: pointer; font-size: inherit;}
 span{font-size: inherit;}
 
 /* 양식 통일용 */
@@ -32,6 +32,7 @@ input[type="number"]::-webkit-inner-spin-button {
 
 /* scss mixin */
 $mainC: #0E0057;
+$b1sa: 1px solid #aaa;
 
 @mixin secWidth{
     width: 1320px;
@@ -187,7 +188,7 @@ section{margin-bottom: 150px;}
                         padding-left: 30px;
                         box-sizing: border-box;
                         line-height: 35px;
-                        &:first-child{border-right: 1px solid #aaa;}
+                        &:first-child{border-right: $b1sa;}
                     }
 
                     .gnb_center{
@@ -199,7 +200,7 @@ section{margin-bottom: 150px;}
                             width: 25%;
                             box-sizing: border-box;
                             padding-left: 30px;
-                            border-right: 1px solid #aaa;
+                            border-right: $b1sa;
                         }
                     }/* gnb_center */
                     
@@ -423,11 +424,25 @@ section{margin-bottom: 150px;}
                     text-align: center; line-height: 50px;
                     margin-right: 10px;
 
-                    border: 1px solid #aaa;
+                    border: $b1sa;
                     border-radius: 3px;
             }
         }//label_cover
             
+        }
+
+        .qunt_opt{
+            width: 250px;
+            display: flex;
+            font-size: 24px;
+            border: $b1sa;
+            box-sizing: border-box;
+            button{width: 40px; height: 40px;}
+            input{
+                border: none;
+                width: 170px;
+                text-align: center;
+            }
         }
 
     }//right
@@ -492,7 +507,7 @@ section{margin-bottom: 150px;}
                     width: 200px; height: 50px;
                     text-align: center; line-height: 50px;
                     box-sizing: border-box;
-                    border: 1px solid #aaa;
+                    border: $b1sa;
                     &:first-child{
                         background-color: #333;
                         color: #fff;
@@ -565,7 +580,7 @@ section{margin-bottom: 150px;}
         .review_top{
                 @include flexSB();
                 padding-bottom: 15px;
-                border-bottom: 1px solid #aaa;
+                border-bottom: $b1sa;
 
                 .review_point{
                     display: flex;
@@ -614,7 +629,7 @@ section{margin-bottom: 150px;}
 
             .review_content{
                 height: 250px;
-                border-bottom: 1px solid #aaa;
+                border-bottom: $b1sa;
 
                 .point{
                     .star_icon{font-size: 30px; margin-right: -5px;}
@@ -692,7 +707,45 @@ section{margin-bottom: 150px;}
 
 
 
-    .inquiry{}
+    .inquiry{
+        .inquiry_content{
+            border-bottom: $b1sa;
+            .qna{
+                .question{
+                    height: 50px;
+                    line-height: 50px;
+                    cursor: pointer;
+                    
+                    &::before{
+                        content: "Q.";
+                        margin-right: 5px;
+                    }
+                    .inquiry_status{
+                        font-size: 14px;
+                        padding: 3px;
+                        background-color: #eee;
+                        margin-right: 5px;
+
+                        &.rep{
+                            background-color: #5ea661;
+                            color: #fff;
+                        }
+                    }
+                }//question
+
+                .answer{
+                    border-top: $b1sa;
+                    padding: 10px 0 30px 70px;
+
+                    &::before{
+                        content: "\e5da";
+                        font-family: 'Material Icons Outlined';
+                    }
+                }//answer
+                
+            }//qna
+        }
+    }
 
 }//bottom
 
