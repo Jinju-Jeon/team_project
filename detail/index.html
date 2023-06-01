@@ -17,6 +17,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollToPlugin.min.js"></script>
     
     <!-- my -->
+    <script src="./js/main.js" defer></script>
     <link rel="stylesheet" href="./css/style.scss">
 </head>
 
@@ -642,8 +643,8 @@
 
 
     <section class="info_bottom">
-        <input type="radio" name="bottom_btn" id="bottom_tab1" checked>
-        <input type="radio" name="bottom_btn" id="bottom_tab2">
+        <input type="radio" name="bottom_btn" id="bottom_tab1">
+        <input type="radio" name="bottom_btn" id="bottom_tab2" checked>
         <div class="bottom_labels tab_labels">
             <label for="bottom_tab1">상품 리뷰</label>
             <label for="bottom_tab2">상품 문의</label>
@@ -651,36 +652,99 @@
         <div class="bottom_tabs">
             <div class="bottom_tab review">
                 <div class="review_top">
-                    <div class="review_total">
                         <div class="review_point">
-                            <p class="stars">
+                            <p class="total_stars">
                                 <span class="material-icons-round">star</span>
                                 <span class="material-icons-round">star</span>
                                 <span class="material-icons-round">star</span>
                                 <span class="material-icons-round">star</span>
                                 <span class="material-icons-round">star_outline</span>
                             </p>
-                            <p class="point">
+                            <p class="total_point">
                                 4.8
                                 <!-- 이거도 동적 처리 못하나? -->
                             </p>
                         </div><!-- ///review_point -->
-                        <button type="button">리뷰 작성하기</button>
-                    </div>
-                    <div class="my_review">
-                        <br/><hr><br/>
-                        별점부여<br/>
-                        텍스트<br/>
-                        사진: 최대 5장<br/>
-                    </div>
                 </div><!-- //review_top -->
-                <div class="review_bottom">
-                    <br/><hr><br/>
-                    여기에 이전 리뷰들 + 작성하면 등록되게 처리
-                </div>
 
+                <div class="review_prev">
+                    <div class="review_content">
+                        <div class="prev_point point">
+                            <p class="stars">
+                                <label for="star1"><span class="star_icon material-icons-round">star</span></label>
+                                <label for="star2"><span class="star_icon material-icons-round">star</span></label>
+                                <label for="star3"><span class="star_icon material-icons-round">star</span></label>
+                                <label for="star4"><span class="star_icon material-icons-round">star</span></label>
+                                <label for="star5"><span class="star_icon material-icons-round">star_outline</span></label>
+                                <span class="point_no">4.0</span>
+                            </p>
+                        </div><!-- //prev_point -->
+                        <div class="prev_text">소재도 좋고 사이즈도 딱 맞아요</div>
+                        <div class="prev_img">
+                            <div class="img"><img src="./img/thum01.jpg" alt="이미지1"></div>
+                            <div class="img"><img src="./img/thum02.jpg" alt="이미지2"></div>
+                            <div class="img"><img src="./img/thum03.jpg" alt="이미지3"></div>
+                            <div class="img"><img src="./img/thum04.jpg" alt="이미지4"></div>
+                            <div class="img"><img src="./img/thum05.jpg" alt="이미지5"></div>
+                        </div>
+                        
+                    </div><!-- //review_content -->
+                </div>
+                
+                <div action="my_review" class="my_review">
+                    <input type="radio" name="star_radio" id="star1" value="1">
+                    <input type="radio" name="star_radio" id="star2" value="2">
+                    <input type="radio" name="star_radio" id="star3" value="3">
+                    <input type="radio" name="star_radio" id="star4" value="4">
+                    <input type="radio" name="star_radio" id="star5" value="5">
+                    <h4 class="bottom_tit">리뷰 작성하기</h4>
+
+                    <div class="my_point point">
+                        <p class="stars">
+                            <label for="star1"><span class="star_icon material-icons-round">star_outline</span></label>
+                            <label for="star2"><span class="star_icon material-icons-round">star_outline</span></label>
+                            <label for="star3"><span class="star_icon material-icons-round">star_outline</span></label>
+                            <label for="star4"><span class="star_icon material-icons-round">star_outline</span></label>
+                            <label for="star5"><span class="star_icon material-icons-round">star_outline</span></label>
+                            <span class="point_no">3.0</span>
+                        </p>
+                        <p>
+                            별점을 입력해주세요
+                        </p>
+                    </div><!-- //mypoint -->
+                    
+                    <div class="my_desc">
+                        <div class="desc_top">
+                            <textarea id="my_text" placeholder="리뷰를 입력해주세요(10자 이상)" minlength="10"></textarea>
+                            <button type="button">완료</button>
+                        </div>
+                        <div class="desc_bottom">
+                            <input type="file" id="my_photo" style="display: none;" accept="image/*" multiple >
+                            <label for="my_photo">
+                                <span class="material-icons-round"> insert_photo </span><br/>
+                                사진을 업로드해주세요<br/>
+                                (최대 5장)
+                            </label>
+                            <div class="photo_area">
+                                <div class="img"></div>
+                                <div class="img"></div>
+                                <div class="img"></div>
+                                <div class="img"></div>
+                                <div class="img"></div>
+                            </div>
+
+                        </div>
+                    </div><!-- //my_desc -->
+                </div><!-- ////my_review -->
+
+            </div><!-- ////review -->
+
+
+
+            <div class="bottom_tab inquiry">
+                
+                <!-- 리뷰랑 문의도 페이지네이션 넣기 -->
             </div>
-            <div class="bottom_tab inquiry">여기에 문의</div>
         </div>
 
     </section><!-- ///bottom -->
