@@ -357,8 +357,8 @@ section{margin-bottom: 150px;}
 
     .top_right{
         width: 310px;
-        >div{margin-bottom: 30px; &:last-child{margin-bottom: 0;}}
-        .opt_tit{font-size: 20px; font-weight: bold;} 
+        >div{margin-bottom: 50px; &:last-child{margin-bottom: 0;}}
+        .opt_tit{font-size: 20px; font-weight: bold; margin-bottom: 5px;} 
 
         .pro_name{
             .category{
@@ -431,7 +431,7 @@ section{margin-bottom: 150px;}
             
         }
 
-        .qunt_opt{
+        .order_qunt{
             width: 250px;
             display: flex;
             font-size: 24px;
@@ -442,6 +442,28 @@ section{margin-bottom: 150px;}
                 border: none;
                 width: 170px;
                 text-align: center;
+            }
+        }
+
+        .price_cover{
+            @include flexSB();
+            margin-bottom: 20px;
+            p.price{
+            font-size: 24px;
+            font-weight: bold;
+        }}
+
+        .order_btn{
+            display: flex;
+            button{
+                border: $b1sa;
+                border-radius: 50px;
+                font-size: 28px;
+                padding: 5px 11px;
+
+                &.like{margin-right: 10px;}
+                &.buy{padding: 5px 20px; margin-right: 0; margin-left: auto;}
+                span{font-size: 28px; margin-top: 5px;}
             }
         }
 
@@ -495,7 +517,7 @@ section{margin-bottom: 150px;}
     }
 
     .notice{
-        .graph{width: 80%;}
+        .graph{width: 100%;}
 
         .notice_size{
             table{
@@ -523,9 +545,7 @@ section{margin-bottom: 150px;}
         }//notice_size
         
 
-        .notice_detail{
-            dl{width: 820px;}
-        }//notice_detail
+        .notice_detail{}//notice_detail
 
 
 
@@ -687,7 +707,7 @@ section{margin-bottom: 150px;}
 
                         
                         >.img{
-                            width: 180px; height: 180px; background-color: #eee;
+                            width: 180px; height: 180px; 
                             margin-right: 20px;
 
                             &:last-child{margin-right: 0;}
@@ -736,6 +756,7 @@ section{margin-bottom: 150px;}
                 .answer{
                     border-top: $b1sa;
                     padding: 10px 0 30px 70px;
+                    display: none;
 
                     &::before{
                         content: "\e5da";

@@ -23,7 +23,7 @@
   },
   "description": "",
   "staticFiles": {
-    "staticPath":[
+    "staticPath": [
       {
         "staticPath": "./sub/img",
         "staticOutDir": "/sub/img"

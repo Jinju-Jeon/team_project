@@ -391,11 +391,29 @@
                 </div> <!-- label_cover -->
             </div>
             <div class="qunt_opt">
-                <button type="button" id="qunt_minus">-</button>
-                <input type="number" id="qunt" value="1" min="1">
-                <button type="button" id="qunt_plut">+</button>
+                <h4 class="opt_tit">주문 수량</h4>
+                <div class="order_qunt">
+                    <button type="button" id="qunt_minus">-</button>
+                    <input type="number" id="qunt" value="1" min="1">
+                    <button type="button" id="qunt_plut">+</button>
+                </div>
+                
             </div>
-            <!-- 여기에 주문금액 넣어야함!!!!! -->
+            <div class="order">
+                <div class="price_cover">
+                <h4 class="opt_tit">
+                    주문 금액
+                </h4>
+                <p class="price">
+                    00,000원
+                </p>
+            </div>
+                <div class="order_btn">
+                    <button class="like" id="like"><span class="material-icons-outlined">favorite </span></button>
+                    <button class="cart" id="cart"><span class="material-icons-outlined">add_shopping_cart </span></button>
+                    <button class="buy" id="buy">BUY</button>
+                </div>
+            </div>
         </div><!-- top_right -->
     </div><!-- info_top -->
 
@@ -745,7 +763,7 @@
             <div class="bottom_tab inquiry">
                 <div class="inquiry_content">
                     <div class="qna">
-                        <p class="question"><span class="inquiry_status wait">답변 대기중</span>170에 M사이즈 괜찮을까요?</p>
+                        <p class="question"><span class="inquiry_status wait">답변 대기</span>170에 M사이즈 괜찮을까요?</p>
                     </div>
                 </div><!-- inquiry_content -->
                 <div class="inquiry_content">
