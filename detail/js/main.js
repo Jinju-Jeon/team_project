@@ -1,8 +1,3 @@
-
-
-
-
-
 /* 변수설정 */
 let price = 119000
 let orderPrice = 0
@@ -14,8 +9,22 @@ const divEl = function(className){
 const pEl = function(className){
     let p = document.createElement('p')
     p.classList.add(className)
+    return p
 }
 const spanEl = function(){return document.createElement('span')}
+
+
+/* 이미지 */
+const imgList  = document.querySelectorAll('.img_list .img')
+const mainImg = document.querySelector('.product_img>.img img')
+console.log(mainImg)
+imgList.forEach((item,i)=>{
+    item.addEventListener('mouseenter',function(){
+        let src = './img/product_img'+(i+1)+'.jpg'
+        mainImg.setAttribute('src',src)
+
+    })
+})
 
 
 
@@ -71,41 +80,26 @@ writeAction()
 
 let chkStatus = 0
 reviewSubmit.addEventListener('click',()=>{
-    reviewChk()
 
-
-
-    //틀
-    const reviewContent = divEl('review_content')
-
-    //별점
-    const prevPoint = divEl('prev_point') //이거 변수 여러개 선택적으로 받는 방법 기억나면 바꾸기
-    prevPoint.classList.add('point')
-    starSpan(pointCnt,prevPoint)
-        
-    //텍스트
-    const prevText = divEl('prev_text')
-    prevText.innerText = myText.value
-
-    //파일
-    let prevImg = divEl('prev_img')
-    let imgs = photoArea.querySelectorAll('.img')
-    imgs.forEach((item)=>{
-        prevImg.appendChild(item)
+    //리뷰 작성 체크
+    myPoint.forEach((item)=>{
+        if(item.checked){
+            chkStatus = 1
+            return
+        }
     })
-
-    
-    
-    if(imgs.length===0){
-        reviewContent.append(prevPoint,prevText)
-    } else{
-        reviewContent.append(prevPoint,prevText,prevImg)
+    if(!chkStatus){
+        alert('별점을 매겨주세요')
+        return
+    } else if (myText.value.length<10){
+        alert('리뷰는 10자 이상 작성해주세요')
+        myText.select()
+        return
     }
-    
 
+    newReview()
 
-
-    console.log(reviewContent)
+    myText.value=''
     
     
 
@@ -142,24 +136,6 @@ function priceChange(){
     
 }
 
-//리뷰 전송 전 체크
-function reviewChk(){
-    myPoint.forEach((item)=>{
-        if(item.checked){
-            chkStatus = 1
-            return
-        }
-    })
-
-    if(!chkStatus){
-        alert('별점을 매겨주세요')
-        return
-    } else if (myText.value.length<10){
-        alert('리뷰는 10자 이상 작성해주세요')
-        return
-    }
-}
-
 //이미지 파일 div내에 삽입(파일리스트,.img들어갈 div)
 function imgLoad(files,coverDiv){
     const fileList = Array.from(files)
@@ -179,12 +155,14 @@ function starSpan(cnt,coverDiv){
     for(let i=1;i<=cnt;i++){
         let myStar = spanEl()
         myStar.classList.add('material-icons-round')
+        myStar.classList.add('star_icon')
         myStar.innerText = 'star'
         coverDiv.appendChild(myStar)
     }
     for(let i=1;i<=(5-cnt);i++){
         let myStar = spanEl()
         myStar.classList.add('material-icons-round')
+        myStar.classList.add('star_icon')
         myStar.innerText = 'star_outline'
         coverDiv.appendChild(myStar)
     }
@@ -214,6 +192,7 @@ function writeAction(){
             const myPointLabel = reviewMy.querySelectorAll('p.stars label span.star_icon')
             myPointLabel.forEach((item)=>{
                 item.innerText = 'star_outline'
+                
             })        
             for(let i=0; i<pointCnt;i++){
                 myPointLabel[i].innerText = 'star'
@@ -225,4 +204,45 @@ function writeAction(){
         })
     })
 
+}
+
+function newReview(){
+
+    //틀
+    const reviewContent = divEl('review_content')
+
+    //별점
+    const prevPoint = pEl('stars')
+    prevPoint.classList.add('point')
+    starSpan(pointCnt,prevPoint)
+
+    let pointNo = spanEl()
+    pointNo.classList.add('point_no')
+    pointNo.textContent = (pointCnt+'.0')
+
+    prevPoint.appendChild(pointNo)
+        
+    //텍스트
+    const prevText = divEl('prev_text')
+    prevText.innerText = myText.value
+
+    //파일
+    let prevImg = divEl('prev_img')
+    let imgs = photoArea.querySelectorAll('.img')
+    imgs.forEach((item)=>{
+        prevImg.appendChild(item)
+    })
+
+    
+    
+    if(imgs.length===0){
+        reviewContent.append(prevPoint,prevText)
+    } else{
+        reviewContent.append(prevPoint,prevText,prevImg)
+    }
+
+
+
+    
+    reviewPrev.prepend(reviewContent)
 }
