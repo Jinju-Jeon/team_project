@@ -5,6 +5,7 @@ document.querySelector('.popup').addEventListener('click',()=>document.getElemen
 /* 변수설정 */
 let price = 119000
 let orderPrice = 0
+let repBtns = new Array
 const divEl = function(className){
     let div = document.createElement('div')
     div.classList.add(className)
@@ -120,33 +121,13 @@ reviewSubmit.addEventListener('click',()=>{
 const qnaBtn = document.getElementById('qna_submit')
 const qnaTxt = document.getElementById('my_qna')
 const inquiryPrev = document.querySelector('.inquiry_prev')
-
 qnaBtn.addEventListener('click',()=>{
-    const inqContent = divEl('inquiry_content')
-    const questionCover = divEl('question_cover')
-    
-    const answerCover = divEl('answer_cover')
-
-    const question = pEl('question')
-    question.innerText = qnaTxt.value
-    
-
-    const inqStat = spanEl()
-    inqStat.classList.add('wait','inquiry_status')
-    inqStat.innerText = '답변 대기'
-
-    questionCover.append(inqStat,question)
-
-    inqContent.append(questionCover,answerCover)
-    inqContent.classList.add('not_ans')
-    inquiryPrev.prepend(inqContent)
-
-    qnaTxt.value=""
+    newInq()
     ansArea()
-
-
 })
 
+
+/* 문의답변 */
 
 
 
@@ -286,13 +267,37 @@ function newReview(){
     reviewPrev.prepend(reviewContent)
 }
 
+function newInq(){
+    const inqContent = divEl('inquiry_content')
+    const questionCover = divEl('question_cover')
+    
+    const answerCover = divEl('answer_cover')
 
+    const question = pEl('question')
+    question.innerText = qnaTxt.value
+    
+
+    const inqStat = spanEl()
+    inqStat.classList.add('wait','inquiry_status')
+    inqStat.innerText = '답변 대기'
+
+    questionCover.append(inqStat,question)
+
+    inqContent.append(questionCover,answerCover)
+    inqContent.classList.add('not_ans')
+    inquiryPrev.prepend(inqContent)
+
+    qnaTxt.value=""
+}
 //답변란 메이커
+
 function ansArea(){
 
     let notAns = document.querySelectorAll('.not_ans .answer_cover')
     notAns.forEach((item,i)=>{
         item.replaceChildren()
+        item.setAttribute('class','')
+        item.classList.add('answer_cover',('answer_cover'+i))
 
         const txtArea = document.createElement('textarea')
         txtArea.classList.add('rep_txt')
@@ -302,14 +307,70 @@ function ansArea(){
         const repBtn = document.createElement('button')
         repBtn.setAttribute('class','rep_btn')
         repBtn.setAttribute('id','rep_btn'+i)
+        repBtn.setAttribute('value',i)
         repBtn.innerText = '답변 작성'
 
         item.append(txtArea,repBtn)
 
 
 
+
     })
+
+    
+    repBtns = document.querySelectorAll('.rep_btn')
+
+    makeRep(repBtns)
 
 }
 
-//할 일: 답변 전송 버튼 추가 > 답변 받기 구현 > 해당 글 클릭으로 답변 열고 닫기
+function makeRep(array){
+    array.forEach((item,i)=>{
+        item.addEventListener('click',()=>{
+            let answered = document.querySelector(('.answer_cover'+i))
+            let reply = document.querySelector(('#rep_txt'+i))
+            
+            let repEl = pEl('answer')
+            repEl.innerText = reply.value
+
+            answered.replaceChildren()
+            answered.parentNode.classList.remove('not_ans')
+            let stat = answered.parentNode.querySelector('span.wait')
+            stat.classList.remove('wait')
+            stat.classList.add('rep')
+            stat.innerText = '답변 완료'
+
+            answered.appendChild(repEl)
+
+            
+            
+        })//aEL
+    })//forEach
+    
+    repToggle()
+    
+}//function
+
+function repToggle(){
+    const repQ = document.querySelectorAll('.question_cover')
+    const repA = document.querySelectorAll('.answer_cover')
+
+    let stat = []
+    for(let i=0;i<repQ.length;i++){
+        stat[i] = 0
+    }
+
+    repQ.forEach((item,i)=>{
+        item.addEventListener('click',function(){
+            console.log('click')
+            if(!stat[i]){
+                stat[i]=1
+                repA[i].style.display = 'flex'
+            }else{
+                stat[i]=0
+                repA[i].style.display = 'none'
+            }
+        })
+    })
+    
+}

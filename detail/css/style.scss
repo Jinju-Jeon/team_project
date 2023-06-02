@@ -648,9 +648,10 @@ section{margin-bottom: 150px;}
 
     .bottom_tit{font-weight: bold; font-size: 24px;}
 
-    .bottom_tabs>div{display: none; padding-top: 50px;}
+    .bottom_tabs>div{display: none;}
 
     .review{
+        padding-top: 50px;
         >div{margin-bottom: 15px}
 
         .review_top{
@@ -784,7 +785,7 @@ section{margin-bottom: 150px;}
 
     
     .inquiry{
-        .inquiry_prev{margin-bottom: 15px;}        
+        .inquiry_prev{margin-bottom: 15px; border-top: $b1sa;}        
         .inquiry_content{
             border-bottom: $b1sa;
 
@@ -819,7 +820,7 @@ section{margin-bottom: 150px;}
                 
                 .answer_cover{
                     padding-top: 10px;
-                    display: flex;
+                    display: none;
                     border-top: $b1sa;
 
                     .answer{
