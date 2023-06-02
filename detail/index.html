@@ -662,8 +662,8 @@
 
 
     <section class="info_bottom">
-        <input type="radio" name="bottom_btn" id="bottom_tab1">
-        <input type="radio" name="bottom_btn" id="bottom_tab2" checked>
+        <input type="radio" name="bottom_btn" id="bottom_tab1" checked>
+        <input type="radio" name="bottom_btn" id="bottom_tab2">
         <div class="bottom_labels tab_labels">
             <label for="bottom_tab1">상품 리뷰</label>
             <label for="bottom_tab2">상품 문의</label>
@@ -690,11 +690,11 @@
                     <div class="review_content">
                         <div class="prev_point point">
                             <p class="stars">
-                                <label for="star1"><span class="star_icon material-icons-round">star</span></label>
-                                <label for="star2"><span class="star_icon material-icons-round">star</span></label>
-                                <label for="star3"><span class="star_icon material-icons-round">star</span></label>
-                                <label for="star4"><span class="star_icon material-icons-round">star</span></label>
-                                <label for="star5"><span class="star_icon material-icons-round">star_outline</span></label>
+                                <span class="star_icon material-icons-round">star</span>
+                                <span class="star_icon material-icons-round">star</span>
+                                <span class="star_icon material-icons-round">star</span>
+                                <span class="star_icon material-icons-round">star</span>
+                                <span class="star_icon material-icons-round">star_outline</span>
                                 <span class="point_no">4.0</span>
                             </p>
                         </div><!-- //prev_point -->
@@ -710,7 +710,7 @@
                     </div><!-- //review_content -->
                 </div>
                 
-                <div action="my_review" class="my_review">
+                <div class="my_review">
                     <input type="radio" name="star_radio" id="star1" value="1">
                     <input type="radio" name="star_radio" id="star2" value="2">
                     <input type="radio" name="star_radio" id="star3" value="3">
@@ -734,7 +734,7 @@
                     
                     <div class="my_desc">
                         <div class="desc_top">
-                            <textarea id="my_text" placeholder="리뷰를 입력해주세요(10자 이상)" minlength="10"></textarea>
+                            <textarea id="my_text" placeholder="리뷰를 입력해주세요(10자 이상)" minlength="10">테스트용문구로10자를채워야함</textarea>
                             <button type="button">완료</button>
                         </div>
                         <div class="desc_bottom">
@@ -745,11 +745,6 @@
                                 (최대 5장)
                             </label>
                             <div class="photo_area">
-                                <div class="img"></div>
-                                <div class="img"></div>
-                                <div class="img"></div>
-                                <div class="img"></div>
-                                <div class="img"></div>
                             </div>
 
                         </div>

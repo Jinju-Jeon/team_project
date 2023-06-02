@@ -645,10 +645,9 @@ section{margin-bottom: 150px;}
 
         .review_prev{
             max-height: 750px;
-            margin-bottom: 0;
+            margin-bottom: 80px;
 
             .review_content{
-                height: 250px;
                 border-bottom: $b1sa;
 
                 .point{
@@ -658,6 +657,7 @@ section{margin-bottom: 150px;}
                 .prev_text{margin-bottom: 10px;}
                 .prev_img{
                     display: flex;
+                    padding-bottom: 25px;
                     .img{
                         width: 150px; height: 150px;
                         margin-right: 20px;
