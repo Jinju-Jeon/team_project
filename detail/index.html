@@ -405,9 +405,9 @@
             <div class="qunt_opt">
                 <h4 class="opt_tit">주문 수량</h4>
                 <div class="order_qunt">
-                    <button type="button" id="qunt_minus">-</button>
+                    <button type="button" id="qunt_minus"><span>-</span></button>
                     <input type="number" id="qunt" value="1" min="1">
-                    <button type="button" id="qunt_plus">+</button>
+                    <button type="button" id="qunt_plus"><span>+</span></button>
                 </div>
                 
             </div>
@@ -423,7 +423,7 @@
                 <div class="order_btn">
                     <button class="like" id="like"><span class="material-icons-outlined">favorite </span></button>
                     <button class="cart" id="cart"><span class="material-icons-outlined">add_shopping_cart </span></button>
-                    <button class="buy" id="buy">BUY</button>
+                    <button class="buy" id="buy">바로 구매하기</button>
                 </div>
             </div>
         </div><!-- top_right -->
@@ -770,12 +770,21 @@
 
             <div class="bottom_tab inquiry">
                 <div class="inquiry_prev">
-                    <div class="inquiry_content">
-                            <p class="question"><span class="inquiry_status wait">답변 대기</span>170에 M사이즈 괜찮을까요?</p>
+                    <div class="inquiry_content not_ans">
+                        <div class="question_cover">
+                            <span class="inquiry_status wait">답변 대기</span><p class="question">170에 M사이즈 괜찮을까요?</p>
+                        </div>
+                        <div class="answer_cover">
+
+                        </div>
                     </div><!-- inquiry_content -->
                     <div class="inquiry_content">
-                            <p class="question"><span class="inquiry_status rep">답변 완료</span>재입고 언제 되나요?</p>
+                        <div class="question_cover">
+                            <span class="inquiry_status rep">답변 완료</span><p class="question">재입고 언제 되나요?</p>
+                        </div>
+                        <div class="answer_cover">
                             <p class="answer">안녕하세요. 1개월 내로 재입고 예정입니다.</p>
+                        </div>
                     </div><!-- inquiry_content -->
                 </div>
                 

@@ -1,8 +1,6 @@
 //popup닫기용
 document.querySelector('.popup').addEventListener('click',()=>document.getElementById('exchange_popup').click())
 
-//ansArea 초기설정
-// ansArea()
 
 /* 변수설정 */
 let price = 119000
@@ -31,6 +29,8 @@ imgList.forEach((item,i)=>{
     })
 })
 
+//ansArea 초기설정
+ansArea()
 
 
 /* 주문수량 및 가격 */
@@ -123,6 +123,9 @@ const inquiryPrev = document.querySelector('.inquiry_prev')
 
 qnaBtn.addEventListener('click',()=>{
     const inqContent = divEl('inquiry_content')
+    const questionCover = divEl('question_cover')
+    
+    const answerCover = divEl('answer_cover')
 
     const question = pEl('question')
     question.innerText = qnaTxt.value
@@ -132,11 +135,14 @@ qnaBtn.addEventListener('click',()=>{
     inqStat.classList.add('wait','inquiry_status')
     inqStat.innerText = '답변 대기'
 
-    question.prepend(inqStat)
-    inqContent.appendChild(question)
+    questionCover.append(inqStat,question)
 
+    inqContent.append(questionCover,answerCover)
+    inqContent.classList.add('not_ans')
     inquiryPrev.prepend(inqContent)
 
+    qnaTxt.value=""
+    ansArea()
 
 
 })
@@ -280,20 +286,30 @@ function newReview(){
     reviewPrev.prepend(reviewContent)
 }
 
+
 //답변란 메이커
 function ansArea(){
-    let notAnsQ = document.querySelectorAll('span.wait')
-    let notAnsDiv = new Array
-    notAnsQ.forEach((item,i)=>{
-        notAnsDiv[i] = item.parentNode.parentNode
-    })
-    notAnsDiv.forEach((item,i)=>{
+
+    let notAns = document.querySelectorAll('.not_ans .answer_cover')
+    notAns.forEach((item,i)=>{
+        item.replaceChildren()
+
         const txtArea = document.createElement('textarea')
-        txtArea.classList.add('not_ans')
+        txtArea.classList.add('rep_txt')
         txtArea.setAttribute('placeholder','답변을 작성해주세요')
-        txtArea.setAttribute('id','not_ans'+i)
-        item.appendChild(txtArea)
+        txtArea.setAttribute('id','rep_txt'+i)
+
+        const repBtn = document.createElement('button')
+        repBtn.setAttribute('class','rep_btn')
+        repBtn.setAttribute('id','rep_btn'+i)
+        repBtn.innerText = '답변 작성'
+
+        item.append(txtArea,repBtn)
+
+
+
     })
+
 }
 
 //할 일: 답변 전송 버튼 추가 > 답변 받기 구현 > 해당 글 클릭으로 답변 열고 닫기
