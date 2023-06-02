@@ -578,8 +578,12 @@
             <div class="exchange">
                 <h4 class="mid_tit">교환 및 반품</h4>
                 <div class="exchange_top">
+                    <input type="checkbox" id="exchange_popup">
                     <p>휠라 온라인스토어는 최상의 서비스 제공을 위하려 무료교환/반품 서비스를 제공하고 있습니다.</p>
-                    <a href="#!">구매상품 교환/반품 시 포장 법</a>
+                    <label for="exchange_popup">구매상품 교환/반품 시 포장 법</label>
+                    <div class="popup">
+                        <div class="img"><img src="./img/return.jpg" alt="교환/반품 포장법"></div>                        
+                    </div>
                 </div>
                 <div class="exchange_info">
                     <dl>
@@ -665,7 +669,7 @@
                             </ul>
                         </dd>
                     </dl>
-                </div>
+                </div><!-- //exchange_info -->
             </div><!-- //exchange -->
 
         </div><!-- ////mid_tabs -->
@@ -674,8 +678,8 @@
 
 
     <section class="info_bottom">
-        <input type="radio" name="bottom_btn" id="bottom_tab1" checked>
-        <input type="radio" name="bottom_btn" id="bottom_tab2">
+        <input type="radio" name="bottom_btn" id="bottom_tab1">
+        <input type="radio" name="bottom_btn" id="bottom_tab2" checked>
         <div class="bottom_labels tab_labels">
             <label for="bottom_tab1">상품 리뷰</label>
             <label for="bottom_tab2">상품 문의</label>
@@ -693,7 +697,6 @@
                             </p>
                             <p class="total_point">
                                 4.8
-                                <!-- 이거도 동적 처리 못하나? -->
                             </p>
                         </div><!-- ///review_point -->
                 </div><!-- //review_top -->
@@ -766,17 +769,21 @@
 
 
             <div class="bottom_tab inquiry">
-                <div class="inquiry_content">
-                    <div class="qna">
-                        <p class="question"><span class="inquiry_status wait">답변 대기</span>170에 M사이즈 괜찮을까요?</p>
-                    </div>
-                </div><!-- inquiry_content -->
-                <div class="inquiry_content">
-                    <div class="qna">
-                        <p class="question"><span class="inquiry_status rep">답변 완료</span>재입고 언제 되나요?</p>
-                        <p class="answer">안녕하세요. 1개월 내로 재입고 예정입니다.</p>
-                    </div>
-                </div><!-- inquiry_content -->
+                <div class="inquiry_prev">
+                    <div class="inquiry_content">
+                            <p class="question"><span class="inquiry_status wait">답변 대기</span>170에 M사이즈 괜찮을까요?</p>
+                    </div><!-- inquiry_content -->
+                    <div class="inquiry_content">
+                            <p class="question"><span class="inquiry_status rep">답변 완료</span>재입고 언제 되나요?</p>
+                            <p class="answer">안녕하세요. 1개월 내로 재입고 예정입니다.</p>
+                    </div><!-- inquiry_content -->
+                </div>
+                
+                <h4 class="bottom_tit">리뷰 작성하기</h4>
+                <div class="my_qna">
+                    <textarea id="my_qna" placeholder="문의사항을 입력해주세요(10자 이상)" minlength="10"></textarea>
+                    <button type="button" id="qna_submit">완료</button>
+                </div>
                 <!-- 리뷰랑 문의도 페이지네이션 넣기 -->
             </div>
         </div>

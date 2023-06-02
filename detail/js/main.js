@@ -1,3 +1,9 @@
+//popup닫기용
+document.querySelector('.popup').addEventListener('click',()=>document.getElementById('exchange_popup').click())
+
+//ansArea 초기설정
+// ansArea()
+
 /* 변수설정 */
 let price = 119000
 let orderPrice = 0
@@ -17,7 +23,6 @@ const spanEl = function(){return document.createElement('span')}
 /* 이미지 */
 const imgList  = document.querySelectorAll('.img_list .img')
 const mainImg = document.querySelector('.product_img>.img img')
-console.log(mainImg)
 imgList.forEach((item,i)=>{
     item.addEventListener('mouseenter',function(){
         let src = './img/product_img'+(i+1)+'.jpg'
@@ -108,6 +113,33 @@ reviewSubmit.addEventListener('click',()=>{
 ////리뷰 추가
 
 
+
+
+
+/* 문의사항 */
+const qnaBtn = document.getElementById('qna_submit')
+const qnaTxt = document.getElementById('my_qna')
+const inquiryPrev = document.querySelector('.inquiry_prev')
+
+qnaBtn.addEventListener('click',()=>{
+    const inqContent = divEl('inquiry_content')
+
+    const question = pEl('question')
+    question.innerText = qnaTxt.value
+    
+
+    const inqStat = spanEl()
+    inqStat.classList.add('wait','inquiry_status')
+    inqStat.innerText = '답변 대기'
+
+    question.prepend(inqStat)
+    inqContent.appendChild(question)
+
+    inquiryPrev.prepend(inqContent)
+
+
+
+})
 
 
 
@@ -206,6 +238,7 @@ function writeAction(){
 
 }
 
+//리뷰 추가
 function newReview(){
 
     //틀
@@ -246,3 +279,21 @@ function newReview(){
     
     reviewPrev.prepend(reviewContent)
 }
+
+//답변란 메이커
+function ansArea(){
+    let notAnsQ = document.querySelectorAll('span.wait')
+    let notAnsDiv = new Array
+    notAnsQ.forEach((item,i)=>{
+        notAnsDiv[i] = item.parentNode.parentNode
+    })
+    notAnsDiv.forEach((item,i)=>{
+        const txtArea = document.createElement('textarea')
+        txtArea.classList.add('not_ans')
+        txtArea.setAttribute('placeholder','답변을 작성해주세요')
+        txtArea.setAttribute('id','not_ans'+i)
+        item.appendChild(txtArea)
+    })
+}
+
+//할 일: 답변 전송 버튼 추가 > 답변 받기 구현 > 해당 글 클릭으로 답변 열고 닫기

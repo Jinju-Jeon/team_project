@@ -602,10 +602,30 @@ section{margin-bottom: 150px;}
             p{
                 font-weight: bold;
             }
-            a{
+            input[type=checkbox]{display: none;}
+            label{
                 border: 1px solid #333;
                 padding: 15px;
                 border-radius: 100px;
+            }
+            
+            #exchange_popup:checked ~ .popup{transform: scale(1);}
+            .popup{
+                position: fixed;
+                top: 0; left: 0;
+                width: 100%; height: 100%;
+                transform: scale(0);
+                z-index: 999;
+                background-color: rgba(0,0,0,0.5);
+
+                .img{
+                    position: relative;
+                    top: 5%;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    width: 550px;
+                }
+                
             }
         }
     }
@@ -758,11 +778,11 @@ section{margin-bottom: 150px;}
 
 
 
-
+    
     .inquiry{
+        .inquiry_prev{margin-bottom: 15px;}        
         .inquiry_content{
             border-bottom: $b1sa;
-            .qna{
                 .question{
                     height: 50px;
                     line-height: 50px;
@@ -788,7 +808,6 @@ section{margin-bottom: 150px;}
                 .answer{
                     border-top: $b1sa;
                     padding: 10px 0 30px 70px;
-                    display: none;
 
                     &::before{
                         content: "\e5da";
@@ -796,15 +815,33 @@ section{margin-bottom: 150px;}
                     }
                 }//answer
                 
-            }//qna
+                .not_ans{
+                    margin: 10px 0 30px 70px;;
+                    width: 800px;
+                    height: 100px;
+                }
+        }
+
+        >h4{margin-bottom: 10px}
+
+        .my_qna{
+            @include flexSB();
+            align-items: center;
+
+            #my_qna{
+                display: block;
+                width: 1180px; height: 100px;
+                padding: 5px;
+                box-sizing: border-box;
+            }
+            button{
+                width: 110px; height: 50px;
+                background-color: $mainC; color: #fff;
+            }
         }
     }
 
 }//bottom
-
-
-
-
 
 
 
