@@ -115,4 +115,4 @@ function makeSearch(searchAll,searchList){
 }
 
 
-export {headerFunction}
+export {headerFunction, makeSearch}

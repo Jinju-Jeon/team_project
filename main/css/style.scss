@@ -19,6 +19,7 @@ section,.footer_inner{
     box-sizing: border-box;
 }
 
+span{font-size: inherit;}
 
 
 
@@ -251,22 +252,42 @@ section,.footer_inner{
 
 /********** mid_banner **********/
 .mid_banner{
+        width: 100%;
+        padding: 100px 0 100px;
+        color: #fff;
 
-    .img{
-        width: 100%; height: 200px;
         background:{
+            color: rgba(0,0,0,0.5);
+            blend-mode: multiply;
             image: url(./img/sus_ban01.jpg);
             position: center ;
             size: cover;
             repeat: no-repeat;
             attachment: fixed;
-        };
-    }
+        }
+
+        h1{margin-bottom: 30px;}
+
+        p{text-align: center;}
+        .more{
+            transition: .2s;
+            width: 75px;
+            padding: 7px 15px;
+            border-radius: 100px;
+            border: 1px solid #fff;
+            margin: 40px auto 0;
+            span{display: block; float:right;}
+
+            &:hover{
+                background-color: rgba(255,255,255,0.5);
+            }
+        }
 }
 
 
 /********** new **********/
 .new{
+    width: 1300px;
     input[type=radio]{display: none;}
 
     @for $i from 1 through 3{
@@ -276,29 +297,35 @@ section,.footer_inner{
     }
 
 
-    .new_tab_cover{}
+    .new_tab_cover{
+        margin-top: 100px;
+    }
 
     .new_tab{
         display: none;
         
         .swiper-slide{
-            width: calc(60% - 40px);
+            width: calc(70% - 40px);
             display: flex;
             justify-content: end;
             position: relative;
+            padding: 10px 25px;
 
             .new_img{
-                width: 45%;
-                margin-right: 20px;
+                width: 40%;
+                margin-top: 2.5%;
+                opacity: .5;
             }
             .new_txt{
                 width: 0; height: 0;
                 transition: .8s;
+                
                 .new_tit{
                     font-weight: bold;
                     font-size: 24px;
                     text-align: center;
-                    margin-bottom: 40px;
+                    margin: 40px 0;
+                    background: none;
                 }
                 .new_desc{
                     font-size: 14px;
@@ -312,7 +339,12 @@ section,.footer_inner{
             .new_tit,.new_desc,.icon{display: none;}
             
             &.swiper-slide-active{
-                margin: 0 20px;
+                background-color: #eee;
+                .new_img{
+                    width: 45%; margin-top: 0;
+                    margin-right: 20px;
+                    opacity: 1;
+                }
             }
             &.swiper-slide-active,&.swiper-slide-next{
                 justify-content: start;
@@ -325,14 +357,14 @@ section,.footer_inner{
                 
                 .icon{
                     position: absolute;
-                    right: 0;
-                    bottom: 0;
+                    right: 25px;
+                    bottom: 10px;
                     display: flex;
                     button{
                         &.cart_btn{margin-right: 20px;}
                         span{
                         text-align: center;
-                        font-size: 40px;
+                        font-size: 48px;
                     }}                    
                 }//icon
             }            
@@ -341,7 +373,7 @@ section,.footer_inner{
 
         .swiper-pagination{
             position: relative;
-            margin-top: 20px;
+            margin-top: 50px;
 
             .swiper-pagination-bullet-active{
                 background-color: $mainC;
@@ -351,12 +383,21 @@ section,.footer_inner{
         }//swiper-pagination
 
         .swiper-button-prev{
-            top: 45%; left: 16%; color: $mainC; 
-            &::after{content: "◀"; font-size: 60px;}
+            position: absolute;
+            top: 45%; left: 10%; color: $mainC; 
+            &::after{
+                content: "\e5e0"; font-size: 64px;
+                font-family: 'Material Icons Outlined';
+            }
         }
         .swiper-button-next{
-            top: 45%; right: 16%; color: $mainC; 
-            &::after{content: "▶"; font-size: 60px;}
+            position: absolute;
+            top: 45%; right: 10%; color: $mainC; 
+            &::after{
+                content: "\e5e1"; font-size: 64px;
+                font-family: 'Material Icons Outlined';
+                
+            }
         }
         
 

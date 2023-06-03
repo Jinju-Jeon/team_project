@@ -1,6 +1,5 @@
-
 import { headerFunction } from "/public/public.js";
-
+//build가 js내의 경로를 인식 못함 > build 후 /public을 /team_project/public으로 돌려주기? 
 
 const header = document.querySelector('header')
 fetch('/public/header.html')
