@@ -19,14 +19,14 @@ import userData from "./data.js"
                 if(userPw.value === data.pw){
                     message.classList.remove('err')
                     message.classList.add('cor')
-                    message.innerText = '로그인 성공'
+                    locat.href ='http://trinj.dothome.co.kr/team_project/main'
                 } else{
                     message.classList.remove('cor')
                     message.classList.add('err')
 
                     if(++count>=5){
                         message.innerText = '5회 이상 오류입니다. 비밀번호 찾기로 이동합니다.'
-                        setTimeout(()=>{location.href = './findpw.html'},2000)
+                        setTimeout(()=>{location.href = 'http://trinj.dothome.co.kr/team_project/findpw'},2000)
                     } else{
                         message.innerText = '비밀번호 오류입니다. 5회 오류 시 비밀번호 찾기로 이동합니다. 현재'+count+'회'
                     }//오류 횟수 카운트

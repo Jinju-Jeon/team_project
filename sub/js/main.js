@@ -155,23 +155,36 @@ genderChk.forEach((item)=>{
 const filterToggle = document.getElementById('filter_toggle')
 const filterBottom = document.querySelector('.filter_bottom')
 
-let stateT = 0
+let stateT = 1
 filterToggle.addEventListener('click',function(){
-  if(!stateT){
-    stateT = 1
-    this.innerHTML = '필터 닫기<span class="material-icons"> remove </span>'
-    gsap.to(filterBottom,0.3,{height: 400})
-
-
-  } else{
+  if(stateT){
     stateT = 0
     this.innerHTML = '필터 열기<span class="material-icons"> add </span>'
     gsap.to(filterBottom,0.3,{height: 0})
+
+
+  } else{
+    stateT = 1
+    this.innerHTML = '필터 닫기<span class="material-icons"> remove </span>'
+    gsap.to(filterBottom,0.3,{height: 400})
   }
 })
 
 
-
+//필터전체해제
+const chkFalse = document.getElementById('chk_false')
+const everyChk = [
+  ...colorChk,
+  ...sizeChk,
+  ...priceChk,
+  ...genderChk
+]
+chkFalse.addEventListener('click',function(){
+  everyChk.forEach((item)=>{
+    item.checked = false
+  })
+  priceChk[0].click()
+})
 
 
 
@@ -201,18 +214,7 @@ productImgs.forEach((img)=>{
 
 
 
-//quickmenu 버튼
-const scrollUD = document.querySelectorAll('.quick_bottom li')
-scrollUD[0].addEventListener('click',()=>{
-  gsap.to(window,1,{
-    scrollTo: 0,
-  })
-})
-scrollUD[1].addEventListener('click',()=>{
-  gsap.to(window,1,{
-    scrollTo: document.body.scrollHeight,
-  })
-})
+
 
 
 

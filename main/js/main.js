@@ -1,5 +1,6 @@
 import { headerFunction } from "/public/public.js";
-//build가 js내의 경로를 인식 못함 > build 후 /public을 /team_project/public으로 돌려주기? 
+//나중에 /public/을 /team_project/public으로 돌리기
+
 
 const header = document.querySelector('header')
 fetch('/public/header.html')
@@ -170,25 +171,26 @@ for(let i=0;i<plusBtns.length;i++){
   clickState.push(0)
 }
 plusBtns.forEach((btn,i)=>{
-  btn.addEventListener('click',()=>{
-  if(!clickState[i]){
-    clickState[i]=1
-
-    // recomDesc[i].classList.add('on')
-
-    recomDesc[i].style.display = 'block'
-    gsap.to(recomDesc[i],0.2,{opacity: 1,})
-
-    gsap.to(plusIcon[i],0.2,{rotation: 45, });
-  } else{
-    clickState[i]=0
-    gsap.to(recomDesc[i],0.2,{opacity: 0,},function(){recomDesc[i].style.display = 'none'})
-    gsap.to(plusIcon[i],0.2,{rotation: 0, });
+  btn.addEventListener('mouseenter',()=>{
+      recomDesc[i].style.display = 'block'
+      gsap.to(recomDesc[i],0.2,{opacity: 1,})
+      gsap.to(plusIcon[i],0.2,{rotation: 45, });
     
-
-  }
   
-  })//click
+  })//mouseenter
+
+  btn.addEventListener('mouseleave',()=>{
+    setTimeout(function(){
+      gsap.to(plusIcon[i],0.25,{rotation: 0, });
+      gsap.to(recomDesc[i],0.2,{opacity: 0,},function(){
+        recomDesc[i].style.display = 'none'
+      })
+      
+    },1500)
+    
+  })//mouseenter
+
+
   
 })//forEach
   

@@ -27,6 +27,19 @@ function headerFunction(){
       top: window.scrollY + window.innerHeight*0.3
     })
 
+    //quickmenu 버튼
+    const scrollUD = document.querySelectorAll('.quick_bottom li')
+    scrollUD[0].addEventListener('click',()=>{
+      gsap.to(window,1,{
+        scrollTo: 0,
+      })
+    })
+    scrollUD[1].addEventListener('click',()=>{
+      gsap.to(window,1,{
+        scrollTo: document.body.scrollHeight,
+      })
+    })
+
   });
   
   
