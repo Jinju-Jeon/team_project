@@ -1,13 +1,25 @@
 
-import headerFunction from "/public/header.js";
+import { headerFunction } from "/public/public.js";
 
-document.addEventListener("DOMContentLoaded",function(){
-  const header = document.querySelector('header')
-  fetch('/public/header.html')
-  .then(res => res.text())
-  .then(data => header.innerHTML = data)
-  .then(()=>headerFunction())
-})
+
+const header = document.querySelector('header')
+fetch('/public/header.html')
+.then(res => res.text())
+.then(data => header.innerHTML = data)
+
+const footer = document.querySelector('footer')
+fetch('/public/footer.html')
+.then(res => res.text())
+.then(data => footer.innerHTML = data)
+
+const quick = document.querySelector('.quick')
+fetch('/public/quickmenu.html')
+.then(res => res.text())
+.then(data => quick.innerHTML = data)
+.then(()=>headerFunction())
+
+
+
 
 // visual_main
 new Swiper('.vm_slider', {
@@ -184,8 +196,7 @@ plusBtns.forEach((btn,i)=>{
 
 
 
-
-//scrollEvent
+/* scroll-event */
 window.addEventListener('scroll',()=>{
   /* magazine */
   const magImg = document.querySelectorAll('.magazine .img')
@@ -197,5 +208,6 @@ window.addEventListener('scroll',()=>{
         opacity: 1,
       }).delay(i*0.3)
     })//foreach
-  }
+  }//if
+  
 });

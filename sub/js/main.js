@@ -1,5 +1,26 @@
 
 import menClothList  from "./data.js"
+import { headerFunction } from "/public/public.js";
+
+
+const header = document.querySelector('header')
+fetch('/public/header.html')
+.then(res => res.text())
+.then(data => header.innerHTML = data)
+
+const footer = document.querySelector('footer')
+fetch('/public/footer.html')
+.then(res => res.text())
+.then(data => footer.innerHTML = data)
+
+const quick = document.querySelector('.quick')
+fetch('/public/quickmenu.html')
+.then(res => res.text())
+.then(data => quick.innerHTML = data)
+.then(()=>headerFunction())
+
+
+
 
 const productList = document.querySelector('.product_list')
 const viewType = document.getElementsByName('view_type')
@@ -9,83 +30,6 @@ let state = 0
 
 itemLoad(nowList)
 prE()
-
-
-
-/* scroll-event */
-const headerInner = document.querySelector('.header_inner')
-const quickMenu = document.querySelector('.quick')
-let prev = 0
-window.addEventListener('scroll',()=>{
-  /* header view */
-	if(prev < window.scrollY && window.scrollY>300){
-    headerInner.classList.remove('scroll_up')
-    headerInner.classList.add('scroll_down')
-  } else{
-    headerInner.classList.remove('scroll_down')
-    headerInner.classList.add('scroll_up')
-  }
-	prev = window.scrollY;
-
-
-  /* quickmenu위치 */
-  gsap.to(quickMenu,0.5,{
-    top: window.scrollY + window.innerHeight*0.3
-  })
-  
-});
-
-
-/* header-hover */
-const gnbLists = document.querySelectorAll('.gnb>ul>li')
-const gnbHovers = document.querySelectorAll('.gnb .gnb_hover')
-
-gnbLists.forEach((gnbList,i)=>{
-  gnbList.addEventListener('mouseenter',function(){
-    document.querySelector('.header').classList.remove('top')
-    gnbHovers[i].classList.add('hovered')
-    document.querySelector('.bg_opacity').style.display = 'block'
-  })
-
-  gnbList.addEventListener('mouseleave',function(){
-    gnbHovers[i].classList.remove('hovered')
-    document.querySelector('.bg_opacity').style.display = 'none'
-  })
-})
-
-
-/* search */
-const searchBtn = document.querySelector('.search_btn')
-const search = document.querySelector('.search')
-const searchClose = document.querySelector('.search .close')
-searchBtn.addEventListener('click',()=>{
-  search.style.display = 'block'
-  document.querySelector('.bg_opacity').style.display = 'block'
-})
-searchClose.addEventListener('click',function(){
-  search.style.display = 'none'
-  document.querySelector('.bg_opacity').style.display = 'none'
-})
-document.querySelector('.bg_opacity').addEventListener('click',function(){
-  search.style.display = 'none'
-  this.style.display = 'none'
-})
-
-/* search변화 */
-const popSearch = ['데일리 슈즈','키즈 바람막','베이직리니어반팔티','운동화','스피드서브']
-const recomSearch = ['TENNIS COLLECTION','DAILY SHOES RAYFLIDE','스포츠 언더웨어','가볍고 편한 키즈 운동화 #문더스트']
-const recentSearch = ['씨어서커','온라인 단독','테니스 스커트']
-const searchAll = [popSearch,recomSearch,recentSearch]
-const searchList = document.querySelectorAll('.search .bottom>div>ul')
-makeSearch() //
-
-const madeX = document.querySelectorAll('.search ul span')
-madeX.forEach((x,i)=>{
-  x.addEventListener('click',function(){
-    this.parentNode.parentNode.removeChild(this.parentNode)
-  })
-})
-
 
 
 

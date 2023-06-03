@@ -1,9 +1,11 @@
+
 function headerFunction(){
 
   /* scroll-menu */
   const headerInner = document.querySelector('.header_inner')
-  console.log(headerInner)
+  const quickMenu = document.querySelector('.quick')
   let prev = 0
+
   
   
   //scrollEvent
@@ -18,6 +20,13 @@ function headerFunction(){
     }
     prev = window.scrollY;
     headerStyle();
+  
+  
+    /* quickmenu위치 */
+    gsap.to(quickMenu,0.5,{
+      top: window.scrollY + window.innerHeight*0.3
+    })
+
   });
   
   
@@ -71,7 +80,6 @@ function headerFunction(){
   makeSearch(searchAll,searchList) //
   
   const madeX = document.querySelectorAll('.search ul span')
-  console.log(madeX)
   madeX.forEach((x,i)=>{
     x.addEventListener('click',function(){
       this.parentNode.parentNode.removeChild(this.parentNode)
@@ -107,5 +115,4 @@ function makeSearch(searchAll,searchList){
 }
 
 
-
-export default headerFunction
+export {headerFunction}

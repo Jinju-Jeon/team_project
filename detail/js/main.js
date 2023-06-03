@@ -1,3 +1,27 @@
+
+import { headerFunction } from "/public/public.js";
+
+
+const header = document.querySelector('header')
+fetch('/public/header.html')
+.then(res => res.text())
+.then(data => header.innerHTML = data)
+
+const footer = document.querySelector('footer')
+fetch('/public/footer.html')
+.then(res => res.text())
+.then(data => footer.innerHTML = data)
+
+const quick = document.querySelector('.quick')
+fetch('/public/quickmenu.html')
+.then(res => res.text())
+.then(data => quick.innerHTML = data)
+.then(()=>headerFunction())
+
+
+
+
+
 //popup닫기용
 document.querySelector('.popup').addEventListener('click',()=>document.getElementById('exchange_popup').click())
 
