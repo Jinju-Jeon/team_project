@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+
+*{margin: 0; padding: 0; color: #333; font-family: 'Noto Sans KR';}
+li, a{list-style: none; text-decoration: none;}
+h1, h2, h3, h4, h5, h6{font-weight: normal; font-size: inherit;}
+
+body{
+    padding: 150px 110px 0;
+    background-color: #eee; 
+}
+
+label, li, select, p, input{font-size: 20px;}
+button{font-size: 18px;}
+
+.wrap{
+    width: 920px;
+    margin: 0 auto;
+    
+}
+
+.back{
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.tit{
+    display: flex;
+    align-items: center;
+}
+
+.img{
+    width: 185px;
+    margin-right: 25px;
+}
+
+.img svg{fill: #002053; width: 100%;}
+
+h1{
+    font-weight: bold;
+    font-size: 60px;
+}
+
+ul{
+    width: 820px;
+    margin: 0 auto;
+    padding-top: 40px;
+}
+ul:nth-child(3){border-bottom: none;}
+ul li{ height: 120px; overflow: hidden;}
+ul li label{display: block; margin-bottom: 5px;}
+
+.message{
+    margin-left: 20px;
+    font-size: 14px;
+    display: none;
+}
+
+.message::before{
+    content: "*";
+}
+
+.message.err, .message.cor{display: block;}
+
+
+input[type="text"],
+input[type="password"]{
+    width: 100%;
+    height: 50px;
+    display: block;
+    padding: 5px 10px;
+    box-sizing: border-box;
+}
+
+input[type="text"]{width: calc(100% - 140px); float: left;}
+input[type="password"]
+
+.pwchk {position: relative;}
+.pwchk i{
+    position: absolute;
+    top: 50px; right: 10px;
+    font-size: 20px;
+    color: #777;
+}
+
+li:first-child button{
+    width: 120px; height: 50px;
+    border: none;
+    background-color: #002053;
+    color: #fff;
+    margin-left: 20px;
+}
+
+form>ul>button{
+    width: 100%; height: 50px;
+    border: none;
+    margin-top: 50px;
+    background-color: #002053;
+    color: #fff;
+}
+
+
+
+
+
+
+.err{color: #f00;}
+.cor.cor{color: #008223;}

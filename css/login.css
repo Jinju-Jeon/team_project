@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+
+*{margin: 0; padding: 0; color: #333; font-family: 'Noto Sans KR';}
+li, a{list-style: none; text-decoration: none;}
+h1, h2, h3, h4, h5, h6{font-weight: normal; font-size: inherit;}
+a{display: block;}
+
+body{
+    padding-top: 200px;
+    width: 100vw; height: 100vh;
+    box-sizing: border-box;
+    background: no-repeat ;
+    background-size: cover;
+    background-blend-mode:multiply;
+    background-image: url(./img/bg_soosoojin.jpg);
+    background-color: rgba(0,0,0,0.3); 
+    overflow-y: hidden;
+}
+
+.tit{display: flex; margin-bottom: 20px;}
+.tit a{margin-right: 20px;width: 140px;}
+.tit a svg{fill: #fff; width: 100%;  height: 100%}
+
+.wrap{
+    margin: 0 auto;
+    width: 530px;
+    box-sizing: border-box; 
+}
+
+h1{
+    text-align: left;
+    font-size: 54px;
+    font-weight: bold;
+    color: #fff;
+    white-space: nowrap;
+}
+
+form li:first-child{
+    margin-bottom: 50px;
+}
+
+form li label{
+    display: block;
+    color: #fff;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+form li input{
+    width: 100%; height: 50px;
+    padding-left: 20px;
+    font-size: 16px;
+}
+
+
+.guide{
+    margin-top: 20px;
+}
+.guide ul{
+    display: flex;
+    justify-content: center;
+}
+.guide ul li{
+    margin-right: 20px;
+}
+.guide ul li:last-child{
+    margin-right: 0;
+}
+
+.guide ul li a{
+    color: #fff;
+}
+
+.guide ul li a::before{
+    content: "〉";
+    margin-right: -5px;
+    
+}
+
+button{
+    margin-top: 30px;
+    height: 50px;
+    background: none;
+    border: none;
+    width: 100%;
+    background-color: #002053;
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+    cursor: pointer;
+}
+
+.message{
+    margin-top: 10px;
+    font-weight: bold;
+    display: none;
+}
+.message::before{content: "*";}
+
+.message.err{display: block; color: #f00;}
+.message.cor{display: block; color: #00ff44;}

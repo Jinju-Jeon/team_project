@@ -1,17 +1,28 @@
-const { expr } = require("jquery")
-
-let popSearch = [
-    'test',
-    'ttest'
+const userData = [
+    {
+        id: 'green123456',
+        pw: '12345678',
+    },
+    {
+        id: 'abcd',
+        pw: '12345678',
+    },
+    {
+        id: 'rkskekfkakqktk',
+        pw: 'asdfghjk',
+    },
+    {
+        id: 'p9cde0',
+        pw: 'v5s8roqg',
+    },
+    {
+        id: '5ufld7iz3',
+        pw: 'e4xcsdqz',
+    },
 ]
 
-let recomSearch = [
-    'test',
-    'ttest']
-
-let recentSearch = [
-    'test',
-    'ttest']
 
 
-export default {popSearch, recomSearch, recentSearch}
+
+
+export default userData

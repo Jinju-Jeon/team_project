@@ -4,24 +4,23 @@
   "main": "index.html",
   "scripts": {
     "dev": "parcel index.html",
-    "build": "parcel build index.html"
+    "build": "parcel build index.html --public-url http://trinj.dothome.co.kr/team_project/"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "parcel-bundler": "^1.12.5",
     "parcel-plugin-static-files-copy": "^2.6.0",
     "sass": "^1.62.1",
-    "sass-loader": "^13.2.2"
+    "sass-loader": "^13.3.1"
   },
   "dependencies": {
     "gsap": "^3.11.5",
     "jquery": "^3.6.4",
     "jquery-ui-dist": "^1.13.2",
-    "parcel-bundler": "^1.12.3",
     "swiper": "^9.2.4"
   },
-  "description": "",
   "staticFiles": {
     "staticPath": [
       {
@@ -33,5 +32,6 @@
         "staticOutDir": "/detail/img"
       }
     ]
-  }
+  },
+  "description": ""
 }
