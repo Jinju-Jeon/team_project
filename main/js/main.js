@@ -1,19 +1,28 @@
+const aHref = document.querySelectorAll('.link a')
+console.log(aHref)
+const link = new Array
+aHref.forEach((item,i)=>{
+  link[i] = item.getAttribute('href')
+  console.log(link[i])
+})
+
+
 import { headerFunction } from "/public/public.js";
-//나중에 /public/을 /team_project/public으로 돌리기
+//이부분은 치환돌리자
 
 
 const header = document.querySelector('header')
-fetch('/public/header.html')
+fetch(link[0])
 .then(res => res.text())
 .then(data => header.innerHTML = data)
 
 const footer = document.querySelector('footer')
-fetch('/public/footer.html')
+fetch(link[1])
 .then(res => res.text())
 .then(data => footer.innerHTML = data)
 
 const quick = document.querySelector('.quick')
-fetch('/public/quickmenu.html')
+fetch(link[2])
 .then(res => res.text())
 .then(data => quick.innerHTML = data)
 .then(()=>headerFunction())

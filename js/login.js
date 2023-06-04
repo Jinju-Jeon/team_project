@@ -19,7 +19,8 @@ import userData from "./data.js"
                 if(userPw.value === data.pw){
                     message.classList.remove('err')
                     message.classList.add('cor')
-                    locat.href ='http://trinj.dothome.co.kr/team_project/main'
+                    message.innerText = '로그인 성공'
+                    location.href ='http://trinj.dothome.co.kr/team_project/main/index.html'
                 } else{
                     message.classList.remove('cor')
                     message.classList.add('err')
