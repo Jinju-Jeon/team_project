@@ -3,7 +3,7 @@ console.log(aHref)
 const link = new Array
 aHref.forEach((item,i)=>{
   link[i] = item.getAttribute('href')
-  console.log(link[i])
+  
 })
 
 
@@ -182,16 +182,16 @@ for(let i=0;i<plusBtns.length;i++){
 plusBtns.forEach((btn,i)=>{
   btn.addEventListener('mouseenter',()=>{
       recomDesc[i].style.display = 'block'
-      gsap.to(recomDesc[i],0.2,{opacity: 1,})
-      gsap.to(plusIcon[i],0.2,{rotation: 45, });
+      gsap.to(recomDesc[i],0.15,{opacity: 1,})
+      gsap.to(plusIcon[i],0.15,{rotation: 45, });
     
   
   })//mouseenter
 
   btn.addEventListener('mouseleave',()=>{
     setTimeout(function(){
-      gsap.to(plusIcon[i],0.25,{rotation: 0, });
-      gsap.to(recomDesc[i],0.2,{opacity: 0,},function(){
+      gsap.to(plusIcon[i],0.1,{rotation: 0, });
+      gsap.to(recomDesc[i],0.1,{opacity: 0,},function(){
         recomDesc[i].style.display = 'none'
       })
       

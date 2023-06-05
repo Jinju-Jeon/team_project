@@ -27,6 +27,7 @@ span{font-size: inherit;}
 //scroll effect
 .header.top{
     background: none;
+    border-bottom: none;
 .header_inner{
     color: #fff;
     .logo svg{fill: #fff;}
@@ -41,6 +42,13 @@ span{font-size: inherit;}
         color: #fff;
     }
 }
+}
+.quick{
+    transition: opacity .2s;
+}
+.quick_off{
+    opacity: 0;
+    pointer-events: none;
 }
 
 

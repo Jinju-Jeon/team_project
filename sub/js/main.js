@@ -6,7 +6,7 @@ console.log(aHref)
 const link = new Array
 aHref.forEach((item,i)=>{
   link[i] = item.getAttribute('href')
-  console.log(link[i])
+  
 })
 
 
@@ -91,7 +91,6 @@ colorChk.forEach((item)=>{
     sizeFilter()
     priceFilter()
     genderFilter()
-
     colorFilter()
     itemLoad(nowList)
     
@@ -351,23 +350,6 @@ function prE(){
   }
 
 }//a태그 이동 방지
-
-function makeSearch(){searchAll.forEach((searchItem,i)=>{
-  const listCover = searchList[i]
-  searchItem.forEach((keyword,j)=>{
-    const list = document.createElement('li')
-    list.innerText = keyword
-
-    if(i==2){
-      const xBox = document.createElement('span')
-      xBox.innerText = 'x'
-      list.appendChild(xBox)
-    }
-
-    listCover.appendChild(list)
-  })
-})
-}//Search란 함수
 
 
 function productSort(){

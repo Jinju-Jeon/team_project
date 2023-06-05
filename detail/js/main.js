@@ -1,9 +1,8 @@
 const aHref = document.querySelectorAll('.link a')
-console.log(aHref)
 const link = new Array
 aHref.forEach((item,i)=>{
   link[i] = item.getAttribute('href')
-  console.log(link[i])
+  
 })
 
 
@@ -308,6 +307,11 @@ function newInq(){
 
     const question = pEl('question')
     question.innerText = qnaTxt.value
+
+    if(qnaTxt.value.length<10){
+        alert('10자 이상 작성해주세요.')
+        return
+    }
     
 
     const inqStat = spanEl()
@@ -362,7 +366,7 @@ function makeRep(array){
         item.addEventListener('click',()=>{
             let answered = document.querySelector(('.answer_cover'+i))
             let reply = document.querySelector(('#rep_txt'+i))
-            
+
             let repEl = pEl('answer')
             repEl.innerText = reply.value
 
@@ -395,7 +399,6 @@ function repToggle(){
 
     repQ.forEach((item,i)=>{
         item.addEventListener('click',function(){
-            console.log('click')
             if(!stat[i]){
                 stat[i]=1
                 repA[i].style.display = 'flex'
@@ -406,4 +409,8 @@ function repToggle(){
         })
     })
     
+}
+
+function closeBtn(array){
+
 }

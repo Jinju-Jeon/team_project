@@ -27,6 +27,15 @@ function headerFunction(){
       top: window.scrollY + window.innerHeight*0.3
     })
 
+
+    /* quickmenu > top의 설정 */
+    if(window.scrollY>500){
+      quickMenu.classList.remove('quick_off')
+    } else{
+      quickMenu.classList.add('quick_off')
+    }
+    
+
   });
 
   //quickmenu 버튼
