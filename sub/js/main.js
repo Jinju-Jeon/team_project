@@ -1,6 +1,8 @@
 
 import menClothList  from "./data.js"
 
+import _ from "lodash"
+
 const aHref = document.querySelectorAll('.link a')
 console.log(aHref)
 const link = new Array
