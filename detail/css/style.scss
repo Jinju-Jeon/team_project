@@ -437,11 +437,11 @@ section{margin-bottom: 150px;}
             }
 
         .review_prev{
-            margin-bottom: 80px;
+            margin-bottom: 40px;
 
             .review_content{
                 position: relative;
-                padding: 25px 0;
+                padding: 15px 0;
                 border-bottom: $b1sa;
 
                 .point{
@@ -524,6 +524,7 @@ section{margin-bottom: 150px;}
     .inquiry{
         .inquiry_prev{margin-bottom: 15px; border-top: $b1sa;}        
         .inquiry_content{
+            position: relative;
             border-bottom: $b1sa;
 
             .question_cover{display: flex;}
@@ -621,11 +622,8 @@ section{margin-bottom: 150px;}
     position: absolute;
     display: block;
 
-    width: 24px; height: 24px;
-    text-align: center; line-height: 24px;
-
-    top: 25px; right: 10px; 
-    font-size: 20px;
+    top: 15px; right: 10px; 
+    font-size: 16px;
     cursor: pointer;
 
     &:hover{

@@ -64,6 +64,7 @@ imgList.forEach((item,i)=>{
 
 //ansArea 및 close 초기설정
 ansArea()
+document.querySelectorAll('.inquiry_content .x_btn').forEach((item)=>(closeAction(item)))
 document.querySelectorAll('.review_content .x_btn').forEach((item)=>(closeAction(item)))
 
 
@@ -121,7 +122,7 @@ let chkStatus = 0
 reviewSubmit.addEventListener('click',()=>{
 
     //리뷰 작성 체크
-    myPoint.forEach((item)=>{
+    myPoint.forEach((item,i)=>{
         if(item.checked){
             chkStatus = 1
             return
@@ -138,6 +139,14 @@ reviewSubmit.addEventListener('click',()=>{
 
     newReview()
     myText.value=''    
+    myPoint.forEach((item)=>{
+        item.checked = false
+    })
+
+    document.querySelectorAll('.my_point .star_icon').forEach((item)=>(item.innerText = 'star_outline'))
+    document.querySelector('.my_review .point_no').innerText = ''
+    chkStatus = 0
+
     
 
     
@@ -287,7 +296,7 @@ function newReview(){
         reviewContent.append(prevPoint,prevText,prevImg)
     }
 
-    closeBtn(reviewContent)
+    
     reviewPrev.prepend(reviewContent)
 
 }
@@ -315,6 +324,9 @@ function newInq(){
 
     inqContent.append(questionCover,answerCover)
     inqContent.classList.add('not_ans')
+    
+    closeBtn(inqContent)
+
     inquiryPrev.prepend(inqContent)
 
     qnaTxt.value=""
@@ -402,7 +414,7 @@ function repToggle(){
 function closeBtn(item){
     let xBtn = spanEl()
     xBtn.classList.add('x_btn','material-icons-outlined')
-    xBtn.innerText = 'close'
+    xBtn.innerText = '삭제close'
     closeAction(xBtn)
     item.appendChild(xBtn)
 }
