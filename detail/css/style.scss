@@ -440,6 +440,7 @@ section{margin-bottom: 150px;}
             margin-bottom: 80px;
 
             .review_content{
+                position: relative;
                 padding: 25px 0;
                 border-bottom: $b1sa;
 
@@ -614,3 +615,20 @@ section{margin-bottom: 150px;}
     }
 
 }//bottom
+
+
+.x_btn{
+    position: absolute;
+    display: block;
+
+    width: 24px; height: 24px;
+    text-align: center; line-height: 24px;
+
+    top: 25px; right: 10px; 
+    font-size: 20px;
+    cursor: pointer;
+
+    &:hover{
+        color: #FF1235;
+    }
+}

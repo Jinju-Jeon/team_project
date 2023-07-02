@@ -62,8 +62,9 @@ imgList.forEach((item,i)=>{
     })
 })
 
-//ansArea 초기설정
+//ansArea 및 close 초기설정
 ansArea()
+document.querySelectorAll('.review_content .x_btn').forEach((item)=>(closeAction(item)))
 
 
 /* 주문수량 및 가격 */
@@ -136,9 +137,7 @@ reviewSubmit.addEventListener('click',()=>{
     }
 
     newReview()
-
-    myText.value=''
-    
+    myText.value=''    
     
 
     
@@ -248,10 +247,7 @@ function writeAction(){
             for(let i=0; i<pointCnt;i++){
                 myPointLabel[i].innerText = 'star'
             }
-
             document.querySelector('.my_point .point_no').innerText = (pointCnt+'.0')
-
-
         })
     })
 
@@ -283,9 +279,7 @@ function newReview(){
     let imgs = photoArea.querySelectorAll('.img')
     imgs.forEach((item)=>{
         prevImg.appendChild(item)
-    })
-
-    
+    })    
     
     if(imgs.length===0){
         reviewContent.append(prevPoint,prevText)
@@ -293,10 +287,9 @@ function newReview(){
         reviewContent.append(prevPoint,prevText,prevImg)
     }
 
-
-
-    
+    closeBtn(reviewContent)
     reviewPrev.prepend(reviewContent)
+
 }
 
 function newInq(){
@@ -348,12 +341,7 @@ function ansArea(){
         repBtn.innerText = '답변 작성'
 
         item.append(txtArea,repBtn)
-
-
-
-
     })
-
     
     repBtns = document.querySelectorAll('.rep_btn')
 
@@ -411,6 +399,17 @@ function repToggle(){
     
 }
 
-function closeBtn(array){
+function closeBtn(item){
+    let xBtn = spanEl()
+    xBtn.classList.add('x_btn','material-icons-outlined')
+    xBtn.innerText = 'close'
+    closeAction(xBtn)
+    item.appendChild(xBtn)
+}
 
+function closeAction(item){
+    item.addEventListener("click",function(){
+        const deleting = item.parentNode
+        deleting.parentNode.removeChild(deleting)
+    })
 }
