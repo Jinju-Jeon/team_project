@@ -33,6 +33,7 @@
     ]
   },
   "dependencies": {
+    "cssnano": "^4.1.11",
     "lodash": "^4.17.21"
   }
 }
