@@ -175,10 +175,6 @@ rank.addEventListener('click',function(){
 const plusBtns = document.querySelectorAll('.recom_detail>button')
 const plusIcon = document.querySelectorAll('.recom_detail>button span')
 const recomDesc = document.querySelectorAll('.recom_desc')
-const clickState = new Array
-for(let i=0;i<plusBtns.length;i++){
-  clickState.push(0)
-}
 plusBtns.forEach((btn,i)=>{
   btn.addEventListener('mouseenter',()=>{
       recomDesc[i].style.display = 'block'
