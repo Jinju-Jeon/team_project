@@ -37,7 +37,6 @@ $b1sa: 1px solid #aaa;
 @mixin secWidth{
     width: 1320px;
     margin: 0 auto;
-    padding: 0 10px;
     box-sizing: border-box; 
 }
 @mixin flexSB{display: flex; justify-content: space-between;}
