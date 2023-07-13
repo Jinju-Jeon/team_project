@@ -1,7 +1,7 @@
 ![project2_find](https://github.com/Jinju-Jeon/team_project/assets/122503637/9fc30a3b-6c9f-41a1-b6e5-efbf1443f7a0)
 
 
-# 230428_iconic
+# Team Project
 -적응형 사이트(1320px / 메인의 경우 1320px ~ 1660px)
 
 -Sass 사용.
